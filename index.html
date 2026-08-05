@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letícia Garcia — Designer & Ilustradora</title>
+  <meta name="description" content="Designer gráfica e ilustradora. Identidades visuais autênticas e ilustração vibrante, com paixão por projetos para crianças.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+
+      /* base */
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+
+      /* acentos da marca */
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+
+      /* escala de display */
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== HEADER ====== -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-8 flex items-center justify-between">
+  <a href="/" class="font-black text-2xl tracking-tighter">Let<span class="text-magenta">.</span></a>
+
+  <nav class="flex items-center gap-6 lg:gap-10 font-semibold text-sm lg:text-lg tracking-tight uppercase">
+    <a href="projetos.html" class="hover:text-magenta transition-colors"
+       data-pt="Trabalhos" data-en="Work"></a>
+    <a href="sobre.html" class="hover:text-magenta transition-colors"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="#contato" class="hover:text-magenta transition-colors"
+       data-pt="Contato" data-en="Contact"></a>
+
+    <button id="lang-toggle"
+            class="font-black text-sm border-2 border-navy rounded-full px-3 py-1 hover:bg-navy hover:text-creme transition-colors">
+      EN
+    </button>
+  </nav>
+</header>
+
+<!-- ====== HERO ====== -->
+<!-- TODO: copy placeholder. Refazer a composição (ver os 3 exercícios do plano). -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-16 pb-28">
+  <h1 class="font-black text-5xl lg:text-hero leading-none tracking-tighter max-w-[15ch]"
+      data-pt="Identidades visuais autênticas e ilustração vibrante."
+      data-en="Authentic visual identities and vibrant illustration."></h1>
+
+  <p class="mt-10 max-w-[46ch] text-lg leading-relaxed"
+     data-pt="Sou Letícia — designer e ilustradora formada pela UNESP. Apaixonada por projetos para crianças: livros, padronagens e jogos."
+     data-en="I'm Letícia — designer and illustrator, graduated from UNESP. Passionate about projects for children: books, patterns and games."></p>
+
+  <a href="#trabalhos"
+     class="inline-block mt-10 bg-navy text-creme font-semibold text-sm uppercase tracking-tight rounded-full px-8 py-4 hover:bg-magenta transition-colors"
+     data-pt="Ver trabalhos" data-en="See work"></a>
+</section>
+
+<!-- ====== SELETOR DESIGN / ILUSTRAÇÃO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28 grid md:grid-cols-2 gap-6">
+  <a href="projetos.html?filtro=design"
+     class="group bg-roxo text-creme rounded-3xl p-10 lg:p-14 min-h-[280px] flex flex-col justify-between">
+    <span class="font-black text-4xl lg:text-title leading-none tracking-tighter">Design</span>
+    <span class="font-semibold text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
+          data-pt="Identidade visual, editorial, impresso →"
+          data-en="Visual identity, editorial, print →"></span>
+  </a>
+
+  <a href="projetos.html?filtro=ilustracao"
+     class="group bg-magenta text-creme rounded-3xl p-10 lg:p-14 min-h-[280px] flex flex-col justify-between">
+    <span class="font-black text-4xl lg:text-title leading-none tracking-tighter"
+          data-pt="Ilustração" data-en="Illustration"></span>
+    <span class="font-semibold text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
+          data-pt="Infantil, editorial, publicidade →"
+          data-en="Children's, editorial, advertising →"></span>
+  </a>
+</section>
+
+<!-- ====== TRABALHOS EM DESTAQUE ====== -->
+<!-- TODO Letícia: confirmar o ano de cada projeto -->
+<section id="trabalhos" class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28">
+  <h2 class="font-black text-3xl lg:text-section tracking-tighter mb-12"
+      data-pt="Trabalhos selecionados" data-en="Selected work"></h2>
+
+  <div class="grid md:grid-cols-2 gap-x-6 gap-y-16">
+
+    <!-- destaque: ocupa as duas colunas -->
+    <a href="projetos/luna-monstrinho.html" class="group md:col-span-2">
+      <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/luna-monstrinho/capa.webp"
+             alt="Luna e o Monstrinho — capa do livro infantil ilustrado sobre emoções na infância"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="mt-6 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h3 class="font-black text-3xl lg:text-5xl tracking-tighter">Luna e o Monstrinho</h3>
+          <p class="mt-2 text-sm opacity-60">
+            <span data-pt="Livro infantil · TCC UNESP" data-en="Children's book · UNESP thesis"></span> · 2024 ·
+            <span class="text-laranja font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+          </p>
+        </div>
+        <span class="bg-amarelo text-navy font-semibold text-xs uppercase tracking-tight rounded-full px-4 py-2"
+              data-pt="Projeto em destaque" data-en="Featured project"></span>
+      </div>
+    </a>
+
+    <a href="projetos/almanaque-vampirico.html" class="group">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/almanaque-vampirico/capa.webp"
+             alt="Almanaque Vampírico — ilustrações e diagramação de almanaque de temática vampiresca"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <h3 class="mt-5 font-black text-2xl tracking-tight">Almanaque Vampírico</h3>
+      <p class="mt-1 text-sm opacity-60">
+        <span data-pt="Projeto pessoal" data-en="Personal project"></span> · 2026 ·
+        <span class="text-laranja font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+      </p>
+    </a>
+
+    <a href="projetos/chico-quitandas.html" class="group">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/chico-quitandas/capa.webp"
+             alt="Chico Quitandas Mineiras — identidade visual de marca de quitandas"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <h3 class="mt-5 font-black text-2xl tracking-tight">Chico Quitandas Mineiras</h3>
+      <p class="mt-1 text-sm opacity-60">
+        <span data-pt="Identidade visual" data-en="Visual identity"></span> · 2026 ·
+        <span class="text-roxo font-semibold">Design</span>
+      </p>
+    </a>
+
+    <a href="projetos/revista-aura.html" class="group">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/revista-aura/capa.webp"
+             alt="Revista AURA — projeto editorial"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <h3 class="mt-5 font-black text-2xl tracking-tight">Revista AURA</h3>
+      <p class="mt-1 text-sm opacity-60">
+        <span data-pt="Editorial" data-en="Editorial"></span> · 2025 ·
+        <span class="text-roxo font-semibold">Design</span>
+      </p>
+    </a>
+
+    <a href="projetos/melissa-fini.html" class="group">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/melissa-fini/capa.webp"
+             alt="Melissa + Fini — ilustrações para campanha de Dia das Crianças"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <h3 class="mt-5 font-black text-2xl tracking-tight">Melissa + Fini</h3>
+      <p class="mt-1 text-sm opacity-60">
+        <span data-pt="Dia das Crianças" data-en="Children's Day"></span> · 2025 ·
+        <span class="text-magenta font-semibold" data-pt="Ilustração" data-en="Illustration"></span>
+      </p>
+    </a>
+
+    <a href="projetos/puket-inverno.html" class="group">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/puket-inverno/capa.webp"
+             alt="Puket — estampas e direção visual da coleção de inverno"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <h3 class="mt-5 font-black text-2xl tracking-tight">Puket — Coleção de Inverno</h3>
+      <p class="mt-1 text-sm opacity-60">
+        Puket · 2026 ·
+        <span class="text-laranja font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+      </p>
+    </a>
+
+    <a href="projetos/ilumac.html" class="group">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+        <img src="assets/img/ilumac/capa.webp"
+             alt="ILUMAC — brandbook, catálogos e materiais de feira"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <h3 class="mt-5 font-black text-2xl tracking-tight">ILUMAC</h3>
+      <p class="mt-1 text-sm opacity-60">
+        ILUMAC · 2024 ·
+        <span class="text-roxo font-semibold">Design</span>
+      </p>
+    </a>
+
+  </div>
+
+  <a href="projetos.html"
+     class="inline-block mt-16 font-semibold text-lg border-b-2 border-navy hover:text-magenta hover:border-magenta transition-colors"
+     data-pt="Ver todos os projetos →" data-en="See all projects →"></a>
+</section>
+
+<!-- ====== SOBRE (curto) ====== -->
+<section class="bg-navy text-creme py-28">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20 grid md:grid-cols-2 gap-16 items-center">
+    <div class="aspect-square rounded-3xl overflow-hidden bg-creme/10">
+      <img src="assets/img/perfil/capa.webp" alt="Retrato de Letícia Garcia" class="w-full h-full object-cover">
+    </div>
+    <div>
+      <h2 class="font-black text-3xl lg:text-section tracking-tighter"
+          data-pt="Oi, eu sou a Let" data-en="Hi, I'm Let"></h2>
+      <p class="mt-8 text-lg leading-relaxed opacity-80"
+         data-pt="Designer e ilustradora formada em Design pela UNESP, atuando em agências desde 2021. Trabalho com identidade visual, ilustração e materiais impressos e digitais — de KV para mídia a livro infantil."
+         data-en="Designer and illustrator with a Design degree from UNESP, working in agencies since 2021. I work with visual identity, illustration and print and digital materials — from campaign key visuals to children's books."></p>
+      <p class="mt-6 text-sm uppercase tracking-tight opacity-50">
+        Melissa · Fini · Puket · dr.consulta · Sanavita · ILUMAC · Negra Rosa · Minu · Iamaní
+      </p>
+      <a href="sobre.html"
+         class="inline-block mt-10 font-semibold border-b-2 border-amarelo text-amarelo hover:opacity-70 transition-opacity"
+         data-pt="Mais sobre mim →" data-en="More about me →"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTATO / FOOTER ====== -->
+<footer id="contato" class="max-w-[1280px] mx-auto px-5 lg:px-20 py-28">
+  <p class="font-semibold text-sm uppercase tracking-tight opacity-50"
+     data-pt="Bora criar algo juntos" data-en="Let's create something together"></p>
+
+  <a href="mailto:let_garcia10@hotmail.com"
+     class="block mt-6 font-black text-3xl lg:text-title tracking-tighter break-all hover:text-magenta transition-colors">
+    let_garcia10@hotmail.com
+  </a>
+
+  <div class="mt-16 flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://instagram.com/letsketches" target="_blank" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="https://www.linkedin.com/in/leticia-garcia-ribeiro" target="_blank" class="hover:text-magenta transition-colors">LinkedIn</a>
+      <a href="https://www.artstation.com/leticialet" target="_blank" class="hover:text-magenta transition-colors">ArtStation</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<script>
+  // troca de idioma: lê data-pt / data-en e guarda a escolha
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        el.textContent = el.dataset[l];
+      });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+
+    btn.addEventListener('click', () => {
+      lang = lang === 'pt' ? 'en' : 'pt';
+      apply(lang);
+    });
+
+    apply(lang);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna e o Monstrinho — Letícia Garcia</title>
+  <meta name="description" content="Livro infantil ilustrado sobre emoções na infância. Trabalho de Conclusão de Curso em Design Gráfico pela UNESP Bauru, aprovado com conceito A.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== HEADER ====== -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-8 flex items-center justify-between">
+  <a href="../index.html" class="font-black text-2xl tracking-tighter">Let<span class="text-magenta">.</span></a>
+  <nav class="flex items-center gap-6 lg:gap-10 font-semibold text-sm lg:text-lg tracking-tight uppercase">
+    <a href="../projetos.html" class="hover:text-magenta transition-colors" data-pt="Trabalhos" data-en="Work"></a>
+    <a href="../sobre.html" class="hover:text-magenta transition-colors" data-pt="Sobre" data-en="About"></a>
+    <a href="../index.html#contato" class="hover:text-magenta transition-colors" data-pt="Contato" data-en="Contact"></a>
+    <button id="lang-toggle" class="font-black text-sm border-2 border-navy rounded-full px-3 py-1 hover:bg-navy hover:text-creme transition-colors">EN</button>
+  </nav>
+</header>
+
+<!-- ====== TÍTULO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
+  <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
+        data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Luna e o Monstrinho</h1>
+
+  <p class="mt-8 max-w-[52ch] text-xl lg:text-2xl leading-snug"
+     data-pt="Um livro infantil que ajuda crianças a nomear o que sentem — e adultos a escutar."
+     data-en="A children's book that helps kids name what they feel — and adults to listen."></p>
+</section>
+
+<!-- ====== CAPA ====== -->
+<section class="max-w-[1440px] mx-auto px-5 lg:px-10 pb-20">
+  <div class="rounded-3xl overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/capa.webp"
+         alt="Capa do livro Luna e o Monstrinho: a personagem Luna ao lado do Monstrinho, em ilustração colorida de estética cartoon"
+         class="w-full object-cover">
+  </div>
+</section>
+
+<!-- ====== FICHA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-24">
+  <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t-2 border-navy/10 pt-10">
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Contexto" data-en="Context"></dt>
+      <dd class="mt-2 font-semibold" data-pt="TCC — Design Gráfico, UNESP Bauru" data-en="Undergraduate thesis — Graphic Design, UNESP Bauru"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dd class="mt-2 font-semibold">2024</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Papel" data-en="Role"></dt>
+      <dd class="mt-2 font-semibold"
+          data-pt="Autoria, ilustração, projeto gráfico e pesquisa"
+          data-en="Writing, illustration, book design and research"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dd class="mt-2 font-semibold">Photoshop, Illustrator, Procreate</dd>
+    </div>
+  </dl>
+
+  <p class="mt-10 text-sm opacity-60 max-w-[70ch]"
+     data-pt="Orientação: Profª. Drª. Cassia Letícia Carrara Domiciano · Coorientação: Prof. Me. Guilherme Cardoso Contini · Banca: Rodrigo Cordeiro e Carolina Sartori · Aprovado com conceito A e indicado ao Repositório Digital da UNESP."
+     data-en="Advisor: Prof. Dr. Cassia Letícia Carrara Domiciano · Co-advisor: Prof. Guilherme Cardoso Contini, MSc · Committee: Rodrigo Cordeiro and Carolina Sartori · Graded A and nominated for UNESP's Digital Repository."></p>
+</section>
+
+<!-- ====== CONTEXTO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-24 grid md:grid-cols-2 gap-16">
+  <div>
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="O problema" data-en="The problem"></h2>
+    <p class="mt-8 text-lg leading-relaxed"
+       data-pt="Crianças sentem muito e nomeiam pouco. Quando o que elas sentem é minimizado por adultos, o que sobra é insegurança — e, mais tarde, dificuldade de se expressar. Faltam livros que tratem emoção como assunto, não como lição de moral."
+       data-en="Children feel a lot and can name little. When what they feel gets dismissed by adults, what's left is insecurity — and later, difficulty expressing themselves. There's a shortage of books that treat emotion as a subject rather than a moral lesson."></p>
+  </div>
+  <div>
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="A resposta" data-en="The response"></h2>
+    <p class="mt-8 text-lg leading-relaxed"
+       data-pt="Um livro ilustrado para crianças de 6 a 11 anos e seus responsáveis, com escrita simples e personagens carismáticos. A Luna encontra o Monstrinho — que muda de cor conforme o que ela sente — e aprende a dar nome às próprias emoções."
+       data-en="An illustrated book for children aged 6 to 11 and their caregivers, with simple writing and charismatic characters. Luna meets the Monstrinho — who changes colour according to what she feels — and learns to name her own emotions."></p>
+  </div>
+</section>
+
+<!-- ====== PESQUISA ====== -->
+<section class="bg-navy text-creme py-24">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Pesquisa antes do traço" data-en="Research before drawing"></h2>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-10">
+      <div>
+        <span class="font-black text-6xl text-amarelo">04</span>
+        <p class="mt-4 leading-relaxed opacity-80"
+           data-pt="psicólogos de áreas diferentes responderam a um questionário sobre como falar de emoção com crianças. As respostas guiaram a construção da história."
+           data-en="psychologists from different fields answered a questionnaire on how to talk about emotion with children. Their answers shaped the story."></p>
+      </div>
+      <div>
+        <span class="font-black text-6xl text-magenta">6–11</span>
+        <p class="mt-4 leading-relaxed opacity-80"
+           data-pt="anos: a faixa etária definida a partir de pesquisa sobre desenvolvimento emocional e autonomia na infância."
+           data-en="years old: the age range defined from research on emotional development and autonomy in childhood."></p>
+      </div>
+      <div>
+        <span class="font-black text-6xl text-laranja">A</span>
+        <p class="mt-4 leading-relaxed opacity-80"
+           data-pt="conceito final na banca de defesa, com indicação ao Repositório Digital da UNESP."
+           data-en="final grade at the thesis defence, with a nomination for UNESP's Digital Repository."></p>
+      </div>
+    </div>
+
+    <p class="mt-16 max-w-[60ch] leading-relaxed opacity-80"
+       data-pt="A fundamentação passou por história da literatura infantil, o papel da ilustração na narrativa e a relação entre autoestima e gestão de frustrações. Entre os similares analisados, “O Monstro das Cores”, de Anna Llenas, que usa cor para representar emoção — e inspirou diretamente a criação do Monstrinho."
+       data-en="The theoretical grounding covered the history of children's literature, the role of illustration in narrative, and the relationship between self-esteem and handling frustration. Among the references analysed was Anna Llenas' “The Colour Monster”, which uses colour to represent emotion — and directly inspired the Monstrinho."></p>
+  </div>
+</section>
+
+<!-- ====== PROCESSO ====== -->
+<!-- TODO Letícia: substituir/complementar com as páginas do livro (ver lista de download) -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-24">
+  <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Processo" data-en="Process"></h2>
+  <p class="mt-6 max-w-[60ch] text-lg leading-relaxed opacity-70"
+     data-pt="Escrita, storyboard, concept art, design de personagens, testes de impressão e produção gráfica."
+     data-en="Writing, storyboard, concept art, character design, print tests and graphic production."></p>
+
+  <div class="mt-14 grid md:grid-cols-2 gap-6">
+    <figure class="md:col-span-2">
+      <div class="rounded-2xl overflow-hidden bg-navy/5">
+        <img src="../assets/img/luna-monstrinho/01.webp"
+             alt="Páginas internas do livro Luna e o Monstrinho mostrando a diagramação entre texto e ilustração"
+             class="w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-sm opacity-60"
+                  data-pt="Diagramação: o texto ocupa pouco espaço para que a ilustração conduza a narrativa."
+                  data-en="Layout: text takes little space so the illustration can carry the narrative."></figcaption>
+    </figure>
+
+    <figure>
+      <div class="rounded-2xl overflow-hidden bg-navy/5">
+        <img src="../assets/img/luna-monstrinho/02.webp"
+             alt="Lettering do título Luna e o Monstrinho"
+             class="w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-sm opacity-60"
+                  data-pt="Lettering do título, desenhado à mão."
+                  data-en="Hand-drawn title lettering."></figcaption>
+    </figure>
+
+    <figure>
+      <div class="rounded-2xl overflow-hidden bg-navy/5">
+        <img src="../assets/img/luna-monstrinho/03.gif"
+             alt="Animação apresentando os personagens do livro"
+             class="w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-sm opacity-60"
+                  data-pt="Personagens em movimento: formas simples e geométricas, estética cartoon."
+                  data-en="Characters in motion: simple geometric shapes, cartoon aesthetic."></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ====== PRÓXIMO PROJETO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28">
+  <a href="almanaque-vampirico.html" class="group block border-t-2 border-navy/10 pt-10">
+    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+          data-pt="Próximo projeto" data-en="Next project"></span>
+    <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
+      Almanaque Vampírico →
+    </span>
+  </a>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://instagram.com/letsketches" target="_blank" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="mailto:let_garcia10@hotmail.com" class="hover:text-magenta transition-colors">E-mail</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+    btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
+    apply(lang);
+  })();
+</script>
+
+</body>
+</html>
