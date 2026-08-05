@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  TEMPLATE DE CASE — copiar este arquivo como projetos/[slug].html
+  ============================================================
+
+  Como usar:
+  1. Duplicar o arquivo e renomear para o slug do projeto (ex.: chico-quitandas.html).
+  2. Trocar tudo que estiver entre {{ }} pelo conteúdo real.
+  3. Apagar as seções que o projeto não usar (PESQUISA costuma ser só de projeto acadêmico).
+  4. Apagar estes comentários de instrução quando o case estiver pronto.
+
+  Regras que valem em qualquer case:
+  - Container: max-w-[1280px] mx-auto px-5 lg:px-20 (só a CAPA usa max-w-[1440px] px-5 lg:px-10).
+  - Uma cor de acento por projeto — escolher UMA e usar em todo o case:
+      Design ............... roxo    (text-roxo)
+      Ilustração ........... magenta (text-magenta)
+      Design + Ilustração .. laranja (text-laranja)
+    O amarelo entra só como destaque pontual, nunca como a cor do case.
+  - Todo texto visível precisa de data-pt E data-en. Nunca escrever texto solto
+    dentro de um elemento que tenha data-pt — o JS sobrescreve o conteúdo.
+    Exceção: nomes próprios, anos e ferramentas, que são iguais nos dois idiomas
+    e por isso ficam como texto normal, sem data-pt.
+  - Toda imagem precisa de alt descritivo (o que aparece na imagem, não "imagem do projeto").
+  - Imagens em assets/img/{{slug}}/ — capa.webp, 01.webp, 02.webp...
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- {{Nome do projeto}} — manter o sufixo "— Letícia Garcia" -->
+  <title>{{Nome do projeto}} — Letícia Garcia</title>
+  <!-- {{Uma ou duas frases: o que é o projeto, para quem, e o resultado. Máx. ~155 caracteres.}} -->
+  <meta name="description" content="{{Descrição do projeto para busca e compartilhamento.}}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== HEADER ====== -->
+<!-- Igual em todos os cases. Não editar. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-8 flex items-center justify-between">
+  <a href="../index.html" class="font-black text-2xl tracking-tighter">Let<span class="text-magenta">.</span></a>
+  <nav class="flex items-center gap-6 lg:gap-10 font-semibold text-sm lg:text-lg tracking-tight uppercase">
+    <a href="../projetos.html" class="hover:text-magenta transition-colors" data-pt="Trabalhos" data-en="Work"></a>
+    <a href="../sobre.html" class="hover:text-magenta transition-colors" data-pt="Sobre" data-en="About"></a>
+    <a href="../index.html#contato" class="hover:text-magenta transition-colors" data-pt="Contato" data-en="Contact"></a>
+    <button id="lang-toggle" class="font-black text-sm border-2 border-navy rounded-full px-3 py-1 hover:bg-navy hover:text-creme transition-colors">EN</button>
+  </nav>
+</header>
+
+<!-- ====== TÍTULO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
+  <!-- Categoria do projeto. Trocar text-laranja pela cor de acento escolhida. -->
+  <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
+        data-pt="{{Design + Ilustração}}" data-en="{{Design + Illustration}}"></span>
+
+  <!-- Nome do projeto: sem data-pt, é o mesmo nos dois idiomas. -->
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">{{Nome do projeto}}</h1>
+
+  <!-- Lead: UMA frase que resume o projeto pelo valor entregue, não pela técnica. -->
+  <p class="mt-8 max-w-[52ch] text-xl lg:text-2xl leading-snug"
+     data-pt="{{Uma frase que resume o projeto.}}"
+     data-en="{{One sentence summing up the project.}}"></p>
+</section>
+
+<!-- ====== CAPA ====== -->
+<!-- Container mais largo que o resto da página, de propósito. -->
+<section class="max-w-[1440px] mx-auto px-5 lg:px-10 pb-20">
+  <div class="rounded-3xl overflow-hidden bg-navy/5">
+    <img src="../assets/img/{{slug}}/capa.webp"
+         alt="{{Descrever o que aparece na capa: peça, elementos e estilo.}}"
+         class="w-full object-cover">
+  </div>
+</section>
+
+<!-- ====== FICHA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-24">
+  <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t-2 border-navy/10 pt-10">
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Contexto" data-en="Context"></dt>
+      <!-- Cliente, agência, projeto pessoal ou acadêmico. -->
+      <dd class="mt-2 font-semibold" data-pt="{{Cliente ou contexto}}" data-en="{{Client or context}}"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dd class="mt-2 font-semibold">{{2026}}</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Papel" data-en="Role"></dt>
+      <!-- O que foi feito por ela, de fato. Se foi trabalho de equipe, dizer o recorte. -->
+      <dd class="mt-2 font-semibold"
+          data-pt="{{Ilustração, projeto gráfico}}"
+          data-en="{{Illustration, graphic design}}"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dd class="mt-2 font-semibold">{{Illustrator, Procreate}}</dd>
+    </div>
+  </dl>
+
+  <!-- Créditos e reconhecimentos. Separar itens com " · ". Apagar a linha se não houver. -->
+  <p class="mt-10 text-sm opacity-60 max-w-[70ch]"
+     data-pt="{{Créditos: equipe, direção, agência, premiações.}}"
+     data-en="{{Credits: team, direction, agency, awards.}}"></p>
+</section>
+
+<!-- ====== CONTEXTO ====== -->
+<!-- Duas colunas: o problema de um lado, a resposta do outro. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-24 grid md:grid-cols-2 gap-16">
+  <div>
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="O problema" data-en="The problem"></h2>
+    <!-- O que estava em jogo antes do projeto existir. Sem falar de solução ainda. -->
+    <p class="mt-8 text-lg leading-relaxed"
+       data-pt="{{Qual era o problema, para quem, e por que importava.}}"
+       data-en="{{What the problem was, for whom, and why it mattered.}}"></p>
+  </div>
+  <div>
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="A resposta" data-en="The response"></h2>
+    <!-- A decisão de projeto — o que foi feito e por quê. -->
+    <p class="mt-8 text-lg leading-relaxed"
+       data-pt="{{O que foi criado e qual decisão de projeto sustenta isso.}}"
+       data-en="{{What was created and the design decision behind it.}}"></p>
+  </div>
+</section>
+
+<!-- ====== PESQUISA ====== -->
+<!--
+  Seção opcional, fundo navy para quebrar o creme no meio da página.
+  Usar quando houver números que sustentem o projeto (pesquisa, resultado, alcance).
+  Se o projeto não tiver números, APAGAR a seção inteira — número inventado não vale.
+  As três cores de destaque abaixo (amarelo/magenta/laranja) são a exceção à regra
+  de uma cor só: aqui elas funcionam como marcadores dos números, não como acento do case.
+-->
+<section class="bg-navy text-creme py-24">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter"
+        data-pt="{{Título da seção}}" data-en="{{Section title}}"></h2>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-10">
+      <div>
+        <!-- Número curto: 2 a 4 caracteres funcionam melhor nesse tamanho. -->
+        <span class="font-black text-6xl text-amarelo">{{00}}</span>
+        <p class="mt-4 leading-relaxed opacity-80"
+           data-pt="{{Frase que continua o número — começar em minúscula.}}"
+           data-en="{{Sentence continuing the number — start lowercase.}}"></p>
+      </div>
+      <div>
+        <span class="font-black text-6xl text-magenta">{{00}}</span>
+        <p class="mt-4 leading-relaxed opacity-80"
+           data-pt="{{Frase que continua o número.}}"
+           data-en="{{Sentence continuing the number.}}"></p>
+      </div>
+      <div>
+        <span class="font-black text-6xl text-laranja">{{00}}</span>
+        <p class="mt-4 leading-relaxed opacity-80"
+           data-pt="{{Frase que continua o número.}}"
+           data-en="{{Sentence continuing the number.}}"></p>
+      </div>
+    </div>
+
+    <!-- Parágrafo de fechamento: referências, método, o que embasou. Opcional. -->
+    <p class="mt-16 max-w-[60ch] leading-relaxed opacity-80"
+       data-pt="{{Fechamento da pesquisa: método, referências, o que sustentou as decisões.}}"
+       data-en="{{Research wrap-up: method, references, what backed the decisions.}}"></p>
+  </div>
+</section>
+
+<!-- ====== PROCESSO ====== -->
+<!--
+  Grid assimétrico de propósito: a primeira figura ocupa as duas colunas.
+  Duplicar ou remover <figure> conforme o projeto — mas manter o ritmo irregular,
+  nunca uma grade toda simétrica.
+  Toda figura leva figcaption explicando a DECISÃO, não descrevendo a imagem.
+-->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-24">
+  <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Processo" data-en="Process"></h2>
+  <p class="mt-6 max-w-[60ch] text-lg leading-relaxed opacity-70"
+     data-pt="{{As etapas do trabalho, em uma linha.}}"
+     data-en="{{The stages of the work, in one line.}}"></p>
+
+  <div class="mt-14 grid md:grid-cols-2 gap-6">
+    <figure class="md:col-span-2">
+      <div class="rounded-2xl overflow-hidden bg-navy/5">
+        <img src="../assets/img/{{slug}}/01.webp"
+             alt="{{Descrever o que aparece nesta imagem.}}"
+             class="w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-sm opacity-60"
+                  data-pt="{{A decisão de projeto que esta imagem mostra.}}"
+                  data-en="{{The design decision this image shows.}}"></figcaption>
+    </figure>
+
+    <figure>
+      <div class="rounded-2xl overflow-hidden bg-navy/5">
+        <img src="../assets/img/{{slug}}/02.webp"
+             alt="{{Descrever o que aparece nesta imagem.}}"
+             class="w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-sm opacity-60"
+                  data-pt="{{Legenda.}}"
+                  data-en="{{Caption.}}"></figcaption>
+    </figure>
+
+    <figure>
+      <div class="rounded-2xl overflow-hidden bg-navy/5">
+        <img src="../assets/img/{{slug}}/03.webp"
+             alt="{{Descrever o que aparece nesta imagem.}}"
+             class="w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-sm opacity-60"
+                  data-pt="{{Legenda.}}"
+                  data-en="{{Caption.}}"></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ====== PRÓXIMO PROJETO ====== -->
+<!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28">
+  <a href="{{proximo-slug}}.html" class="group block border-t-2 border-navy/10 pt-10">
+    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+          data-pt="Próximo projeto" data-en="Next project"></span>
+    <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
+      {{Nome do próximo projeto}} →
+    </span>
+  </a>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<!-- Igual em todos os cases. Não editar. -->
+<footer class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://instagram.com/letsketches" target="_blank" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="mailto:let_garcia10@hotmail.com" class="hover:text-magenta transition-colors">E-mail</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+    btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
+    apply(lang);
+  })();
+</script>
+
+</body>
+</html>
