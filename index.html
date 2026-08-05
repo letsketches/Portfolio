@@ -8,7 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <!-- itálico 900 só para a faixa rolante -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -34,6 +35,18 @@
 
     html { scroll-behavior: smooth; }
     body { -webkit-font-smoothing: antialiased; }
+
+    /* faixa rolante: a trilha tem duas cópias idênticas, então -50% fecha o loop sem emenda */
+    @keyframes faixa {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .animate-faixa { animation: faixa 30s linear infinite; }
+
+    /* quem pediu menos movimento no sistema vê a faixa parada */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-faixa { animation: none; }
+    }
   </style>
 </head>
 
@@ -41,7 +54,10 @@
 
 <!-- ====== HEADER ====== -->
 <header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-6 lg:py-8 flex items-center justify-between gap-4">
-  <a href="/" class="font-black text-2xl tracking-tighter shrink-0">Let<span class="text-magenta">.</span></a>
+  <a href="/" class="shrink-0">
+    <img src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
+         class="h-7 lg:h-10 w-auto">
+  </a>
 
   <nav class="flex items-center gap-4 lg:gap-10 font-semibold text-xs lg:text-lg tracking-tight uppercase">
     <a href="projetos.html" class="hover:text-magenta transition-colors"
@@ -58,160 +74,354 @@
   </nav>
 </header>
 
-<!-- ====== HERO ====== -->
-<!-- TODO: copy placeholder. Refazer a composição (ver os 3 exercícios do plano). -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-16 pb-28">
-  <h1 class="font-black text-5xl lg:text-hero leading-none tracking-tighter max-w-[15ch]"
-      data-pt="Identidades visuais autênticas e ilustração vibrante."
-      data-en="Authentic visual identities and vibrant illustration."></h1>
-
-  <p class="mt-10 max-w-[46ch] text-lg leading-relaxed"
-     data-pt="Sou Letícia — designer e ilustradora formada pela UNESP. Apaixonada por projetos para crianças: livros, padronagens e jogos."
-     data-en="I'm Letícia — designer and illustrator, graduated from UNESP. Passionate about projects for children: books, patterns and games."></p>
-
-  <a href="#trabalhos"
-     class="inline-block mt-10 bg-navy text-creme font-semibold text-sm uppercase tracking-tight rounded-full px-8 py-4 hover:bg-magenta transition-colors"
-     data-pt="Ver trabalhos" data-en="See work"></a>
-</section>
-
 <!-- ====== SELETOR DESIGN / ILUSTRAÇÃO ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28 grid md:grid-cols-2 gap-6">
+<!-- Primeira seção da página: o trabalho abre o site, sem texto de introdução. -->
+<!-- O h1 fica só para leitor de tela e busca — a página precisa de um título, mas ele não aparece. -->
+<h1 class="sr-only"
+    data-pt="Letícia Garcia — designer gráfica e ilustradora"
+    data-en="Letícia Garcia — graphic designer and illustrator"></h1>
+
+<!-- Cada card esconde um sticker que só aparece no hover — canto inferior direito. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-4 lg:pt-8 pb-16 lg:pb-24 grid md:grid-cols-2 gap-6">
   <a href="projetos.html?filtro=design"
-     class="group bg-roxo text-creme rounded-3xl p-10 lg:p-14 min-h-[280px] flex flex-col justify-between">
-    <span class="font-black text-4xl lg:text-title leading-none tracking-tighter">Design</span>
-    <span class="font-semibold text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
+     class="group relative overflow-hidden bg-roxo text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
+    <span class="font-black text-3xl lg:text-5xl leading-none tracking-tighter">Design</span>
+    <span class="font-semibold text-xs lg:text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
           data-pt="Identidade visual, editorial, impresso →"
           data-en="Visual identity, editorial, print →"></span>
+    <img src="assets/stickers/estrela-amarelo.svg" alt="" aria-hidden="true"
+         class="pointer-events-none absolute -right-4 -bottom-4 h-24 lg:h-28 opacity-0 rotate-12 scale-90
+                group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 transition-all duration-300">
   </a>
 
   <a href="projetos.html?filtro=ilustracao"
-     class="group bg-magenta text-creme rounded-3xl p-10 lg:p-14 min-h-[280px] flex flex-col justify-between">
-    <span class="font-black text-4xl lg:text-title leading-none tracking-tighter"
+     class="group relative overflow-hidden bg-magenta text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
+    <span class="font-black text-3xl lg:text-5xl leading-none tracking-tighter"
           data-pt="Ilustração" data-en="Illustration"></span>
-    <span class="font-semibold text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
+    <span class="font-semibold text-xs lg:text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
           data-pt="Infantil, editorial, publicidade →"
           data-en="Children's, editorial, advertising →"></span>
+    <img src="assets/stickers/pincel-amarelo.svg" alt="" aria-hidden="true"
+         class="pointer-events-none absolute -right-2 -bottom-4 h-24 lg:h-28 opacity-0 -rotate-12 scale-90
+                group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 transition-all duration-300">
   </a>
 </section>
 
-<!-- ====== TRABALHOS EM DESTAQUE ====== -->
-<!-- TODO Letícia: confirmar o ano de cada projeto -->
-<section id="trabalhos" class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28">
-  <h2 class="font-black text-3xl lg:text-section tracking-tighter mb-12"
-      data-pt="Trabalhos selecionados" data-en="Selected work"></h2>
+<!-- ====== TRABALHOS ====== -->
+<!-- Grade limpa: a imagem ocupa o card inteiro e o texto só aparece no hover (desktop). -->
+<!-- No mobile não existe hover, então o texto fica embaixo da imagem, no fluxo normal. -->
+<!-- A cor do overlay é a cor de acento da categoria do projeto. -->
+<!-- TODO Letícia: confirmar o ano de Almanaque, Chico Quitandas e Puket (estavam como 2026). -->
+<!-- TODO Letícia: sem ano confirmado — Marca Let, Prêmio Excelência, Block Font, dr.consulta, Sanavita, Negra Rosa, Iamaní, Minu. -->
+<section id="trabalhos" class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20 lg:pb-28">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-6">
 
-  <div class="grid md:grid-cols-2 gap-x-6 gap-y-16">
-
-    <!-- destaque: ocupa as duas colunas -->
-    <a href="projetos/luna-monstrinho.html" class="group md:col-span-2">
-      <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-navy/5">
+    <a href="projetos/luna-monstrinho.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/luna-monstrinho/capa.webp"
              alt="Luna e o Monstrinho — capa do livro infantil ilustrado sobre emoções na infância"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <div class="mt-6 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h3 class="font-black text-3xl lg:text-5xl tracking-tighter">Luna e o Monstrinho</h3>
-          <p class="mt-2 text-sm opacity-60">
-            <span data-pt="Livro infantil · TCC UNESP" data-en="Children's book · UNESP thesis"></span> · 2024 ·
-            <span class="text-laranja font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
-          </p>
-        </div>
-        <span class="bg-amarelo text-navy font-semibold text-xs uppercase tracking-tight rounded-full px-4 py-2"
-              data-pt="Projeto em destaque" data-en="Featured project"></span>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Luna e o Monstrinho</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Livro infantil · TCC UNESP" data-en="Children's book · UNESP thesis"></span> · 2024 · <span class="font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+        </p>
       </div>
     </a>
 
-    <a href="projetos/almanaque-vampirico.html" class="group">
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
-        <img src="assets/img/almanaque-vampirico/capa.webp"
+    <a href="projetos/almanaque-vampirico.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/almanaque-vampirico/capa.jpg"
              alt="Almanaque Vampírico — ilustrações e diagramação de almanaque de temática vampiresca"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <h3 class="mt-5 font-black text-2xl tracking-tight">Almanaque Vampírico</h3>
-      <p class="mt-1 text-sm opacity-60">
-        <span data-pt="Projeto pessoal" data-en="Personal project"></span> · 2026 ·
-        <span class="text-laranja font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
-      </p>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Almanaque Vampírico</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Projeto pessoal" data-en="Personal project"></span> · 2026 · <span class="font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+        </p>
+      </div>
     </a>
 
-    <a href="projetos/chico-quitandas.html" class="group">
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
-        <img src="assets/img/chico-quitandas/capa.webp"
+    <a href="projetos/chico-quitandas.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/chico-quitandas/capa.jpg"
              alt="Chico Quitandas Mineiras — identidade visual de marca de quitandas"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <h3 class="mt-5 font-black text-2xl tracking-tight">Chico Quitandas Mineiras</h3>
-      <p class="mt-1 text-sm opacity-60">
-        <span data-pt="Identidade visual" data-en="Visual identity"></span> · 2026 ·
-        <span class="text-roxo font-semibold">Design</span>
-      </p>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Chico Quitandas Mineiras</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Identidade visual" data-en="Visual identity"></span> · 2026 · <span class="font-semibold">Design</span>
+        </p>
+      </div>
     </a>
 
-    <a href="projetos/revista-aura.html" class="group">
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
-        <img src="assets/img/revista-aura/capa.webp"
-             alt="Revista AURA — projeto editorial"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <h3 class="mt-5 font-black text-2xl tracking-tight">Revista AURA</h3>
-      <p class="mt-1 text-sm opacity-60">
-        <span data-pt="Editorial" data-en="Editorial"></span> · 2025 ·
-        <span class="text-roxo font-semibold">Design</span>
-      </p>
-    </a>
-
-    <a href="projetos/melissa-fini.html" class="group">
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
-        <img src="assets/img/melissa-fini/capa.webp"
-             alt="Melissa + Fini — ilustrações para campanha de Dia das Crianças"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-      </div>
-      <h3 class="mt-5 font-black text-2xl tracking-tight">Melissa + Fini</h3>
-      <p class="mt-1 text-sm opacity-60">
-        <span data-pt="Dia das Crianças" data-en="Children's Day"></span> · 2025 ·
-        <span class="text-magenta font-semibold" data-pt="Ilustração" data-en="Illustration"></span>
-      </p>
-    </a>
-
-    <a href="projetos/puket-inverno.html" class="group">
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
-        <img src="assets/img/puket-inverno/capa.webp"
+    <a href="projetos/puket-inverno.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/puket-inverno/capa.jpg"
              alt="Puket — estampas e direção visual da coleção de inverno"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <h3 class="mt-5 font-black text-2xl tracking-tight">Puket — Coleção de Inverno</h3>
-      <p class="mt-1 text-sm opacity-60">
-        Puket · 2026 ·
-        <span class="text-laranja font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
-      </p>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Puket — Coleção de Inverno</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Puket" data-en="Puket"></span> · 2026 · <span class="font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+        </p>
+      </div>
     </a>
 
-    <a href="projetos/ilumac.html" class="group">
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-navy/5">
+    <a href="projetos/revista-aura.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/revista-aura/capa.jpg"
+             alt="Revista AURA — projeto editorial"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Revista AURA</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Editorial" data-en="Editorial"></span> · 2025 · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/melissa-fini.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/melissa-fini/capa.jpg"
+             alt="Melissa + Fini — ilustrações para campanha de Dia das Crianças"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-magenta/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Melissa + Fini</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Dia das Crianças" data-en="Children's Day"></span> · 2025 · <span class="font-semibold" data-pt="Ilustração" data-en="Illustration"></span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/ilumac.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/ilumac/capa.webp"
              alt="ILUMAC — brandbook, catálogos e materiais de feira"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <h3 class="mt-5 font-black text-2xl tracking-tight">ILUMAC</h3>
-      <p class="mt-1 text-sm opacity-60">
-        ILUMAC · 2024 ·
-        <span class="text-roxo font-semibold">Design</span>
-      </p>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">ILUMAC</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Brandbook e materiais de feira" data-en="Brandbook and trade-fair material"></span> · 2024 · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/marca-let.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/marca-let/capa.webp"
+             alt="Marca Let — logotipo, manual de marca e aplicações da marca pessoal"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Marca Let</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Projeto de faculdade · Marca pessoal" data-en="University project · Personal brand"></span> · <span class="font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/calendario-frutas.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/calendario-frutas/capa.webp"
+             alt="Calendário 2025 — ilustrações de frutas brasileiras com mulheres compondo a cena"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-magenta/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Calendário 2025</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Projeto pessoal · Frutas brasileiras" data-en="Personal project · Brazilian fruits"></span> · 2025 · <span class="font-semibold" data-pt="Ilustração" data-en="Illustration"></span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/spoleto.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/spoleto/capa.webp"
+             alt="Mulher brasileira — ilustração de prato para o concurso da rede Spoleto"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-magenta/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Mulher brasileira</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Concurso Spoleto" data-en="Spoleto contest"></span> · 2021 · <span class="font-semibold" data-pt="Ilustração" data-en="Illustration"></span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/premio-excelencia.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/premio-excelencia/capa.webp"
+             alt="Cartaz do 13º Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">13º Prêmio de Excelência Gráfica</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Concurso ABIGRAF Bauru" data-en="ABIGRAF Bauru contest"></span> · <span class="font-semibold" data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/block-font.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/block-font/capa.webp"
+             alt="Block Font — tipografia em caixa alta e cartazes de aplicação"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Block Font</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Projeto de faculdade · Tipografia" data-en="University project · Type design"></span> · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/dr-consulta.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/dr-consulta/capa.webp"
+             alt="dr.consulta — key visual e desdobramentos de campanha"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">dr.consulta</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Cliente · KV e desdobramentos" data-en="Client · Key visual and rollout"></span> · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/sanavita.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/sanavita/capa.webp"
+             alt="Sanavita — key visual e criativos para mídia paga"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Sanavita</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Cliente · KV, mídia paga e CRM" data-en="Client · Key visual, paid media and CRM"></span> · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/negra-rosa.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/negra-rosa/capa.webp"
+             alt="Negra Rosa — key visual e posts para marca de beleza negra"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Negra Rosa</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Cliente · KV e desdobramentos" data-en="Client · Key visual and rollout"></span> · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/iamani.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/iamani/capa.webp"
+             alt="Iamaní — key visual para marca de chás funcionais orgânicos"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Iamaní</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Cliente · KV e desdobramentos" data-en="Client · Key visual and rollout"></span> · <span class="font-semibold">Design</span>
+        </p>
+      </div>
+    </a>
+
+    <a href="projetos/minu.html" class="group relative block">
+      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+        <img src="assets/img/minu/capa.webp"
+             alt="Minu — ebook e banners para marketing de recompensas"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+                  sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
+                  sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+        <h3 class="font-black text-2xl tracking-tight">Minu</h3>
+        <p class="mt-1 sm:mt-2 text-sm opacity-60 sm:opacity-90">
+          <span data-pt="Cliente · Ebook e banners" data-en="Client · Ebook and banners"></span> · <span class="font-semibold">Design</span>
+        </p>
+      </div>
     </a>
 
   </div>
-
-  <a href="projetos.html"
-     class="inline-block mt-16 font-semibold text-lg border-b-2 border-navy hover:text-magenta hover:border-magenta transition-colors"
-     data-pt="Ver todos os projetos →" data-en="See all projects →"></a>
 </section>
+
+<!-- ====== FAIXA ROLANTE ====== -->
+<!-- Decorativa: aria-hidden porque o @letsketches já está nos links do rodapé. -->
+<div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
 
 <!-- ====== SOBRE (curto) ====== -->
 <section class="bg-navy text-creme py-28">
   <div class="max-w-[1280px] mx-auto px-5 lg:px-20 grid md:grid-cols-2 gap-16 items-center">
-    <div class="aspect-square rounded-3xl overflow-hidden bg-creme/10">
-      <img src="assets/img/perfil/capa.webp" alt="Retrato de Letícia Garcia" class="w-full h-full object-cover">
+    <!-- foto em arco com stickers em volta, como no Figma -->
+    <!-- os stickers de olho e nuvem já vêm com o contorno branco embutido no SVG -->
+    <div class="relative mx-auto md:mx-0 w-full pl-12 pr-6 pt-12 pb-10">
+      <!-- explosão atrás, saindo pela esquerda -->
+      <img src="assets/stickers/explosao-amarelo.svg" alt="" aria-hidden="true"
+           class="pointer-events-none absolute left-0 top-1/4 w-36 lg:w-48 -translate-x-1/3">
+
+      <div class="relative aspect-[4/5] rounded-t-full overflow-hidden bg-creme/10">
+        <img src="assets/img/perfil/capa.webp"
+             alt="Retrato de Letícia Garcia olhando para o alto, com o céu ao fundo"
+             class="w-full h-full object-cover">
+      </div>
+
+      <!-- olhos no topo à esquerda, sobrepondo a foto -->
+      <img src="assets/stickers/olhos-roxo-contorno.svg" alt="" aria-hidden="true"
+           class="pointer-events-none absolute left-8 top-4 w-24 lg:w-28">
+      <!-- nuvem embaixo à direita -->
+      <img src="assets/stickers/nuvem-magenta-contorno.svg" alt="" aria-hidden="true"
+           class="pointer-events-none absolute right-0 bottom-4 w-28 lg:w-36">
     </div>
     <div>
       <h2 class="font-black text-3xl lg:text-section tracking-tighter"
