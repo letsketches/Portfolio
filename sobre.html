@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — Letícia Garcia</title>
+  <meta name="description" content="Designer gráfica e ilustradora formada pela UNESP. Identidade visual, ilustração publicitária, livros infantis e design editorial.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+
+      /* base */
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+
+      /* acentos da marca */
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+
+      /* escala de display */
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* faixa rolante: a trilha tem duas cópias idênticas, então -50% fecha o loop sem emenda */
+    @keyframes faixa {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .animate-faixa { animation: faixa 30s linear infinite; }
+
+    /* os avatares perseguem o cursor, cada um com sua amplitude.
+       O deslocamento é escrito pelo JS em --dx/--dy; a suavização é feita
+       por interpolação no rAF, não por transition, para não brigar com ela. */
+    .avatar-flutua {
+      transform: translate(var(--dx, 0px), var(--dy, 0px));
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-faixa { animation: none; }
+      .avatar-flutua { transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== FAIXA DE GRADIENTE ====== -->
+<!-- Fio de 24px no topo, com as quatro cores da marca. -->
+<div class="h-6 w-full bg-gradient-to-r from-magenta via-laranja to-roxo" aria-hidden="true"></div>
+
+<!-- ====== HEADER ====== -->
+<!-- Igual ao da home; aqui SOBRE fica marcado como página atual. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
+  <a href="index.html" class="shrink-0">
+    <img src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
+         class="h-8 lg:h-[76px] w-auto">
+  </a>
+
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+    <a href="projetos.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Trabalhos" data-en="Work"></a>
+    <a href="sobre.html" aria-current="page"
+       class="border-2 border-magenta text-magenta rounded-full px-2 lg:px-4 py-1 lg:py-1.5"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="index.html#contato"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Contato" data-en="Contact"></a>
+
+    <button id="lang-toggle"
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
+      EN
+    </button>
+  </nav>
+</header>
+
+<!-- ====== BIO ====== -->
+<section class="bg-navy text-creme py-16 lg:py-24">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+    <!-- vídeo em arco: topo totalmente arredondado, base reta -->
+    <div class="relative mx-auto md:mx-0 w-full max-w-[420px] md:max-w-none pl-10 lg:pl-16">
+      <img src="assets/stickers/explosao-magenta.svg" alt="" aria-hidden="true"
+           class="pointer-events-none absolute left-0 top-8 w-40 lg:w-56 -translate-x-1/3">
+      <div class="relative aspect-[2/3] rounded-t-full overflow-hidden bg-creme/10">
+        <video src="assets/video/perfil.mp4"
+               class="w-full h-full object-cover"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="Vídeo de Letícia Garcia"></video>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="font-black text-4xl lg:text-section tracking-tighter"
+          data-pt="Oi, eu sou a Let" data-en="Hi, I'm Let"></h1>
+
+      <div class="mt-8 space-y-4 text-base lg:text-lg leading-relaxed opacity-85">
+        <p data-pt="É formada em Design Gráfico pela UNESP. Já na faculdade, atuou como designer e diretora financeira na empresa Design Júnior ao desenvolver identidades visuais, ilustrações e impressos. Seus trabalhos de ilustração e design incluem materiais publicitários, ilustrações para livros infantis, design digital e editorial, e identidade visual. Já trabalhou com clientes como Monks, Kyraly, Sereiarte, ILUMAC, Sanavita e dr.consulta."
+           data-en="She holds a degree in Graphic Design from UNESP. While still at university she worked as a designer and financial director at the junior enterprise Design Júnior, developing visual identities, illustrations and print pieces. Her illustration and design work spans advertising material, children's book illustration, digital and editorial design, and visual identity. She has worked with clients such as Monks, Kyraly, Sereiarte, ILUMAC, Sanavita and dr.consulta."></p>
+        <p data-pt="Na Tractian, referência em gestão de condição de ativos para indústrias, atua como Junior Designer III na área de criação, desenvolvendo materiais e campanhas que fortalecem a marca e engajam públicos no Brasil e no exterior."
+           data-en="At Tractian, a reference in asset condition management for industry, she works as a Junior Designer III on the creative team, developing material and campaigns that strengthen the brand and engage audiences in Brazil and abroad."></p>
+        <p data-pt="Atualmente mora em Lorena-SP e está sempre em busca de desafios na área da criação. Letícia gosta de trabalhar com employer branding, design para web, ilustrações para publicidade, além de desenvolver identidades visuais autênticas para vários nichos, buscando unir o design com suas ilustrações vibrantes."
+           data-en="She currently lives in Lorena-SP and is always after new challenges in the creative field. Letícia enjoys working with employer branding, web design and advertising illustration, as well as developing authentic visual identities across niches — always looking to bring her design and her vibrant illustration together."></p>
+      </div>
+
+      <p class="mt-8 text-xs lg:text-sm uppercase tracking-tight opacity-50 max-w-[46ch]">
+        Melissa · Fini · Tractian · dr.consulta · Sanavita · ILUMAC · Negra Rosa · Minu · Iamaní
+      </p>
+
+      <!-- ferramentas -->
+      <ul class="mt-8 flex flex-wrap gap-3">
+        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe Photoshop">Ps</li>
+        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe Illustrator">Ai</li>
+        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe After Effects">Ae</li>
+        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe InDesign">Id</li>
+        <li class="bg-laranja text-navy rounded-lg w-12 h-12 flex items-center justify-center" title="Figma">
+          <svg viewBox="0 0 38 57" class="h-6 w-auto" fill="currentColor" aria-hidden="true">
+            <path d="M9.5 57a9.5 9.5 0 0 0 9.5-9.5V38H9.5a9.5 9.5 0 0 0 0 19Z"/>
+            <path d="M0 28.5A9.5 9.5 0 0 1 9.5 19H19v19H9.5A9.5 9.5 0 0 1 0 28.5Z"/>
+            <path d="M0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5Z"/>
+            <path d="M19 0h9.5a9.5 9.5 0 0 1 0 19H19V0Z"/>
+            <path d="M38 28.5A9.5 9.5 0 1 1 28.5 19a9.5 9.5 0 0 1 9.5 9.5Z"/>
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== AVATARES ====== -->
+<!-- Os cinco avatares ficam nas posições do Figma e perseguem o cursor, cada um
+     com uma amplitude própria — os de cima reagem mais que os de baixo, o que dá
+     a sensação de profundidade. Sem mouse ou com "reduzir movimento", ficam parados. -->
+<section id="avatares" class="bg-amarelo py-9 overflow-hidden relative">
+  <div class="max-w-[1280px] mx-auto h-[200px] sm:h-[240px] lg:h-[278px] relative">
+    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="26" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:1.95%; top:19.78%">
+    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="44" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:21.25%; top:6.12%">
+    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="18" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:41.09%; top:19.78%">
+    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="50" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:60.39%; top:4.68%">
+    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="32" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:79.38%; top:17.63%">
+  </div>
+</section>
+
+<!-- ====== FAIXA ROLANTE ====== -->
+<div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
+
+<!-- ====== CONTATO / FOOTER ====== -->
+<footer id="contato" class="max-w-[1280px] mx-auto px-5 lg:px-20 py-20 lg:py-28">
+  <p class="font-semibold text-sm uppercase tracking-tight opacity-50"
+     data-pt="Bora criar algo incrível juntos" data-en="Let's create something amazing together"></p>
+
+  <a href="mailto:let_garcia10@hotmail.com"
+     class="block mt-6 font-black text-3xl lg:text-title tracking-tighter break-all hover:text-magenta transition-colors">
+    let_garcia10@hotmail.com
+  </a>
+
+  <div class="mt-16 flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
+      <a href="https://www.artstation.com/leticialet" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">ArtStation</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<script>
+  // troca de idioma: lê data-pt / data-en e guarda a escolha
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+
+    btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
+    apply(lang);
+  })();
+
+  // avatares perseguindo o cursor, com amortecimento
+  (function () {
+    const secao = document.getElementById('avatares');
+    if (!secao) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(hover: hover)').matches) return;   // sem mouse, tudo parado
+
+    const itens = [...secao.querySelectorAll('.avatar-flutua')].map(el => ({
+      el,
+      amp: parseFloat(el.dataset.amp) || 24,   // deslocamento máximo em px
+      x: 0, y: 0                               // posição atual, interpolada
+    }));
+    if (!itens.length) return;
+
+    const SUAVIDADE = 0.07;   // quanto menor, mais preguiçoso o movimento
+    let alvoX = 0, alvoY = 0, visivel = false, rodando = false;
+
+    // cursor normalizado em [-1, 1] a partir do centro da seção
+    window.addEventListener('mousemove', (e) => {
+      const r = secao.getBoundingClientRect();
+      alvoX = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2)));
+      alvoY = Math.max(-1, Math.min(1, (e.clientY - (r.top  + r.height / 2)) / (r.height / 2)));
+      if (visivel) liga();
+    }, { passive: true });
+
+    function quadro() {
+      let mexendo = false;
+      for (const it of itens) {
+        const destinoX = alvoX * it.amp;
+        const destinoY = alvoY * it.amp;
+        it.x += (destinoX - it.x) * SUAVIDADE;
+        it.y += (destinoY - it.y) * SUAVIDADE;
+        if (Math.abs(destinoX - it.x) > 0.1 || Math.abs(destinoY - it.y) > 0.1) mexendo = true;
+        it.el.style.setProperty('--dx', it.x.toFixed(2) + 'px');
+        it.el.style.setProperty('--dy', it.y.toFixed(2) + 'px');
+      }
+      if (mexendo && visivel) requestAnimationFrame(quadro);
+      else rodando = false;
+    }
+
+    function liga() {
+      if (rodando) return;
+      rodando = true;
+      requestAnimationFrame(quadro);
+    }
+
+    // só anima enquanto a faixa está na tela
+    new IntersectionObserver(([e]) => {
+      visivel = e.isIntersecting;
+      if (visivel) liga();
+    }).observe(secao);
+  })();
+</script>
+
+</body>
+</html>

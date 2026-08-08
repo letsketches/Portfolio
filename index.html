@@ -43,9 +43,17 @@
     }
     .animate-faixa { animation: faixa 30s linear infinite; }
 
-    /* quem pediu menos movimento no sistema vê a faixa parada */
+    /* mesma trilha, sentido invertido: começa deslocada e volta ao zero */
+    @keyframes faixa-inversa {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+    .animate-faixa-inversa { animation: faixa-inversa 30s linear infinite; }
+
+    /* quem pediu menos movimento no sistema vê as faixas paradas */
     @media (prefers-reduced-motion: reduce) {
-      .animate-faixa { animation: none; }
+      .animate-faixa,
+      .animate-faixa-inversa { animation: none; }
     }
   </style>
 </head>
@@ -53,22 +61,26 @@
 <body class="bg-creme text-navy font-sans">
 
 <!-- ====== HEADER ====== -->
-<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-6 lg:py-8 flex items-center justify-between gap-4">
+<!-- Nav em pílulas de contorno, alinhadas à direita, como no modelo do Figma. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
   <a href="/" class="shrink-0">
     <img src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
-         class="h-7 lg:h-10 w-auto">
+         class="h-8 lg:h-[76px] w-auto">
   </a>
 
-  <nav class="flex items-center gap-4 lg:gap-10 font-semibold text-xs lg:text-lg tracking-tight uppercase">
-    <a href="projetos.html" class="hover:text-magenta transition-colors"
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+    <a href="projetos.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Trabalhos" data-en="Work"></a>
-    <a href="sobre.html" class="hover:text-magenta transition-colors"
+    <a href="sobre.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Sobre" data-en="About"></a>
-    <a href="#contato" class="hover:text-magenta transition-colors"
+    <a href="#contato"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Contato" data-en="Contact"></a>
 
     <button id="lang-toggle"
-            class="shrink-0 font-black text-xs lg:text-sm border-2 border-navy rounded-full px-3 py-1 hover:bg-navy hover:text-creme transition-colors">
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
       EN
     </button>
   </nav>
@@ -84,28 +96,37 @@
 <!-- Cada card esconde um sticker que só aparece no hover — canto inferior direito. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-4 lg:pt-8 pb-16 lg:pb-24 grid md:grid-cols-2 gap-6">
   <a href="projetos.html?filtro=design"
-     class="group relative overflow-hidden bg-roxo text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
+     class="group relative bg-roxo text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
     <span class="font-black text-3xl lg:text-5xl leading-none tracking-tighter">Design</span>
     <span class="font-semibold text-xs lg:text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
           data-pt="Identidade visual, editorial, impresso →"
           data-en="Visual identity, editorial, print →"></span>
-    <img src="assets/stickers/estrela-amarelo.svg" alt="" aria-hidden="true"
-         class="pointer-events-none absolute -right-4 -bottom-4 h-24 lg:h-28 opacity-0 rotate-12 scale-90
+    <img src="assets/stickers/estrela-contorno-amarelo.svg" alt="" aria-hidden="true"
+         class="pointer-events-none absolute right-6 lg:right-10 -bottom-5 h-28 lg:h-32 opacity-0 rotate-12 scale-90
                 group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 transition-all duration-300">
   </a>
 
   <a href="projetos.html?filtro=ilustracao"
-     class="group relative overflow-hidden bg-magenta text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
+     class="group relative bg-magenta text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
     <span class="font-black text-3xl lg:text-5xl leading-none tracking-tighter"
           data-pt="Ilustração" data-en="Illustration"></span>
     <span class="font-semibold text-xs lg:text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
           data-pt="Infantil, editorial, publicidade →"
           data-en="Children's, editorial, advertising →"></span>
-    <img src="assets/stickers/pincel-amarelo.svg" alt="" aria-hidden="true"
-         class="pointer-events-none absolute -right-2 -bottom-4 h-24 lg:h-28 opacity-0 -rotate-12 scale-90
+    <img src="assets/stickers/pincel-contorno-amarelo.svg" alt="" aria-hidden="true"
+         class="pointer-events-none absolute right-4 lg:right-8 -bottom-6 h-32 lg:h-40 opacity-0 -rotate-12 scale-90
                 group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 transition-all duration-300">
   </a>
 </section>
+
+<!-- ====== FAIXA AMARELA ====== -->
+<!-- Mesma trilha da faixa laranja, girando no sentido oposto. -->
+<div class="bg-amarelo text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa-inversa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
 
 <!-- ====== TRABALHOS ====== -->
 <!-- Grade limpa: a imagem ocupa o card inteiro e o texto só aparece no hover (desktop). -->
@@ -113,7 +134,13 @@
 <!-- A cor do overlay é a cor de acento da categoria do projeto. -->
 <!-- TODO Letícia: confirmar o ano de Almanaque, Chico Quitandas e Puket (estavam como 2026). -->
 <!-- TODO Letícia: sem ano confirmado — Marca Let, Prêmio Excelência, Block Font, dr.consulta, Sanavita, Negra Rosa, Iamaní, Minu. -->
-<section id="trabalhos" class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20 lg:pb-28">
+<section id="trabalhos" class="relative overflow-hidden pt-12 lg:pt-16 pb-20 lg:pb-28">
+  <!-- estrelas decorativas atrás da grade, sangrando pelas laterais -->
+  <img src="assets/stickers/explosao-amarelo.svg" alt="" aria-hidden="true"
+       class="pointer-events-none absolute -left-40 lg:-left-48 top-[20%] w-80 lg:w-[620px] -z-10">
+  <img src="assets/stickers/explosao-roxo.svg" alt="" aria-hidden="true"
+       class="pointer-events-none absolute -right-32 lg:-right-24 top-[70%] w-80 lg:w-[620px] -z-10">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-6">
 
     <a href="projetos/luna-monstrinho.html" class="group relative block">
@@ -138,7 +165,7 @@
              alt="Almanaque Vampírico — ilustrações e diagramação de almanaque de temática vampiresca"
              class="w-full h-full object-cover">
       </div>
-      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-magenta/90 sm:text-creme sm:p-6
                   sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
                   sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
         <h3 class="font-black text-2xl tracking-tight">Almanaque Vampírico</h3>
@@ -330,7 +357,7 @@
              alt="Sanavita — key visual e criativos para mídia paga"
              class="w-full h-full object-cover">
       </div>
-      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-laranja/90 sm:text-creme sm:p-6
                   sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
                   sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
         <h3 class="font-black text-2xl tracking-tight">Sanavita</h3>
@@ -346,7 +373,7 @@
              alt="Negra Rosa — key visual e posts para marca de beleza negra"
              class="w-full h-full object-cover">
       </div>
-      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-magenta/90 sm:text-creme sm:p-6
                   sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
                   sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
         <h3 class="font-black text-2xl tracking-tight">Negra Rosa</h3>
@@ -362,7 +389,7 @@
              alt="Iamaní — key visual para marca de chás funcionais orgânicos"
              class="w-full h-full object-cover">
       </div>
-      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-roxo/90 sm:text-creme sm:p-6
+      <div class="mt-3 text-navy sm:mt-0 sm:absolute sm:inset-0 sm:bg-magenta/90 sm:text-creme sm:p-6
                   sm:flex sm:flex-col sm:justify-end sm:opacity-0 sm:transition-opacity sm:duration-300
                   sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
         <h3 class="font-black text-2xl tracking-tight">Iamaní</h3>
@@ -388,6 +415,7 @@
       </div>
     </a>
 
+  </div>
   </div>
 </section>
 
@@ -451,10 +479,10 @@
 
   <div class="mt-16 flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
     <nav class="flex gap-6">
-      <a href="https://www.behance.net/letsketches" target="_blank" class="hover:text-magenta transition-colors">Behance</a>
-      <a href="https://instagram.com/letsketches" target="_blank" class="hover:text-magenta transition-colors">Instagram</a>
-      <a href="https://www.linkedin.com/in/leticia-garcia-ribeiro" target="_blank" class="hover:text-magenta transition-colors">LinkedIn</a>
-      <a href="https://www.artstation.com/leticialet" target="_blank" class="hover:text-magenta transition-colors">ArtStation</a>
+      <a href="https://www.behance.net/letsketches" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
+      <a href="https://www.artstation.com/leticialet" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">ArtStation</a>
     </nav>
     <span class="opacity-50">© 2026 Letícia Garcia</span>
   </div>
