@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <!--
-  ============================================================
-  TEMPLATE DE CASE — copiar este arquivo como projetos/[slug].html
-  ============================================================
-
-  Como usar:
-  1. Duplicar o arquivo e renomear para o slug do projeto (ex.: chico-quitandas.html).
-  2. Trocar tudo que estiver entre {{ }} pelo conteúdo real.
-  3. O CARROSSEL é opcional — usar quando houver uma sequência de imagens do
-     mesmo material (páginas de um livro, telas de um app). Pode repetir o
-     bloco mais de uma vez se o projeto tiver mais de uma sequência.
-     Duplicar ou apagar <figure> em IMAGENS conforme a quantidade de imagens soltas.
-  4. Apagar estes comentários de instrução quando o case estiver pronto.
-
-  Regras que valem em qualquer case:
-  - Container: max-w-[1280px] mx-auto px-5 lg:px-20 — igual em toda a página.
-  - Uma cor de acento por projeto — escolher UMA e usar em todo o case
-    (categoria, barra de progresso do carrossel):
-      Design ............... roxo    (text-roxo / bg-roxo)
-      Ilustração ........... magenta (text-magenta / bg-magenta)
-      Design + Ilustração .. laranja (text-laranja / bg-laranja)
-    O amarelo entra só como destaque pontual, nunca como a cor do case.
-  - Todo texto visível precisa de data-pt E data-en. Nunca escrever texto solto
-    dentro de um elemento que tenha data-pt — o JS sobrescreve o conteúdo.
-    Exceção: nomes próprios, anos e ferramentas, que são iguais nos dois idiomas
-    e por isso ficam como texto normal, sem data-pt.
-  - Toda imagem precisa de alt descritivo (o que aparece na imagem, não "imagem do projeto").
-  - Imagens em assets/img/{{slug}}/ — carrossel-01.webp, carrossel-02.webp...,
-    01.webp, 02.webp... (imagens soltas).
+  TODO Letícia:
+  - pagina-dracula.jpg: trocar pelo gif animado quando estiver pronto (ajustar a extensão do arquivo).
 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- {{Nome do projeto}} — manter o sufixo "— Letícia Garcia" -->
-  <title>{{Nome do projeto}} — Letícia Garcia</title>
-  <!-- {{Uma ou duas frases: o que é o projeto, para quem, e o resultado. Máx. ~155 caracteres.}} -->
-  <meta name="description" content="{{Descrição do projeto para busca e compartilhamento.}}">
+  <title>Almanaque Vampírico — Letícia Garcia</title>
+  <meta name="description" content="Peça editorial ilustrada inspirada em revistas pop, com letterings e ilustrações originais sobre vampiros. Trabalho final da Mentoria com Paula Cruz, para a Escola Arte Revide.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,21 +65,20 @@
 
 <!-- ====== TÍTULO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
-  <!-- Categoria do projeto. Trocar text-laranja pela cor de acento escolhida. -->
   <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
-        data-pt="{{Design + Ilustração}}" data-en="{{Design + Illustration}}"></span>
+        data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
 
-  <!-- Nome do projeto: sem data-pt, é o mesmo nos dois idiomas. -->
-  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">{{Nome do projeto}}</h1>
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Almanaque Vampírico</h1>
 
-  <!-- Descrição do projeto: pode ter mais de um parágrafo — separar com uma linha em branco. -->
   <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
-     data-pt="{{Primeiro parágrafo: o que é o projeto e para quem.}}
+     data-pt="Um projeto de peça editorial ilustrada baseada em revistas da cultura pop, o almanaque foi o modelo escolhido para falar dos seres mais elegantes e sangrentos: os vampiros.
 
-{{Segundo parágrafo: como foi desenvolvido.}}"
-     data-en="{{First paragraph: what the project is and who it's for.}}
+Para esse projetos foram desenvolvidas 6 páginas (3 duplas) e entre elas 2 páginas dedicadas a stickers, além da capa e contra-capa, letterings e ilustrações personalizadas para o almanaque. Os textos foram feitos de forma ilustrativa para compor a diagramação das páginas e com o contexto de cada seção do almanaque.
+Este é um projeto educacional sem fins lucrativos e foi desenvolvido para a Escola Arte Revide como trabalho final da Mentoria com a designer e ilustradora Paula Cruz."
+     data-en="An illustrated editorial piece inspired by pop-culture magazines, the almanac was the format chosen to talk about the most elegant and bloodthirsty of creatures: vampires.
 
-{{Second paragraph: how it was developed.}}"></p>
+The project includes 6 pages (3 spreads), two of which are dedicated to stickers, plus the front and back covers, custom lettering and illustrations made for the almanac. The text was written and illustrated to compose the layout of each page, in keeping with the theme of each section.
+This is a non-commercial educational project, developed for Escola Arte Revide as the final piece of a mentorship with designer and illustrator Paula Cruz."></p>
 </section>
 
 <!-- ====== FICHA ====== -->
@@ -115,32 +86,22 @@
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
-      <dd class="mt-2 font-semibold">{{2026}}</dd>
+      <dd class="mt-2 font-semibold">2024</dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
-      <!-- O que foi feito por ela, de fato. Se foi trabalho de equipe, dizer o recorte. -->
       <dd class="mt-2 font-semibold"
-          data-pt="{{Direção artística, ilustração, design gráfico}}"
-          data-en="{{Art direction, illustration, graphic design}}"></dd>
+          data-pt="Autoria, ilustração, projeto gráfico e pesquisa"
+          data-en="Authorship, illustration, graphic design and research"></dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
-      <dd class="mt-2 font-semibold">{{Photoshop, Illustrator, Procreate}}</dd>
+      <dd class="mt-2 font-semibold">Photoshop, Illustrator, Procreate</dd>
     </div>
   </dl>
 </section>
 
-<!-- ====== CARROSSEL ====== -->
-<!--
-  Sequência de imagens que avança sozinha, tipo stories: a barra do segmento
-  ativo enche com o tempo e passa pra próxima imagem. Setas pra navegar e
-  clique na imagem pra ampliar já vêm prontos — não precisa mexer no JS.
-  Opcional — usar quando houver 2+ imagens do mesmo material pra mostrar em
-  sequência. Duplicar o bloco inteiro (com um novo data-carousel) se o
-  projeto tiver mais de uma sequência. Pausa ao passar o mouse ou ao abrir
-  a imagem ampliada. Trocar bg-laranja/text-laranja pela cor de acento do case.
--->
+<!-- ====== CARROSSEL 1 — mockup da capa ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <div data-carousel data-interval="4000">
     <div class="flex gap-3 lg:gap-4" data-carousel-track>
@@ -155,17 +116,17 @@
       </div>
     </div>
 
-    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[16/9] cursor-zoom-in" data-carousel-viewport>
-      <img src="../assets/img/{{slug}}/carrossel-01.webp"
-           alt="{{Descrever o que aparece nesta imagem.}}"
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[3/2] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/almanaque-vampirico/carrossel-01.jpg"
+           alt="Mockup do Almanaque Vampírico sobre fundo verde: capa vermelha ilustrada com um morcego e rosas"
            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/{{slug}}/carrossel-02.webp"
-           alt="{{Descrever o que aparece nesta imagem.}}"
+      <img src="../assets/img/almanaque-vampirico/carrossel-02.jpg"
+           alt="Capas do Almanaque Vampírico e página dupla 'Quem são os vampiros' sobre fundo laranja"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/{{slug}}/carrossel-03.webp"
-           alt="{{Descrever o que aparece nesta imagem.}}"
+      <img src="../assets/img/almanaque-vampirico/carrossel-03.jpg"
+           alt="Capa do Almanaque Vampírico e página dupla de stickers sobre fundo rosa"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
 
@@ -183,24 +144,72 @@
   </div>
 </section>
 
-<!-- ====== IMAGENS ====== -->
-<!-- Imagens soltas, uma por vez. Duplicar ou apagar <figure> conforme o projeto. -->
+<!-- ====== IMAGENS — paleta e sketches ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-16 lg:gap-24">
   <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/{{slug}}/01.webp"
-         alt="{{Descrever o que aparece nesta imagem.}}"
+    <img src="../assets/img/almanaque-vampirico/paleta.jpg"
+         alt="Paleta de cores do Almanaque Vampírico: rosa, amarelo, verde menta, marrom escuro, azul periwinkle e rosa salmão, com códigos RGB, CMYK e HEX"
+         class="w-full object-cover">
+  </figure>
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/almanaque-vampirico/sketches.jpg"
+         alt="Sketches do Almanaque Vampírico: rascunho de página com miniaturas, capa em traço a lápis e capa finalizada a nanquim com o título Almanaque dos Vampiros"
          class="w-full object-cover">
   </figure>
 </section>
 
-<!-- Variante com fundo escuro — usar de vez em quando pra quebrar o ritmo do creme, nunca em toda imagem. -->
-<section class="bg-navy py-16 lg:py-24">
-  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
-    <figure class="rounded-lg overflow-hidden bg-creme/5">
-      <img src="../assets/img/{{slug}}/02.webp"
-           alt="{{Descrever o que aparece nesta imagem.}}"
-           class="w-full object-cover">
-    </figure>
+<!-- ====== CARROSSEL 2 — capa e contracapa ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4000">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+    </div>
+
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[7/5] cursor-zoom-in" data-carousel-viewport>
+      <div class="absolute inset-0 flex gap-0.5 transition-opacity duration-700" data-carousel-slide>
+        <img src="../assets/img/almanaque-vampirico/capa-carrossel.jpg"
+             alt="Capa do Almanaque Vampírico: livro vermelho com silhueta de morcego, tipografia dourada e rosas"
+             class="w-1/2 h-full object-cover">
+        <img src="../assets/img/almanaque-vampirico/contracapa.jpg"
+             alt="Contracapa do Almanaque Vampírico: moldura floral dourada em fundo rosa, com texto sobre a origem dos vampiros"
+             class="w-1/2 h-full object-cover">
+      </div>
+      <img src="../assets/img/almanaque-vampirico/pagina-dupla.jpg"
+           alt="Página dupla 'Quem são os vampiros': ilustrações emolduradas de personagens vampirescos e texto sobre a origem do mito"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/almanaque-vampirico/sticker-vampiricos.jpg"
+           alt="Página dupla de stickers do Almanaque Vampírico: adesivos ilustrados de morcego, taça de vinho, guitarra e outros ícones vampirescos"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <!-- TODO: trocar por gif quando o arquivo animado estiver pronto -->
+      <img src="../assets/img/almanaque-vampirico/pagina-dracula.jpg"
+           alt="Página dupla sobre o Conde Drácula: retrato ilustrado, curiosidades e o kit de 'não sobrevivência'"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -216,11 +225,11 @@
 <!-- ====== PRÓXIMO PROJETO ====== -->
 <!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
-  <a href="{{proximo-slug}}.html" class="group block">
+  <a href="luna-monstrinho.html" class="group block">
     <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
-      {{Nome do próximo projeto}} →
+      Luna e o Monstrinho →
     </span>
   </a>
 </section>
