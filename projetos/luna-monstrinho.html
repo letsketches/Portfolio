@@ -1,17 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Luna e o Monstrinho — Letícia Garcia</title>
-  <meta name="description" content="Livro infantil ilustrado sobre emoções na infância. Trabalho de Conclusão de Curso em Design Gráfico pela UNESP Bauru, aprovado com conceito A.">
+  <meta name="description" content="Livro infantil ilustrado sobre emoções na infância. Trabalho de Conclusão de Curso em Design Gráfico pela UNESP Bauru, aprovado e indicado ao Repositório Digital da UNESP.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
   <style type="text/tailwindcss">
     @theme {
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
@@ -27,22 +30,48 @@
     }
     html { scroll-behavior: smooth; }
     body { -webkit-font-smoothing: antialiased; }
+
+    /* faixa rolante do @letsketches — mesma trilha da home, duas cópias fecham o loop */
+    @keyframes faixa {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .animate-faixa { animation: faixa 30s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-faixa { animation: none; }
+    }
   </style>
 </head>
 
 <body class="bg-creme text-navy font-sans">
 
+<!-- ====== FAIXA DE GRADIENTE ====== -->
+<!-- Fio de 24px no topo, com as quatro cores da marca. -->
+<div class="h-6 w-full bg-gradient-to-r from-magenta via-laranja to-roxo" aria-hidden="true"></div>
+
 <!-- ====== HEADER ====== -->
-<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-6 lg:py-8 flex items-center justify-between gap-4">
+<!-- Nav em pílulas de contorno, alinhadas à direita, como no modelo do Figma. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
   <a href="../index.html" class="shrink-0">
     <img src="../assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
-         class="h-7 lg:h-10 w-auto">
+         class="h-8 lg:h-[76px] w-auto">
   </a>
-  <nav class="flex items-center gap-4 lg:gap-10 font-semibold text-xs lg:text-lg tracking-tight uppercase">
-    <a href="../projetos.html" class="hover:text-magenta transition-colors" data-pt="Trabalhos" data-en="Work"></a>
-    <a href="../sobre.html" class="hover:text-magenta transition-colors" data-pt="Sobre" data-en="About"></a>
-    <a href="../index.html#contato" class="hover:text-magenta transition-colors" data-pt="Contato" data-en="Contact"></a>
-    <button id="lang-toggle" class="shrink-0 font-black text-xs lg:text-sm border-2 border-navy rounded-full px-3 py-1 hover:bg-navy hover:text-creme transition-colors">EN</button>
+
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+    <a href="../projetos.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Trabalhos" data-en="Work"></a>
+    <a href="../sobre.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="../index.html#contato"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Contato" data-en="Contact"></a>
+
+    <button id="lang-toggle"
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
+      EN
+    </button>
   </nav>
 </header>
 
@@ -53,27 +82,26 @@
 
   <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Luna e o Monstrinho</h1>
 
-  <p class="mt-8 max-w-[52ch] text-xl lg:text-2xl leading-snug"
-     data-pt="Um livro infantil que ajuda crianças a nomear o que sentem — e adultos a escutar."
-     data-en="A children's book that helps kids name what they feel — and adults to listen."></p>
-</section>
+  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+     data-pt="Luna e o Monstrinho é um livro infantil ilustrado desenvolvido com foco em ajudar crianças que têm dificuldade de dizer o que sentem e de entender suas emoções — e também ajuda pais e responsáveis a acolherem esses sentimentos, em vez de reprimi-los. Um dos principais desafios do livro foi ter um embasamento sólido sobre emoções na infância, o que levou à busca por profissionais da psicologia, que responderam a um questionário voltado a encontrar a melhor abordagem para o tema e para a construção da história.
 
-<!-- ====== CAPA ====== -->
-<section class="max-w-[1440px] mx-auto px-5 lg:px-10 pb-20">
-  <div class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/capa.webp"
-         alt="Capa do livro Luna e o Monstrinho: a personagem Luna ao lado do Monstrinho, em ilustração colorida de estética cartoon"
-         class="w-full object-cover">
-  </div>
+O público principal são as crianças, então a pesquisa também buscou entender suas necessidades e interesses para a criação de personagens, cenários e história. A escrita é simples, e os personagens são coloridos e carismáticos, com uma estética cartoon que remete a desenhos animados — formas simples e geométricas que ficam na memória das crianças."
+     data-en="Luna e o Monstrinho is an illustrated children's book developed to help kids who struggle to say what they feel and to understand their own emotions — and to help parents and caregivers welcome those feelings instead of dismissing them. One of the book's main challenges was building a solid grounding in childhood emotions, which meant reaching out to psychology professionals who answered a questionnaire aimed at finding the best approach to the theme and shaping the story.
+
+Since children are the main audience, research into their needs and interests shaped the characters, settings and story. The writing stays simple, and the characters are colourful and charismatic, with a cartoon aesthetic reminiscent of animated shows — simple, geometric shapes that stick in a child's memory."></p>
+
+  <p class="mt-6 text-sm opacity-60 max-w-[70ch]"
+     data-pt="Orientação: Profª. Drª. Cassia Letícia Carrara Domiciano · Coorientação: Prof. Me. Guilherme Cardoso Contini · Banca: Rodrigo Cordeiro e Carolina Sartori · Aprovado e indicado ao Repositório Digital da UNESP."
+     data-en="Advisor: Prof. Dr. Cassia Letícia Carrara Domiciano · Co-advisor: Prof. Guilherme Cardoso Contini, MSc · Committee: Rodrigo Cordeiro and Carolina Sartori · Approved and nominated for UNESP's Digital Repository."></p>
+
+  <a href="https://hdl.handle.net/11449/260519" target="_blank"
+     class="mt-3 inline-block text-sm font-semibold underline hover:text-laranja transition-colors"
+     data-pt="Leia o relatório completo" data-en="Read the full report"></a>
 </section>
 
 <!-- ====== FICHA ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-24">
-  <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t-2 border-navy/10 pt-10">
-    <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Contexto" data-en="Context"></dt>
-      <dd class="mt-2 font-semibold" data-pt="TCC — Design Gráfico, UNESP Bauru" data-en="Undergraduate thesis — Graphic Design, UNESP Bauru"></dd>
-    </div>
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
       <dd class="mt-2 font-semibold">2024</dd>
@@ -89,107 +117,184 @@
       <dd class="mt-2 font-semibold">Photoshop, Illustrator, Procreate</dd>
     </div>
   </dl>
-
-  <p class="mt-10 text-sm opacity-60 max-w-[70ch]"
-     data-pt="Orientação: Profª. Drª. Cassia Letícia Carrara Domiciano · Coorientação: Prof. Me. Guilherme Cardoso Contini · Banca: Rodrigo Cordeiro e Carolina Sartori · Aprovado com conceito A e indicado ao Repositório Digital da UNESP."
-     data-en="Advisor: Prof. Dr. Cassia Letícia Carrara Domiciano · Co-advisor: Prof. Guilherme Cardoso Contini, MSc · Committee: Rodrigo Cordeiro and Carolina Sartori · Graded A and nominated for UNESP's Digital Repository."></p>
 </section>
 
-<!-- ====== CONTEXTO ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-24 grid md:grid-cols-2 gap-16">
-  <div>
-    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="O problema" data-en="The problem"></h2>
-    <p class="mt-8 text-lg leading-relaxed"
-       data-pt="Crianças sentem muito e nomeiam pouco. Quando o que elas sentem é minimizado por adultos, o que sobra é insegurança — e, mais tarde, dificuldade de se expressar. Faltam livros que tratem emoção como assunto, não como lição de moral."
-       data-en="Children feel a lot and can name little. When what they feel gets dismissed by adults, what's left is insecurity — and later, difficulty expressing themselves. There's a shortage of books that treat emotion as a subject rather than a moral lesson."></p>
-  </div>
-  <div>
-    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="A resposta" data-en="The response"></h2>
-    <p class="mt-8 text-lg leading-relaxed"
-       data-pt="Um livro ilustrado para crianças de 6 a 11 anos e seus responsáveis, com escrita simples e personagens carismáticos. A Luna encontra o Monstrinho — que muda de cor conforme o que ela sente — e aprende a dar nome às próprias emoções."
-       data-en="An illustrated book for children aged 6 to 11 and their caregivers, with simple writing and charismatic characters. Luna meets the Monstrinho — who changes colour according to what she feels — and learns to name her own emotions."></p>
-  </div>
-</section>
-
-<!-- ====== PESQUISA ====== -->
-<section class="bg-navy text-creme py-24">
-  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
-    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Pesquisa antes do traço" data-en="Research before drawing"></h2>
-
-    <div class="mt-14 grid md:grid-cols-3 gap-10">
-      <div>
-        <span class="font-black text-6xl text-amarelo">04</span>
-        <p class="mt-4 leading-relaxed opacity-80"
-           data-pt="psicólogos de áreas diferentes responderam a um questionário sobre como falar de emoção com crianças. As respostas guiaram a construção da história."
-           data-en="psychologists from different fields answered a questionnaire on how to talk about emotion with children. Their answers shaped the story."></p>
+<!-- ====== CARROSSEL 1 — mockups da capa e páginas internas ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4000">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
       </div>
-      <div>
-        <span class="font-black text-6xl text-magenta">6–11</span>
-        <p class="mt-4 leading-relaxed opacity-80"
-           data-pt="anos: a faixa etária definida a partir de pesquisa sobre desenvolvimento emocional e autonomia na infância."
-           data-en="years old: the age range defined from research on emotional development and autonomy in childhood."></p>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
       </div>
-      <div>
-        <span class="font-black text-6xl text-laranja">A</span>
-        <p class="mt-4 leading-relaxed opacity-80"
-           data-pt="conceito final na banca de defesa, com indicação ao Repositório Digital da UNESP."
-           data-en="final grade at the thesis defence, with a nomination for UNESP's Digital Repository."></p>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
       </div>
     </div>
 
-    <p class="mt-16 max-w-[60ch] leading-relaxed opacity-80"
-       data-pt="A fundamentação passou por história da literatura infantil, o papel da ilustração na narrativa e a relação entre autoestima e gestão de frustrações. Entre os similares analisados, “O Monstro das Cores”, de Anna Llenas, que usa cor para representar emoção — e inspirou diretamente a criação do Monstrinho."
-       data-en="The theoretical grounding covered the history of children's literature, the role of illustration in narrative, and the relationship between self-esteem and handling frustration. Among the references analysed was Anna Llenas' “The Colour Monster”, which uses colour to represent emotion — and directly inspired the Monstrinho."></p>
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/luna-monstrinho/carrossel-01.jpg"
+           alt="Mockup do livro Luna e o Monstrinho sobre fundo azul: capa verde com a personagem Luna e o Monstrinho"
+           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/luna-monstrinho/carrossel-02.jpg"
+           alt="Sinopse do livro Luna e o Monstrinho ao lado da capa, sobre fundo amarelo"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/luna-monstrinho/carrossel-03.jpg"
+           alt="Página dupla do livro Luna e o Monstrinho: Luna e o Monstrinho brincam na gangorra"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/luna-monstrinho/carrossel-04.jpg"
+           alt="Página dupla do livro Luna e o Monstrinho: Luna conhece o Monstrinho pela primeira vez"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
-<!-- ====== PROCESSO ====== -->
-<!-- TODO Letícia: substituir/complementar com as páginas do livro (ver lista de download) -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-24">
-  <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Processo" data-en="Process"></h2>
-  <p class="mt-6 max-w-[60ch] text-lg leading-relaxed opacity-70"
-     data-pt="Escrita, storyboard, concept art, design de personagens, testes de impressão e produção gráfica."
-     data-en="Writing, storyboard, concept art, character design, print tests and graphic production."></p>
+<!-- ====== IMAGEM — página personalizável ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/03.gif"
+         alt="Animação com prévia de páginas internas do livro Luna e o Monstrinho, incluindo a página personalizável 'Desenhe-se aqui'"
+         class="w-full object-cover">
+  </figure>
+</section>
 
-  <div class="mt-14 grid md:grid-cols-2 gap-6">
-    <figure class="md:col-span-2">
-      <div class="rounded-lg overflow-hidden bg-navy/5">
-        <img src="../assets/img/luna-monstrinho/01.webp"
-             alt="Páginas internas do livro Luna e o Monstrinho mostrando a diagramação entre texto e ilustração"
-             class="w-full object-cover">
-      </div>
-      <figcaption class="mt-3 text-sm opacity-60"
-                  data-pt="Diagramação: o texto ocupa pouco espaço para que a ilustração conduza a narrativa."
-                  data-en="Layout: text takes little space so the illustration can carry the narrative."></figcaption>
+<!-- ====== TIPOGRAFIA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Tipografia" data-en="Typography"></h2>
+  <p class="mt-6 max-w-[70ch] text-lg leading-relaxed"
+     data-pt="Fonte criada para o projeto: Luna. Houveram muitas tentativas de deixar o título do livro mais orgânico, inicialmente criando uma fonte do zero, apenas com algumas referências. Porém, sua espessura não estava uniforme e ainda causava estranheza na leitura. Portanto, revisitei as referências e modifiquei a fonte DK Lemon Yellow Sun, criada por David Kerkhoff — que possui licença pessoal grátis e era a tipografia mais próxima dos rascunhos iniciais. Acrescentei serifas discretas, modifiquei letras como o M e o W e deixei as formas mais retas. A tipografia foi desenhada no Adobe Illustrator e convertida de vetor para fonte instalável com o FontLab. Foi criada para trazer identidade a todo o projeto — não só ao título do livro, mas a qualquer material que carregue o nome 'Luna e o Monstrinho'."
+     data-en="Custom typeface for the project: Luna. There were many attempts to make the book's title feel more organic, starting with a typeface built from scratch using only a few references. But its stroke weight wasn't consistent and made the title awkward to read. So I went back to the references and modified an existing typeface instead: DK Lemon Yellow Sun, created by David Kerkhoff, which has a free personal-use licence and was the closest match to the early sketches. I added subtle serifs, reworked letters like M and W, and straightened the strokes overall. The typeface was drawn in Adobe Illustrator and converted from vector shapes into an installable font using FontLab. It was created to give the whole project an identity — not just the book's title, but any material that carries the 'Luna e o Monstrinho' name."></p>
+
+  <figure class="mt-10 rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/tipografia.jpg"
+         alt="Fonte customizada do projeto Luna e o Monstrinho: alfabeto completo em maiúsculas e caracteres acentuados"
+         class="w-full object-cover">
+  </figure>
+</section>
+
+<!-- ====== ILUSTRAÇÕES ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-10 lg:gap-16">
+  <div>
+    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Ilustrações" data-en="Illustrations"></h2>
+    <p class="mt-6 max-w-[70ch] text-lg leading-relaxed"
+       data-pt="O processo de pintura digital passa por quatro etapas: rascunho da ideia com as linhas já limpas, aplicação das cores base removendo aos poucos o rascunho, renderização com luz e sombra de acordo com a direção da luz na cena — buscando uma estética não tão realista, mais 'cartoon' — e, por fim, pequenos retoques de cor e brilho para deixar a ilustração mais estilizada."
+       data-en="The digital painting process runs through four stages: a rough sketch with the lines cleaned up, then flat base colours applied while gradually removing the sketch lines. In the rendering stage I apply light and shadow according to each object's place in the scene, aiming for a look that's less realistic and more 'cartoon'. I finish with small colour adjustments and extra highlights to make the illustration feel more stylised."></p>
+  </div>
+
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/processo-sketches.jpg"
+         alt="Grade de oito sketches numerados mostrando o processo de criação dos personagens de Luna e o Monstrinho"
+         class="w-full object-cover">
+  </figure>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <figure class="rounded-lg overflow-hidden bg-navy/5">
+      <img src="../assets/img/luna-monstrinho/processo-cores.jpg"
+           alt="Etapas de rascunho e aplicação de cores base na ilustração de um personagem de Luna e o Monstrinho"
+           class="w-full h-full object-cover">
     </figure>
-
-    <figure>
-      <div class="rounded-lg overflow-hidden bg-navy/5">
-        <img src="../assets/img/luna-monstrinho/02.webp"
-             alt="Lettering do título Luna e o Monstrinho"
-             class="w-full object-cover">
-      </div>
-      <figcaption class="mt-3 text-sm opacity-60"
-                  data-pt="Lettering do título, desenhado à mão."
-                  data-en="Hand-drawn title lettering."></figcaption>
-    </figure>
-
-    <figure>
-      <div class="rounded-lg overflow-hidden bg-navy/5">
-        <img src="../assets/img/luna-monstrinho/03.gif"
-             alt="Animação apresentando os personagens do livro"
-             class="w-full object-cover">
-      </div>
-      <figcaption class="mt-3 text-sm opacity-60"
-                  data-pt="Personagens em movimento: formas simples e geométricas, estética cartoon."
-                  data-en="Characters in motion: simple geometric shapes, cartoon aesthetic."></figcaption>
+    <figure class="rounded-lg overflow-hidden bg-navy/5">
+      <img src="../assets/img/luna-monstrinho/processo-render.jpg"
+           alt="Etapas de renderização e finalização de um personagem de Luna e o Monstrinho"
+           class="w-full h-full object-cover">
     </figure>
   </div>
+
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/personagens-cores.jpg"
+         alt="Estudo de personagem de Luna e o Monstrinho em diferentes ângulos, já colorido"
+         class="w-full object-cover">
+  </figure>
+
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/personagens-estudo.jpg"
+         alt="Variações de expressão e figurino da personagem Luna, em ilustração colorida"
+         class="w-full object-cover">
+  </figure>
+
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/luna-monstrinho/personagens-sketch.jpg"
+         alt="Sketches a lápis do turnaround de personagem de Luna e o Monstrinho"
+         class="w-full object-cover">
+  </figure>
 </section>
+
+<!-- ====== CARROSSEL 2 — livro impresso ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4000">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+    </div>
+
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-square cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/luna-monstrinho/carrossel2-01.jpg"
+           alt="Livro Luna e o Monstrinho impresso sendo segurado na mão, com fundo de plantas"
+           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/luna-monstrinho/carrossel2-02.jpg"
+           alt="Página dupla 'Aos pais e responsáveis' do livro impresso, ao lado de uma foto polaroid ilustrada de família"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/luna-monstrinho/carrossel2-03.jpg"
+           alt="Página dupla roxa do livro impresso com a personagem Luna emocionada e o Monstrinho ao fundo"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAIXA @LETSKETCHES ====== -->
+<!-- Igual à faixa laranja da home. Decorativa: aria-hidden porque o @letsketches já está no rodapé. -->
+<div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
 
 <!-- ====== PRÓXIMO PROJETO ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-28">
-  <a href="almanaque-vampirico.html" class="group block border-t-2 border-navy/10 pt-10">
+<!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
+  <a href="almanaque-vampirico.html" class="group block">
     <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
@@ -210,6 +315,18 @@
   </div>
 </footer>
 
+<!-- ====== LIGHTBOX ====== -->
+<!-- Overlay compartilhado por todos os carrosséis da página pro clique de ampliar. Não editar. -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/95 p-4 lg:p-10" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button type="button" id="lightbox-close"
+          class="absolute top-4 right-4 lg:top-8 lg:right-8 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-creme/10 text-creme hover:bg-creme/20 transition-colors"
+          aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div id="lightbox-content" class="flex gap-0.5 max-w-full max-h-full"></div>
+</div>
+
+<!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
 <script>
   (function () {
     const btn = document.getElementById('lang-toggle');
@@ -222,6 +339,111 @@
     }
     btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
     apply(lang);
+  })();
+</script>
+
+<!-- Carrossel de imagens: barra de progresso tipo stories, setas e clique pra ampliar. -->
+<script>
+  (function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- lightbox compartilhado ----
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxClose = document.getElementById('lightbox-close');
+    let onLightboxClose = null;
+
+    function openLightbox(slide, onClose) {
+      if (!lightbox) return;
+      lightboxContent.innerHTML = '';
+      const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.currentSrc || img.src;
+        clone.alt = img.alt;
+        clone.className = 'max-h-[85vh] max-w-full object-contain';
+        lightboxContent.appendChild(clone);
+      });
+      onLightboxClose = onClose || null;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox || lightbox.classList.contains('hidden')) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+      if (onLightboxClose) { onLightboxClose(); onLightboxClose = null; }
+    }
+
+    if (lightbox) {
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    }
+
+    // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      const fills = Array.from(carousel.querySelectorAll('[data-carousel-fill]'));
+      const viewport = carousel.querySelector('[data-carousel-viewport]');
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      const duration = Number(carousel.dataset.interval) || 4000;
+      if (slides.length < 2) return;
+
+      let index = 0;
+      let elapsed = 0;
+      let lastTime = null;
+      let playing = !reduceMotion;
+
+      function render() {
+        slides.forEach((slide, n) => { slide.style.opacity = n === index ? '1' : '0'; });
+        fills.forEach((fill, n) => {
+          if (n < index) fill.style.width = '100%';
+          else if (n > index) fill.style.width = '0%';
+          else fill.style.width = (reduceMotion || !playing) ? '100%' : `${(elapsed / duration) * 100}%`;
+        });
+      }
+
+      function goTo(next) {
+        index = (next + slides.length) % slides.length;
+        elapsed = 0;
+        render();
+      }
+
+      function frame(time) {
+        if (lastTime === null) lastTime = time;
+        const delta = time - lastTime;
+        lastTime = time;
+        if (playing) {
+          elapsed += delta;
+          if (elapsed >= duration) {
+            goTo(index + 1);
+          } else {
+            fills[index].style.width = `${(elapsed / duration) * 100}%`;
+          }
+        }
+        requestAnimationFrame(frame);
+      }
+
+      render();
+      if (!reduceMotion) requestAnimationFrame(frame);
+
+      carousel.addEventListener('mouseenter', () => { playing = false; });
+      carousel.addEventListener('mouseleave', () => { playing = !reduceMotion; lastTime = null; });
+
+      prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index - 1); });
+      nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index + 1); });
+
+      viewport?.addEventListener('click', (e) => {
+        if (e.target.closest('[data-carousel-prev],[data-carousel-next]')) return;
+        playing = false;
+        openLightbox(slides[index], () => { playing = !reduceMotion; lastTime = null; });
+      });
+    });
   })();
 </script>
 
