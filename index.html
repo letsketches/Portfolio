@@ -73,9 +73,6 @@
   </a>
 
   <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
-    <a href="projetos.html"
-       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
-       data-pt="Trabalhos" data-en="Work"></a>
     <a href="sobre.html"
        class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Sobre" data-en="About"></a>
@@ -99,7 +96,7 @@
 
 <!-- Cada card esconde um sticker que só aparece no hover — canto inferior direito. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-4 lg:pt-8 pb-16 lg:pb-24 grid md:grid-cols-2 gap-6">
-  <a href="projetos.html?filtro=design"
+  <a href="#trabalhos" data-filter="design"
      class="group relative bg-roxo text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
     <span class="font-black text-3xl lg:text-5xl leading-none tracking-tighter">Design</span>
     <span class="font-semibold text-xs lg:text-sm uppercase tracking-tight group-hover:translate-x-2 transition-transform"
@@ -110,7 +107,7 @@
                 group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-100 transition-all duration-300">
   </a>
 
-  <a href="projetos.html?filtro=ilustracao"
+  <a href="#trabalhos" data-filter="ilustracao"
      class="group relative bg-magenta text-creme rounded-xl p-7 lg:p-9 min-h-[160px] flex flex-col justify-between">
     <span class="font-black text-3xl lg:text-5xl leading-none tracking-tighter"
           data-pt="Ilustração" data-en="Illustration"></span>
@@ -145,9 +142,13 @@
   <img src="assets/stickers/explosao-roxo.svg" alt="" aria-hidden="true"
        class="pointer-events-none absolute -right-32 lg:-right-24 top-[70%] w-80 lg:w-[620px] -z-10">
   <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-6">
+  <!-- some só quando um filtro de Design/Ilustração está ativo -->
+  <button type="button" id="trabalhos-reset"
+          class="hidden mb-6 lg:mb-8 font-semibold text-sm uppercase tracking-tight underline hover:text-magenta transition-colors"
+          data-pt="Ver todos os trabalhos" data-en="View all work"></button>
+  <div id="trabalhos-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 sm:gap-6">
 
-    <a href="projetos/luna-monstrinho.html" class="group relative block">
+    <a href="projetos/luna-monstrinho.html" data-tags="design ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/luna-monstrinho/capa.webp"
              alt="Luna e o Monstrinho — capa do livro infantil ilustrado sobre emoções na infância"
@@ -163,7 +164,7 @@
       </div>
     </a>
 
-    <a href="projetos/almanaque-vampirico.html" class="group relative block">
+    <a href="projetos/almanaque-vampirico.html" data-tags="design ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/almanaque-vampirico/capa.jpg"
              alt="Almanaque Vampírico — ilustrações e diagramação de almanaque de temática vampiresca"
@@ -179,7 +180,7 @@
       </div>
     </a>
 
-    <a href="projetos/chico-quitandas.html" class="group relative block">
+    <a href="projetos/chico-quitandas.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/chico-quitandas/capa.jpg"
              alt="Chico Quitandas Mineiras — identidade visual de marca de quitandas"
@@ -195,7 +196,7 @@
       </div>
     </a>
 
-    <a href="projetos/puket-inverno.html" class="group relative block">
+    <a href="projetos/puket-inverno.html" data-tags="design ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/puket-inverno/capa.jpg"
              alt="Puket — estampas e direção visual da coleção de inverno"
@@ -211,7 +212,7 @@
       </div>
     </a>
 
-    <a href="projetos/revista-aura.html" class="group relative block">
+    <a href="projetos/revista-aura.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/revista-aura/capa.jpg"
              alt="Revista AURA — projeto editorial"
@@ -227,7 +228,7 @@
       </div>
     </a>
 
-    <a href="projetos/melissa-fini.html" class="group relative block">
+    <a href="projetos/melissa-fini.html" data-tags="ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/melissa-fini/capa.jpg"
              alt="Melissa + Fini — ilustrações para campanha de Dia das Crianças"
@@ -243,7 +244,7 @@
       </div>
     </a>
 
-    <a href="projetos/ilumac.html" class="group relative block">
+    <a href="projetos/ilumac.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/ilumac/capa.webp"
              alt="ILUMAC — brandbook, catálogos e materiais de feira"
@@ -259,7 +260,7 @@
       </div>
     </a>
 
-    <a href="projetos/marca-let.html" class="group relative block">
+    <a href="projetos/marca-let.html" data-tags="design ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/marca-let/capa.webp"
              alt="Marca Let — logotipo, manual de marca e aplicações da marca pessoal"
@@ -275,7 +276,7 @@
       </div>
     </a>
 
-    <a href="projetos/calendario-frutas.html" class="group relative block">
+    <a href="projetos/calendario-frutas.html" data-tags="ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/calendario-frutas/capa.webp"
              alt="Calendário 2025 — ilustrações de frutas brasileiras com mulheres compondo a cena"
@@ -291,7 +292,7 @@
       </div>
     </a>
 
-    <a href="projetos/spoleto.html" class="group relative block">
+    <a href="projetos/spoleto.html" data-tags="ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/spoleto/capa.webp"
              alt="Mulher brasileira — ilustração de prato para o concurso da rede Spoleto"
@@ -307,7 +308,7 @@
       </div>
     </a>
 
-    <a href="projetos/premio-excelencia.html" class="group relative block">
+    <a href="projetos/premio-excelencia.html" data-tags="design ilustracao" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/premio-excelencia/capa.webp"
              alt="Cartaz do 13º Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube"
@@ -323,7 +324,7 @@
       </div>
     </a>
 
-    <a href="projetos/block-font.html" class="group relative block">
+    <a href="projetos/block-font.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/block-font/capa.webp"
              alt="Block Font — tipografia em caixa alta e cartazes de aplicação"
@@ -339,7 +340,7 @@
       </div>
     </a>
 
-    <a href="projetos/dr-consulta.html" class="group relative block">
+    <a href="projetos/dr-consulta.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/dr-consulta/capa.webp"
              alt="dr.consulta — key visual e desdobramentos de campanha"
@@ -355,7 +356,7 @@
       </div>
     </a>
 
-    <a href="projetos/sanavita.html" class="group relative block">
+    <a href="projetos/sanavita.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/sanavita/capa.webp"
              alt="Sanavita — key visual e criativos para mídia paga"
@@ -371,7 +372,7 @@
       </div>
     </a>
 
-    <a href="projetos/negra-rosa.html" class="group relative block">
+    <a href="projetos/negra-rosa.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/negra-rosa/capa.webp"
              alt="Negra Rosa — key visual e posts para marca de beleza negra"
@@ -387,7 +388,7 @@
       </div>
     </a>
 
-    <a href="projetos/iamani.html" class="group relative block">
+    <a href="projetos/iamani.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/iamani/capa.webp"
              alt="Iamaní — key visual para marca de chás funcionais orgânicos"
@@ -403,7 +404,7 @@
       </div>
     </a>
 
-    <a href="projetos/minu.html" class="group relative block">
+    <a href="projetos/minu.html" data-tags="design" class="group relative block">
       <div class="aspect-[4/5] overflow-hidden bg-navy/5">
         <img src="assets/img/minu/capa.webp"
              alt="Minu — ebook e banners para marketing de recompensas"
@@ -512,6 +513,31 @@
     });
 
     apply(lang);
+  })();
+</script>
+
+<script>
+  // filtro Design / Ilustração: os cards do seletor filtram a grade de trabalhos,
+  // sem sair da home. "Ver todos" limpa o filtro.
+  (function () {
+    const grid = document.getElementById('trabalhos-grid');
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll('[data-tags]'));
+    const resetBtn = document.getElementById('trabalhos-reset');
+
+    function setFilter(tag) {
+      cards.forEach(card => {
+        const tags = card.dataset.tags.split(' ');
+        card.classList.toggle('hidden', Boolean(tag) && !tags.includes(tag));
+      });
+      resetBtn.classList.toggle('hidden', !tag);
+    }
+
+    document.querySelectorAll('[data-filter]').forEach(link => {
+      link.addEventListener('click', () => setFilter(link.dataset.filter));
+    });
+
+    resetBtn.addEventListener('click', () => setFilter(null));
   })();
 </script>
 
