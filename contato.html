@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre — Letícia Garcia</title>
-  <meta name="description" content="Designer gráfica e ilustradora formada pela UNESP. Identidade visual, ilustração publicitária, livros infantis e design editorial.">
+  <title>Contato — Letícia Garcia</title>
+  <meta name="description" content="Fale com a Letícia Garcia: identidade visual, ilustração, livros infantis e design editorial. Conte sobre o seu projeto pelo formulário.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,7 @@
       /* escala de display */
       --text-hero:    120px;
       --text-title:    72px;
+      --text-lead:     66px;
       --text-section:  48px;
     }
 
@@ -49,6 +50,22 @@
       transform: translate(var(--dx, 0px), var(--dy, 0px));
       will-change: transform;
     }
+
+
+    /* balão do formulário: retângulo arredondado com um rabicho apontando pra esquerda */
+    .balao { position: relative; }
+    .balao::before {
+      content: "";
+      position: absolute;
+      left: -34px; top: 92px;
+      border-width: 26px 36px 26px 0;
+      border-style: solid;
+      border-color: transparent var(--color-magenta) transparent transparent;
+    }
+    @media (max-width: 767px) { .balao::before { display: none; } }
+
+    /* campo com erro */
+    .campo-erro { outline: 3px solid var(--color-amarelo); outline-offset: 2px; }
 
     @media (prefers-reduced-motion: reduce) {
       .animate-faixa { animation: none; }
@@ -72,11 +89,11 @@
   </a>
 
   <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
-    <a href="sobre.html" aria-current="page"
-       class="border-2 border-magenta text-magenta rounded-full px-2 lg:px-4 py-1 lg:py-1.5"
-       data-pt="Sobre" data-en="About"></a>
-    <a href="contato.html"
+    <a href="sobre.html"
        class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="contato.html" aria-current="page"
+       class="border-2 border-magenta text-magenta rounded-full px-2 lg:px-4 py-1 lg:py-1.5"
        data-pt="Contato" data-en="Contact"></a>
 
     <button id="lang-toggle"
@@ -86,70 +103,83 @@
   </nav>
 </header>
 
-<!-- ====== BIO ====== -->
-<section class="bg-navy text-creme py-16 lg:py-24">
-  <div class="max-w-[1280px] mx-auto px-5 lg:px-20 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+<!-- ====== FORMULÁRIO ====== -->
+<!-- As estrelas ficam atrás do balão, sangrando pelas laterais, como na home. -->
+<section class="relative overflow-hidden py-12 lg:py-20">
+  <img src="assets/stickers/explosao-amarelo.svg" alt="" aria-hidden="true"
+       class="pointer-events-none absolute left-0 top-[38%] w-56 lg:w-[400px] -translate-x-1/3 -z-10">
+  <img src="assets/stickers/explosao-roxo.svg" alt="" aria-hidden="true"
+       class="pointer-events-none absolute right-0 top-[28%] w-60 lg:w-[500px] translate-x-1/4 -z-10">
 
-    <!-- vídeo em arco: topo totalmente arredondado, base reta -->
-    <div class="relative mx-auto md:mx-0 w-full max-w-[420px] md:max-w-none pl-10 lg:pl-16">
-      <img src="assets/stickers/explosao-magenta.svg" alt="" aria-hidden="true"
-           class="pointer-events-none absolute left-0 top-8 w-40 lg:w-56 -translate-x-1/3">
-      <div class="relative aspect-[2/3] rounded-t-full overflow-hidden bg-creme/10">
-        <video src="assets/video/perfil.mp4"
-               class="w-full h-full object-cover"
-               autoplay muted loop playsinline preload="metadata"
-               aria-label="Vídeo de Letícia Garcia"></video>
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <h1 class="font-black text-4xl lg:text-lead tracking-tighter uppercase text-center"
+        data-pt="Bora trabalhar juntos?" data-en="Shall we work together?"></h1>
+
+    <!-- novalidate: a validação fica no JS, para as mensagens saírem nos dois idiomas.
+         O action em mailto é o caminho sem JS; com JS, o envio monta um mailto melhor. -->
+    <form id="form-contato" novalidate
+          action="mailto:let_garcia10@hotmail.com" method="post" enctype="text/plain"
+          class="balao mt-10 lg:mt-14 mx-auto max-w-[890px] bg-magenta text-creme rounded-3xl p-7 lg:p-12">
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div>
+          <label for="nome" class="block font-semibold text-base lg:text-lg"
+                 data-pt="Nome" data-en="Name"></label>
+          <input id="nome" name="nome" type="text" required
+                 class="mt-3 w-full bg-creme text-navy rounded-full px-6 py-4 text-base
+                        placeholder:text-navy/40 focus:outline-none focus:ring-4 focus:ring-amarelo/70">
+          <p id="erro-nome" class="mt-2 text-sm font-semibold text-amarelo hidden" role="alert"></p>
+        </div>
+        <div>
+          <label for="email" class="block font-semibold text-base lg:text-lg"
+                 data-pt="E-mail" data-en="E-mail"></label>
+          <input id="email" name="email" type="email" required
+                 class="mt-3 w-full bg-creme text-navy rounded-full px-6 py-4 text-base
+                        placeholder:text-navy/40 focus:outline-none focus:ring-4 focus:ring-amarelo/70">
+          <p id="erro-email" class="mt-2 text-sm font-semibold text-amarelo hidden" role="alert"></p>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <h1 class="font-black text-4xl lg:text-section tracking-tighter"
-          data-pt="Oi, eu sou a Let" data-en="Hi, I'm Let"></h1>
-
-      <div class="mt-8 space-y-4 text-base lg:text-lg leading-relaxed opacity-85">
-        <p data-pt="É formada em Design Gráfico pela UNESP. Já na faculdade, atuou como designer e diretora financeira na empresa Design Júnior ao desenvolver identidades visuais, ilustrações e impressos. Seus trabalhos de ilustração e design incluem materiais publicitários, ilustrações para livros infantis, design digital e editorial, e identidade visual. Já trabalhou com clientes como Monks, Kyraly, Sereiarte, ILUMAC, Sanavita e dr.consulta."
-           data-en="She holds a degree in Graphic Design from UNESP. While still at university she worked as a designer and financial director at the junior enterprise Design Júnior, developing visual identities, illustrations and print pieces. Her illustration and design work spans advertising material, children's book illustration, digital and editorial design, and visual identity. She has worked with clients such as Monks, Kyraly, Sereiarte, ILUMAC, Sanavita and dr.consulta."></p>
-        <p data-pt="Na Tractian, referência em gestão de condição de ativos para indústrias, atua como Junior Designer III na área de criação, desenvolvendo materiais e campanhas que fortalecem a marca e engajam públicos no Brasil e no exterior."
-           data-en="At Tractian, a reference in asset condition management for industry, she works as a Junior Designer III on the creative team, developing material and campaigns that strengthen the brand and engage audiences in Brazil and abroad."></p>
-        <p data-pt="Atualmente mora em Lorena-SP e está sempre em busca de desafios na área da criação. Letícia gosta de trabalhar com employer branding, design para web, ilustrações para publicidade, além de desenvolver identidades visuais autênticas para vários nichos, buscando unir o design com suas ilustrações vibrantes."
-           data-en="She currently lives in Lorena-SP and is always after new challenges in the creative field. Letícia enjoys working with employer branding, web design and advertising illustration, as well as developing authentic visual identities across niches — always looking to bring her design and her vibrant illustration together."></p>
+      <div class="mt-6 lg:mt-8">
+        <div>
+          <label for="assunto" class="block font-semibold text-base lg:text-lg"
+                 data-pt="Assunto" data-en="Subject"></label>
+          <input id="assunto" name="assunto" type="text" required
+                 class="mt-3 w-full bg-creme text-navy rounded-full px-6 py-4 text-base
+                        placeholder:text-navy/40 focus:outline-none focus:ring-4 focus:ring-amarelo/70">
+          <p id="erro-assunto" class="mt-2 text-sm font-semibold text-amarelo hidden" role="alert"></p>
+        </div>
       </div>
 
-      <p class="mt-8 text-xs lg:text-sm uppercase tracking-tight opacity-50 max-w-[46ch]">
-        Melissa · Fini · Tractian · dr.consulta · Sanavita · ILUMAC · Negra Rosa · Minu · Iamaní
-      </p>
+      <div class="mt-6 lg:mt-8">
+        <label for="mensagem" class="block font-semibold text-base lg:text-lg"
+               data-pt="Mensagem" data-en="Message"></label>
+        <textarea id="mensagem" name="mensagem" rows="7" required
+                  class="mt-3 w-full bg-creme text-navy rounded-2xl px-6 py-4 text-base resize-y
+                         focus:outline-none focus:ring-4 focus:ring-amarelo/70"></textarea>
+        <p id="erro-mensagem" class="mt-2 text-sm font-semibold text-amarelo hidden" role="alert"></p>
+      </div>
+    </form>
 
-      <!-- ferramentas -->
-      <ul class="mt-8 flex flex-wrap gap-3">
-        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe Photoshop">Ps</li>
-        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe Illustrator">Ai</li>
-        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe After Effects">Ae</li>
-        <li class="bg-laranja text-navy font-black text-lg rounded-lg w-12 h-12 flex items-center justify-center" title="Adobe InDesign">Id</li>
-        <li class="bg-laranja text-navy rounded-lg w-12 h-12 flex items-center justify-center" title="Figma">
-          <svg viewBox="0 0 38 57" class="h-6 w-auto" fill="currentColor" aria-hidden="true">
-            <path d="M9.5 57a9.5 9.5 0 0 0 9.5-9.5V38H9.5a9.5 9.5 0 0 0 0 19Z"/>
-            <path d="M0 28.5A9.5 9.5 0 0 1 9.5 19H19v19H9.5A9.5 9.5 0 0 1 0 28.5Z"/>
-            <path d="M0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5Z"/>
-            <path d="M19 0h9.5a9.5 9.5 0 0 1 0 19H19V0Z"/>
-            <path d="M38 28.5A9.5 9.5 0 1 1 28.5 19a9.5 9.5 0 0 1 9.5 9.5Z"/>
-          </svg>
-        </li>
-      </ul>
+    <div class="mt-8 lg:mt-10 flex flex-col items-center gap-4">
+      <button type="submit" form="form-contato"
+              class="font-black text-xl lg:text-3xl uppercase tracking-tight border-2 border-magenta text-magenta
+                     rounded-full px-10 lg:px-14 py-3 lg:py-4 hover:bg-magenta hover:text-creme transition-colors"
+              data-pt="Enviar" data-en="Send"></button>
+      <p id="aviso-form" class="text-sm text-center max-w-[52ch] opacity-70 hidden" role="status"></p>
     </div>
   </div>
 </section>
 
 <!-- ====== AVATARES ====== -->
-<!-- Os cinco avatares ficam nas posições do Figma e perseguem o cursor, cada um
-     com uma amplitude própria — os de cima reagem mais que os de baixo, o que dá
-     a sensação de profundidade. Sem mouse ou com "reduzir movimento", ficam parados. -->
-<section id="avatares" class="bg-amarelo py-9 overflow-hidden relative">
+<!-- Mesma faixa da página Sobre, com as cores trocadas: fundo navy e avatares amarelos. -->
+<section id="avatares" class="bg-navy py-9 overflow-hidden relative">
   <div class="max-w-[1280px] mx-auto h-[200px] sm:h-[240px] lg:h-[278px] relative">
-    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="26" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:1.95%; top:19.78%">
-    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="44" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:21.25%; top:6.12%">
-    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="18" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:41.09%; top:19.78%">
-    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="50" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:60.39%; top:4.68%">
-    <img src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="32" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:79.38%; top:17.63%">
+    <img src="assets/brand/avatar-let-amarelo.svg" alt="" aria-hidden="true" data-amp="26" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:1.95%; top:19.78%">
+    <img src="assets/brand/avatar-let-amarelo.svg" alt="" aria-hidden="true" data-amp="44" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:21.25%; top:6.12%">
+    <img src="assets/brand/avatar-let-amarelo.svg" alt="" aria-hidden="true" data-amp="18" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:41.09%; top:19.78%">
+    <img src="assets/brand/avatar-let-amarelo.svg" alt="" aria-hidden="true" data-amp="50" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:60.39%; top:4.68%">
+    <img src="assets/brand/avatar-let-amarelo.svg" alt="" aria-hidden="true" data-amp="32" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:79.38%; top:17.63%">
   </div>
 </section>
 
@@ -249,6 +279,94 @@
       visivel = e.isIntersecting;
       if (visivel) liga();
     }).observe(secao);
+  })();
+</script>
+
+
+<!-- Validação do formulário e envio por e-mail. -->
+<script>
+  (function () {
+    const form = document.getElementById('form-contato');
+    if (!form) return;
+    const aviso = document.getElementById('aviso-form');
+    const DESTINO = 'let_garcia10@hotmail.com';
+
+    // nome com pelo menos um sobrenome: 2+ palavras, cada uma com 2+ letras.
+    // Feito em duas etapas porque o regex sozinho tropeça em "D'Ávila" (1 letra antes do apóstrofo).
+    const RE_PALAVRA = /^\p{L}+(?:['\u2019-]\p{L}+)*$/u;
+    function nomeValido(v) {
+      const partes = v.split(/\s+/).filter(Boolean);
+      if (partes.length < 2) return false;
+      return partes.every(t => RE_PALAVRA.test(t) && t.replace(/['\u2019-]/g, '').length >= 2);
+    }
+    const RE_EMAIL = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
+    const MSG = {
+      nome:     { vazio: ['Escreva o seu nome.', 'Please enter your name.'],
+                  formato: ['Escreva nome e sobrenome.', 'Please enter your first and last name.'] },
+      email:    { vazio: ['Escreva o seu e-mail.', 'Please enter your e-mail.'],
+                  formato: ['Esse e-mail não parece válido.', "That e-mail doesn't look valid."] },
+      assunto:  { vazio: ['Escreva o assunto.', 'Please enter a subject.'] },
+      mensagem: { vazio: ['Escreva a sua mensagem.', 'Please write your message.'] }
+    };
+
+    // localStorage pode estar bloqueado (navegação privada, iframe restrito, data: URL).
+    // Sem isto, uma exceção aqui derrubaria a validação inteira.
+    function langAtual() {
+      try { return localStorage.getItem('lang') === 'en' ? 'en' : 'pt'; }
+      catch (e) { return document.documentElement.lang === 'en' ? 'en' : 'pt'; }
+    }
+    const idioma = () => (langAtual() === 'en' ? 1 : 0);
+
+    function marcar(campo, par) {
+      const alvo = document.getElementById('erro-' + campo);
+      const el = document.getElementById(campo);
+      if (!par) {
+        alvo.classList.add('hidden'); alvo.textContent = '';
+        delete alvo.dataset.pt; delete alvo.dataset.en;
+        el.classList.remove('campo-erro'); el.removeAttribute('aria-invalid');
+        return true;
+      }
+      // guarda os dois idiomas: se a pessoa trocar PT/EN, o texto acompanha
+      alvo.dataset.pt = par[0]; alvo.dataset.en = par[1];
+      alvo.textContent = par[idioma()];
+      alvo.classList.remove('hidden');
+      el.classList.add('campo-erro');
+      el.setAttribute('aria-invalid', 'true');
+      el.setAttribute('aria-describedby', 'erro-' + campo);
+      return false;
+    }
+
+    function validar() {
+      const v = {};
+      ['nome','email','assunto','mensagem'].forEach(c => v[c] = document.getElementById(c).value.trim());
+      let ok = true;
+      ok = marcar('nome', !v.nome ? MSG.nome.vazio : (!nomeValido(v.nome) ? MSG.nome.formato : null)) && ok;
+      ok = marcar('email', !v.email ? MSG.email.vazio : (!RE_EMAIL.test(v.email) ? MSG.email.formato : null)) && ok;
+      ok = marcar('assunto', !v.assunto ? MSG.assunto.vazio : null) && ok;
+      ok = marcar('mensagem', !v.mensagem ? MSG.mensagem.vazio : null) && ok;
+      return ok ? v : null;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = validar();
+      if (!v) {
+        form.querySelector('.campo-erro')?.focus();
+        return;
+      }
+      const corpo = `${v.mensagem}\n\n—\n${v.nome}\n${v.email}`;
+      const link = 'mailto:' + DESTINO
+                 + '?subject=' + encodeURIComponent(v.assunto)
+                 + '&body=' + encodeURIComponent(corpo);
+      window.location.href = link;
+
+    // ao corrigir, o erro some
+    ['nome','email','assunto','mensagem'].forEach(c => {
+      document.getElementById(c).addEventListener('input', () => {
+        if (document.getElementById(c).classList.contains('campo-erro')) validar();
+      });
+    });
   })();
 </script>
 
