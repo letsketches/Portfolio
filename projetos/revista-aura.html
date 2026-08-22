@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AURA - revista — Letícia Garcia</title>
+  <meta name="description" content="Revista editorial que documenta a cultura dos brechós em Bauru-SP: consumo consciente, moda de segunda mão, inclusão e sustentabilidade.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* faixa rolante do @letsketches — duas cópias idênticas fecham o loop */
+    @keyframes faixa {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .animate-faixa { animation: faixa 30s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-faixa { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== FAIXA DE GRADIENTE ====== -->
+<!-- Fio de 24px no topo, com as cores da marca. -->
+<div class="h-6 w-full bg-gradient-to-r from-magenta via-laranja to-roxo" aria-hidden="true"></div>
+
+<!-- ====== HEADER ====== -->
+<!-- Igual em todos os cases. Não editar. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
+  <a href="../index.html" class="shrink-0">
+    <img src="../assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
+         class="h-8 lg:h-[76px] w-auto">
+  </a>
+
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+    <a href="../projetos.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Trabalhos" data-en="Work"></a>
+    <a href="../sobre.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="../index.html#contato"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Contato" data-en="Contact"></a>
+
+    <button id="lang-toggle"
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
+      EN
+    </button>
+  </nav>
+</header>
+
+<!-- ====== TÍTULO ====== -->
+<!-- A categoria usa a cor de acento do case: roxo (Design), magenta (Ilustração),
+     laranja (Design + Ilustração). Se a categoria for só "Design", ela é igual nos dois
+     idiomas — nesse caso troque o span por texto solto, sem data-pt. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
+  <span class="font-semibold text-sm uppercase tracking-tight text-roxo">Design</span>
+
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">AURA - revista</h1>
+
+  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+     data-pt="Trabalho da faculdade de 2023 com Bárbara, Letícia e Luisa.
+
+Aura — o projeto tem como objetivo documentar a cultura dos brechós na cidade de Bauru-SP, abordando temas como solidariedade, inclusão social e cidadania. Promove o diálogo sobre consumismo, sustentabilidade, diversidade e acessibilidade na moda, incentivando o uso de roupas de segunda mão, doações e um consumo mais consciente."
+     data-en="A university project from 2023, made with Bárbara, Letícia and Luisa.
+
+Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity, social inclusion and citizenship. It opens a conversation about consumerism, sustainability, diversity and accessibility in fashion, making the case for second-hand clothes, donations and more conscious consumption."></p>
+</section>
+
+<!-- ====== FICHA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dd class="mt-2 font-semibold">2023</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dd class="mt-2 font-semibold"
+          data-pt="Direção artística, editorial, design gráfico"
+          data-en="Art direction, editorial, graphic design"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dd class="mt-2 font-semibold">Photoshop, Illustrator, InDesign</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ====== LOGO ====== -->
+<!-- O gif do logo é transparente, então precisa de fundo escuro para o amarelo aparecer. -->
+<section class="bg-navy py-14 lg:py-20">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <figure class="flex justify-center">
+      <img src="../assets/img/revista-aura/logo-aura.gif"
+           alt="Logotipo animado da revista AURA: letras amarelas com brilhos de quatro pontas entre elas"
+           class="w-full max-w-[506px] h-auto object-contain">
+    </figure>
+  </div>
+</section>
+
+<!-- ====== CAPA ABERTA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-12 lg:pt-16 pb-16 lg:pb-24">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/revista-aura/capa-aberta.png"
+         alt="Arte plana da capa da revista AURA com frente e lombada"
+         class="w-full h-auto object-contain">
+  </figure>
+</section>
+
+<!-- ====== CARROSSEL — páginas e aplicações ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4000">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
+      </div>
+    </div>
+
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/revista-aura/carrossel-01.png"
+           alt="Página dupla da revista: à esquerda, texto sobre brechós beneficentes em Bauru com foto recortada em moldura rosa; à direita, foto de pessoa em saia jeans sobre fundo amarelo"
+           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/revista-aura/carrossel-02.png"
+           alt="Página dupla "Alfinetando": à esquerda, retrato em preto e branco com citação de Aurora James em destaque amarelo; à direita, texto sobre a falta de roupas plus size nos brechós, sobre fundo laranja"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/revista-aura/carrossel-03.png"
+           alt="As quatro pranchetas do projeto lado a lado, mostrando a diagramação das páginas"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/revista-aura/carrossel-04.png"
+           alt="Três posts de Instagram da revista AURA em mockup de feed"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/revista-aura/carrossel-05.png"
+           alt="Capa da revista ao lado de uma página dupla aberta"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MIOLO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-10 lg:gap-16">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/revista-aura/miolo-largo.png"
+         alt="Páginas internas da revista AURA em composição horizontal"
+         class="w-full h-auto object-contain">
+  </figure>
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/revista-aura/miolo-alto.png"
+         alt="Sequência vertical de páginas duplas da revista AURA"
+         class="w-full h-auto object-contain">
+  </figure>
+</section>
+
+<!-- ====== VERSÃO DIGITAL ====== -->
+<!-- Gif transparente, também sobre fundo escuro. -->
+<section class="bg-navy py-12 lg:py-16">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <figure>
+      <img src="../assets/img/revista-aura/site-revista.gif"
+           alt="Animação percorrendo as páginas da versão digital da revista AURA"
+           class="w-full max-w-[700px] mx-auto h-auto object-contain" loading="lazy">
+      <figcaption class="mt-4 text-sm text-creme/60 text-center"
+                  data-pt="A revista também virou versão digital, folheável."
+                  data-en="The magazine also became a flip-through digital edition."></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ====== EQUIPE ====== -->
+<!-- Faixa de gradiente + retratos em duotone. Os nomes são texto de verdade, não imagem. -->
+<section class="bg-navy">
+  <div class="h-16 w-full" aria-hidden="true"
+       style="background:linear-gradient(90deg,#5FBF8F 0%,#F5B800 50%,#8E5BA6 100%)"></div>
+
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
+    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
+      <li class="w-full max-w-[315px] text-center">
+        <img src="../assets/img/revista-aura/retrato-barbara.png"
+             alt="Retrato de Bárbara Beline em duotone verde" class="w-full h-auto rounded-lg">
+        <p class="mt-4 text-lg" style="color:#5FBF8F">Bárbara Beline</p>
+      </li>
+      <li class="w-full max-w-[315px] text-center">
+        <img src="../assets/img/revista-aura/retrato-leticia.png"
+             alt="Retrato de Letícia Garcia Ribeiro em duotone amarelo" class="w-full h-auto rounded-lg">
+        <p class="mt-4 text-lg" style="color:#F5B800">Letícia Garcia Ribeiro</p>
+      </li>
+      <li class="w-full max-w-[315px] text-center">
+        <img src="../assets/img/revista-aura/retrato-luisa.png"
+             alt="Retrato de Luísa Campos Fornazeiro em duotone roxo" class="w-full h-auto rounded-lg">
+        <p class="mt-4 text-lg text-creme">Luísa Campos Fornazeiro</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====== FAIXA @LETSKETCHES ====== -->
+<!-- Duas cópias com 10 itens cada. As metades precisam ser idênticas: a animação
+     anda -50%, então qualquer diferença faz o loop dar um salto. Não editar. -->
+<div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
+
+<!-- ====== PRÓXIMO PROJETO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
+  <a href="almanaque-vampirico.html" class="group block">
+    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+          data-pt="Próximo projeto" data-en="Next project"></span>
+    <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
+      Almanaque Vampírico →
+    </span>
+  </a>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<!-- ====== LIGHTBOX ====== -->
+<!-- Overlay compartilhado por todos os carrosséis da página. Não editar.
+     Pode ficar mesmo que a página não tenha carrossel. -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/95 p-4 lg:p-10" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button type="button" id="lightbox-close"
+          class="absolute top-4 right-4 lg:top-8 lg:right-8 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-creme/10 text-creme hover:bg-creme/20 transition-colors"
+          aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div id="lightbox-content" class="flex gap-0.5 max-w-full max-h-full"></div>
+</div>
+
+<!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+    btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
+    apply(lang);
+  })();
+</script>
+
+<!-- Carrossel de imagens: barra de progresso tipo stories, setas e clique pra ampliar.
+     Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- lightbox compartilhado ----
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxClose = document.getElementById('lightbox-close');
+    let onLightboxClose = null;
+
+    function openLightbox(slide, onClose) {
+      if (!lightbox) return;
+      lightboxContent.innerHTML = '';
+      const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.currentSrc || img.src;
+        clone.alt = img.alt;
+        clone.className = 'max-h-[85vh] max-w-full object-contain';
+        lightboxContent.appendChild(clone);
+      });
+      onLightboxClose = onClose || null;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox || lightbox.classList.contains('hidden')) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+      if (onLightboxClose) { onLightboxClose(); onLightboxClose = null; }
+    }
+
+    if (lightbox) {
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    }
+
+    // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      const fills = Array.from(carousel.querySelectorAll('[data-carousel-fill]'));
+      const viewport = carousel.querySelector('[data-carousel-viewport]');
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      const duration = Number(carousel.dataset.interval) || 4000;
+      if (slides.length < 2) return;
+
+      let index = 0;
+      let elapsed = 0;
+      let lastTime = null;
+      let playing = !reduceMotion;
+
+      function render() {
+        slides.forEach((slide, n) => { slide.style.opacity = n === index ? '1' : '0'; });
+        fills.forEach((fill, n) => {
+          if (n < index) fill.style.width = '100%';
+          else if (n > index) fill.style.width = '0%';
+          else fill.style.width = (reduceMotion || !playing) ? '100%' : `${(elapsed / duration) * 100}%`;
+        });
+      }
+
+      function goTo(next) {
+        index = (next + slides.length) % slides.length;
+        elapsed = 0;
+        render();
+      }
+
+      function frame(time) {
+        if (lastTime === null) lastTime = time;
+        const delta = time - lastTime;
+        lastTime = time;
+        if (playing) {
+          elapsed += delta;
+          if (elapsed >= duration) {
+            goTo(index + 1);
+          } else {
+            fills[index].style.width = `${(elapsed / duration) * 100}%`;
+          }
+        }
+        requestAnimationFrame(frame);
+      }
+
+      render();
+      if (!reduceMotion) requestAnimationFrame(frame);
+
+      carousel.addEventListener('mouseenter', () => { playing = false; });
+      carousel.addEventListener('mouseleave', () => { playing = !reduceMotion; lastTime = null; });
+
+      prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index - 1); });
+      nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index + 1); });
+
+      viewport?.addEventListener('click', (e) => {
+        if (e.target.closest('[data-carousel-prev],[data-carousel-next]')) return;
+        playing = false;
+        openLightbox(slides[index], () => { playing = !reduceMotion; lastTime = null; });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
