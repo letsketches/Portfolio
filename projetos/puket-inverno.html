@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Almanaque Vampírico — Letícia Garcia</title>
-  <meta name="description" content="Peça editorial ilustrada inspirada em revistas pop, com letterings e ilustrações originais sobre vampiros. Trabalho final da Mentoria com Paula Cruz, para a Escola Arte Revide.">
+  <title>Puket — Coleção de Inverno — Letícia Garcia</title>
+  <meta name="description" content="Teste de estampa corrida e localizada para a coleção de inverno da Puket: personagem gatinha skatista, cartela de rosa neon e verde água.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +30,7 @@
     html { scroll-behavior: smooth; }
     body { -webkit-font-smoothing: antialiased; }
 
-    /* faixa rolante do @letsketches — mesma trilha da home, duas cópias fecham o loop */
+    /* faixa rolante do @letsketches — duas cópias idênticas fecham o loop */
     @keyframes faixa {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
@@ -46,11 +45,11 @@
 <body class="bg-creme text-navy font-sans">
 
 <!-- ====== FAIXA DE GRADIENTE ====== -->
-<!-- Fio de 24px no topo, com as quatro cores da marca. -->
+<!-- Fio de 24px no topo, com as cores da marca. -->
 <div class="h-6 w-full bg-gradient-to-r from-magenta via-laranja to-roxo" aria-hidden="true"></div>
 
 <!-- ====== HEADER ====== -->
-<!-- Nav em pílulas de contorno, alinhadas à direita, como no modelo do Figma. -->
+<!-- Igual em todos os cases. Não editar. -->
 <header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
   <a href="../index.html" class="shrink-0">
     <img src="../assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
@@ -76,21 +75,26 @@
 </header>
 
 <!-- ====== TÍTULO ====== -->
+<!-- A categoria usa a cor de acento do case: roxo (Design), magenta (Ilustração),
+     laranja (Design + Ilustração). Se a categoria for só "Design", ela é igual nos dois
+     idiomas — nesse caso troque o span por texto solto, sem data-pt. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
   <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
         data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
 
-  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Almanaque Vampírico</h1>
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Puket — Coleção de Inverno</h1>
 
   <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
-     data-pt="Um projeto de peça editorial ilustrada baseada em revistas da cultura pop, o almanaque foi o modelo escolhido para falar dos seres mais elegantes e sangrentos: os vampiros.
+     data-pt="Em 2024 realizei um teste de estampa corrida e localizada para uma coleção de inverno da marca Puket com o seguinte briefing: seguir a cartela de cores — tons de rosa neon e verde água nas bases, podendo sugerir tons coadjuvantes e efeitos. O tema da estampa é de uma Gatinha skatista que ama skate, super aventureira, audaciosa e muito fofa. Limitação de 8 cores no localizado e 6 na corrida.
 
-Para esse projetos foram desenvolvidas 6 páginas (3 duplas) e entre elas 2 páginas dedicadas a stickers, além da capa e contra-capa, letterings e ilustrações personalizadas para o almanaque. Os textos foram feitos de forma ilustrativa para compor a diagramação das páginas e com o contexto de cada seção do almanaque.
-Este é um projeto educacional sem fins lucrativos e foi desenvolvido para a Escola Arte Revide como trabalho final da Mentoria com a designer e ilustradora Paula Cruz."
-     data-en="An illustrated editorial piece inspired by pop-culture magazines, the almanac was the format chosen to talk about the most elegant and bloodthirsty of creatures: vampires.
+O projeto infelizmente não foi continuado, mas foi muito gratificante poder participar do meu primeiro teste de estampa e aprendi muito durante o processo de criação.
 
-The project includes 6 pages (3 spreads), two of which are dedicated to stickers, plus the front and back covers, custom lettering and illustrations made for the almanac. The text was written and illustrated to compose the layout of each page, in keeping with the theme of each section.
-This is a non-commercial educational project, developed for Escola Arte Revide as the final piece of a mentorship with designer and illustrator Paula Cruz."></p>
+Este é um projeto fictício desenvolvido para teste."
+     data-en="In 2024 I took on a test brief for an all-over and placed print for a Puket winter collection. The brief: stick to the colour card — neon pink and seafoam green as the base tones, with room to suggest supporting shades and effects. The print's theme is a skater kitten who loves skateboarding: adventurous, bold and very cute. A limit of 8 colours on the placed print and 6 on the all-over.
+
+The project sadly didn't move forward, but taking part in my first print test was very rewarding and I learned a lot during the process.
+
+This is a fictional project developed as a test."></p>
 </section>
 
 <!-- ====== FICHA ====== -->
@@ -98,13 +102,13 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
-      <dd class="mt-2 font-semibold">2024</dd>
+      <dd class="mt-2 font-semibold">2026</dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
       <dd class="mt-2 font-semibold"
-          data-pt="Autoria, ilustração, projeto gráfico e pesquisa"
-          data-en="Authorship, illustration, graphic design and research"></dd>
+          data-pt="Direção artística, ilustração, design gráfico"
+          data-en="Art direction, illustration, graphic design"></dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
@@ -113,7 +117,7 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
   </dl>
 </section>
 
-<!-- ====== CARROSSEL 1 — mockup da capa ====== -->
+<!-- ====== CARROSSEL — peças da coleção ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <div data-carousel data-interval="4000">
     <div class="flex gap-3 lg:gap-4" data-carousel-track>
@@ -128,17 +132,17 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
       </div>
     </div>
 
-    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[3/2] cursor-zoom-in" data-carousel-viewport>
-      <img src="../assets/img/almanaque-vampirico/carrossel-01.jpg"
-           alt="Mockup do Almanaque Vampírico sobre fundo verde: capa vermelha ilustrada com um morcego e rosas"
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/puket-inverno/capa.jpg"
+           alt="Camiseta manga longa verde água com a estampa localizada Skate Time no peito e a estampa corrida nas mangas, sobre fundo amarelo"
            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/almanaque-vampirico/carrossel-02.jpg"
-           alt="Capas do Almanaque Vampírico e página dupla 'Quem são os vampiros' sobre fundo laranja"
+      <img src="../assets/img/puket-inverno/meias.png"
+           alt="Par de meias verde água com a estampa corrida da gatinha skatista, sobre fundo rosa neon"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/almanaque-vampirico/carrossel-03.jpg"
-           alt="Capa do Almanaque Vampírico e página dupla de stickers sobre fundo rosa"
+      <img src="../assets/img/puket-inverno/pijama.png"
+           alt="Conjunto de pijama de manga curta e shorts com a estampa corrida da gatinha skatista, sobre fundo amarelo"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
 
@@ -156,92 +160,82 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
   </div>
 </section>
 
-<!-- ====== IMAGENS — paleta e sketches ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-16 lg:gap-24">
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/almanaque-vampirico/paleta.jpg"
-         alt="Paleta de cores do Almanaque Vampírico: rosa, amarelo, verde menta, marrom escuro, azul periwinkle e rosa salmão, com códigos RGB, CMYK e HEX"
-         class="w-full object-cover">
-  </figure>
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/almanaque-vampirico/sketches.jpg"
-         alt="Sketches do Almanaque Vampírico: rascunho de página com miniaturas, capa em traço a lápis e capa finalizada a nanquim com o título Almanaque dos Vampiros"
-         class="w-full object-cover">
-  </figure>
+<!-- ====== PALETA ====== -->
+<!-- Cartela do briefing, montada em HTML: os hex vêm da prancha do Figma.
+     Cor de cliente é conteúdo do case, por isso vai como valor literal e não como token. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div class="grid grid-cols-2 lg:grid-cols-6 gap-4">
+    <div class="col-span-2 lg:col-span-2 bg-[#E8468B] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[220px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 232  70  139<br>CMYK: 1  83  7  0<br>HEX: E8468B</p>
+    </div>
+    <div class="col-span-1 bg-[#92CCB4] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[220px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 146  204  180<br>CMYK: 48  0  36  0<br>HEX: 92CCB4</p>
+    </div>
+    <div class="col-span-1 bg-[#F6BDD8] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[220px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 246  189  216<br>CMYK: 0  35  0  0<br>HEX: F6BDD8</p>
+    </div>
+    <div class="col-span-1 bg-[#FED76E] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[220px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 254  215  110<br>CMYK: 1  16  66  0<br>HEX: FED76E</p>
+    </div>
+    <div class="col-span-1 bg-[#6F77B7] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[220px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 111  119  183<br>CMYK: 64  54  0  0<br>HEX: 6F77B7</p>
+    </div>
+    <div class="col-span-2 lg:col-span-2 bg-[#FFFFFF] border border-navy/15 text-navy rounded-lg p-6 flex flex-col justify-end min-h-[140px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 255  255  255<br>CMYK: 0  0  0  0<br>HEX: FFFFFF</p>
+    </div>
+    <div class="col-span-2 lg:col-span-4 bg-[#252852] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[140px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 37  40  82<br>CMYK: 99  92  35  33<br>HEX: 252852</p>
+    </div>
+  </div>
 </section>
 
-<!-- ====== CARROSSEL 2 — capa e contracapa ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
-  <div data-carousel data-interval="4000">
-    <div class="flex gap-3 lg:gap-4" data-carousel-track>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
+<!-- ====== ESTAMPAS ====== -->
+<!-- Fundo navy pra separar as artes do resto da página, como nos outros cases. -->
+<section class="bg-navy py-12 lg:py-16">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20 flex flex-col gap-6">
+    <div class="grid md:grid-cols-5 gap-6 items-center">
+      <figure class="md:col-span-2 rounded-lg overflow-hidden bg-creme/5">
+        <img src="../assets/img/puket-inverno/estampa-localizada.png"
+             alt="Estampa localizada Skate Time: lettering rosa e amarelo sobre a gatinha skatista de capacete, com raio e estrelas"
+             class="w-full h-auto object-contain">
+      </figure>
+      <figure class="md:col-span-3 rounded-lg overflow-hidden bg-creme/5">
+        <img src="../assets/img/puket-inverno/estampa-elementos.png"
+             alt="Elementos soltos da estampa: rosto da gatinha, capacete, skates, raios e estrelas sobre fundo verde água"
+             class="w-full h-auto object-contain">
+      </figure>
     </div>
 
-    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[7/5] cursor-zoom-in" data-carousel-viewport>
-      <div class="absolute inset-0 flex gap-0.5 transition-opacity duration-700" data-carousel-slide>
-        <img src="../assets/img/almanaque-vampirico/capa-carrossel.jpg"
-             alt="Capa do Almanaque Vampírico: livro vermelho com silhueta de morcego, tipografia dourada e rosas"
-             class="w-1/2 h-full object-cover">
-        <img src="../assets/img/almanaque-vampirico/contracapa.jpg"
-             alt="Contracapa do Almanaque Vampírico: moldura floral dourada em fundo rosa, com texto sobre a origem dos vampiros"
-             class="w-1/2 h-full object-cover">
+    <figure>
+      <div class="rounded-lg overflow-hidden bg-creme/5">
+        <img src="../assets/img/puket-inverno/estampa-corrida.png"
+             alt="Módulo da estampa corrida, com a gatinha, skates, raios e estrelas distribuídos sobre fundo verde água"
+             class="w-full h-auto object-contain">
       </div>
-      <img src="../assets/img/almanaque-vampirico/pagina-dupla.jpg"
-           alt="Página dupla 'Quem são os vampiros': ilustrações emolduradas de personagens vampirescos e texto sobre a origem do mito"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-           data-carousel-slide>
-      <img src="../assets/img/almanaque-vampirico/sticker-vampiricos.jpg"
-           alt="Página dupla de stickers do Almanaque Vampírico: adesivos ilustrados de morcego, taça de vinho, guitarra e outros ícones vampirescos"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-           data-carousel-slide>
-      <!-- TODO: trocar por gif quando o arquivo animado estiver pronto -->
-      <img src="../assets/img/almanaque-vampirico/pagina-dracula.jpg"
-           alt="Página dupla sobre o Conde Drácula: retrato ilustrado, curiosidades e o kit de 'não sobrevivência'"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-           data-carousel-slide>
-
-      <button type="button"
-              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
-              data-carousel-prev aria-label="Imagem anterior">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button"
-              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
-              data-carousel-next aria-label="Próxima imagem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
+      <figcaption class="mt-3 text-sm text-creme/60"
+                  data-pt="A corrida usa 6 cores; a localizada, 8 — o limite que o briefing pedia."
+                  data-en="The all-over print uses 6 colours and the placed print 8 — the limit the brief called for."></figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- ====== FAIXA @LETSKETCHES ====== -->
-<!-- Igual à faixa laranja da home. Decorativa: aria-hidden porque o @letsketches já está no rodapé. -->
+<!-- Duas cópias com 10 itens cada. As metades precisam ser idênticas: a animação
+     anda -50%, então qualquer diferença faz o loop dar um salto. Não editar. -->
 <div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
   <div class="flex w-max animate-faixa">
-    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
     <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
   </div>
 </div>
 
 <!-- ====== PRÓXIMO PROJETO ====== -->
-<!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
-  <a href="chico-quitandas.html" class="group block">
+  <a href="almanaque-vampirico.html" class="group block">
     <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
-      Chico Quitandas Mineiras →
+      Almanaque Vampírico →
     </span>
   </a>
 </section>
@@ -259,7 +253,8 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
 </footer>
 
 <!-- ====== LIGHTBOX ====== -->
-<!-- Overlay compartilhado por todos os carrosséis da página pro clique de ampliar. Não editar. -->
+<!-- Overlay compartilhado por todos os carrosséis da página. Não editar.
+     Pode ficar mesmo que a página não tenha carrossel. -->
 <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/95 p-4 lg:p-10" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
   <button type="button" id="lightbox-close"
           class="absolute top-4 right-4 lg:top-8 lg:right-8 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-creme/10 text-creme hover:bg-creme/20 transition-colors"
@@ -285,7 +280,8 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
   })();
 </script>
 
-<!-- Carrossel de imagens: barra de progresso tipo stories, setas e clique pra ampliar. -->
+<!-- Carrossel de imagens: barra de progresso tipo stories, setas e clique pra ampliar.
+     Igual em todas as páginas. Não editar. -->
 <script>
   (function () {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

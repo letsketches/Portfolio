@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Luna e o Monstrinho — Letícia Garcia</title>
-  <meta name="description" content="Livro infantil ilustrado sobre emoções na infância. Trabalho de Conclusão de Curso em Design Gráfico pela UNESP Bauru, aprovado e indicado ao Repositório Digital da UNESP.">
+  <title>Chico Quitandas Mineiras — Letícia Garcia</title>
+  <meta name="description" content="Identidade visual de micro padaria artesanal mineira: logotipo, paleta, tipografia, ícones ilustrados e aplicações de marca.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,8 +37,14 @@
       to   { transform: translateX(-50%); }
     }
     .animate-faixa { animation: faixa 30s linear infinite; }
+
+    /* colagem de ilustrações da Chico Quitandas — cada ícone gira ao passar o mouse */
+    .chico-icon { transition: transform 300ms ease; cursor: default; }
+    .chico-icon:hover { transform: rotate(var(--hover-rot)) scale(1.06); }
+
     @media (prefers-reduced-motion: reduce) {
       .animate-faixa { animation: none; }
+      .chico-icon { transition: none; }
     }
   </style>
 </head>
@@ -77,26 +83,17 @@
 
 <!-- ====== TÍTULO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
-  <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
-        data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+  <span class="font-semibold text-sm uppercase tracking-tight text-roxo">Design</span>
 
-  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Luna e o Monstrinho</h1>
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Chico Quitandas Mineiras</h1>
 
-  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
-     data-pt="Luna e o Monstrinho é um livro infantil ilustrado desenvolvido com foco em ajudar crianças que têm dificuldade de dizer o que sentem e de entender suas emoções — e também ajuda pais e responsáveis a acolherem esses sentimentos, em vez de reprimi-los. Um dos principais desafios do livro foi ter um embasamento sólido sobre emoções na infância, o que levou à busca por profissionais da psicologia, que responderam a um questionário voltado a encontrar a melhor abordagem para o tema e para a construção da história.
-
-O público principal são as crianças, então a pesquisa também buscou entender suas necessidades e interesses para a criação de personagens, cenários e história. A escrita é simples, e os personagens são coloridos e carismáticos, com uma estética cartoon que remete a desenhos animados — formas simples e geométricas que ficam na memória das crianças."
-     data-en="Luna e o Monstrinho is an illustrated children's book developed to help kids who struggle to say what they feel and to understand their own emotions — and to help parents and caregivers welcome those feelings instead of dismissing them. One of the book's main challenges was building a solid grounding in childhood emotions, which meant reaching out to psychology professionals who answered a questionnaire aimed at finding the best approach to the theme and shaping the story.
-
-Since children are the main audience, research into their needs and interests shaped the characters, settings and story. The writing stays simple, and the characters are colourful and charismatic, with a cartoon aesthetic reminiscent of animated shows — simple, geometric shapes that stick in a child's memory."></p>
-
-  <p class="mt-6 text-sm opacity-60 max-w-[70ch]"
-     data-pt="Orientação: Profª. Drª. Cassia Letícia Carrara Domiciano · Coorientação: Prof. Me. Guilherme Cardoso Contini · Banca: Rodrigo Cordeiro e Carolina Sartori · Aprovado e indicado ao Repositório Digital da UNESP."
-     data-en="Advisor: Prof. Dr. Cassia Letícia Carrara Domiciano · Co-advisor: Prof. Guilherme Cardoso Contini, MSc · Committee: Rodrigo Cordeiro and Carolina Sartori · Approved and nominated for UNESP's Digital Repository."></p>
-
-  <a href="https://hdl.handle.net/11449/260519" target="_blank" rel="noopener noreferrer"
-     class="mt-3 inline-block text-sm font-semibold underline hover:text-laranja transition-colors"
-     data-pt="Leia o relatório completo" data-en="Read the full report"></a>
+  <p class="mt-8 max-w-[1120px] text-xl leading-relaxed whitespace-pre-wrap"
+     data-pt="Chico Quitandas Mineiras é uma micro padaria artesanal especializada em produtos tipicamente mineiros. A marca nasceu como uma forma de honrar o legado do avô de Kamila, sua fundadora, e de agradecê-lo — trazendo ideias de tradição, simplicidade e produtos feitos artesanalmente, além de valorizar a cultura gastronômica de Minas Gerais, seus ingredientes e receitas.
+A marca quer ser vista como uma quitanda que coloca carinho em todos os produtos, preza pela qualidade e é referência em café da tarde — já que hoje falta comida que não nutra só o corpo, mas que traga conforto e afetividade para a alma. O objetivo é criar memórias afetivas e resgatar a herança mineira através da comida e do espaço da quitanda.
+Seu público é predominantemente feminino, com mais de 25 anos e de classe média alta: gente que busca alimentos prontos e saborosos para o dia a dia ou para criar momentos especiais com família e amigos."
+     data-en="Chico Quitandas Mineiras is a micro bakery specialising in typical 'mineiro' products. The brand was born as a way to honour the legacy of Kamila's — its founder's — grandfather, and to thank him for it, built on ideas of tradition, simplicity and handcrafted products, with a focus on the culinary culture of Minas Gerais, its ingredients and recipes.
+The brand wants to be seen as a 'quitanda' that puts affection into every product, values quality, and is a go-to for afternoon coffee — since there's a growing shortage of food that nourishes not just the body, but brings comfort and affection to the soul too. The goal is to create emotional memories and rescue 'mineiro' heritage through food and the quitanda space.
+Its audience is predominantly female, over 25 and upper-middle class: people looking for ready-made, tasty food for everyday life or for creating special moments with family and friends."></p>
 </section>
 
 <!-- ====== FICHA ====== -->
@@ -104,54 +101,63 @@ Since children are the main audience, research into their needs and interests sh
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
-      <dd class="mt-2 font-semibold">2024</dd>
+      <dd class="mt-2 font-semibold">2025</dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
       <dd class="mt-2 font-semibold"
-          data-pt="Autoria, ilustração, projeto gráfico e pesquisa"
-          data-en="Writing, illustration, book design and research"></dd>
+          data-pt="Branding, direção de arte e design gráfico"
+          data-en="Branding, art direction and graphic design"></dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
-      <dd class="mt-2 font-semibold">Photoshop, Illustrator, Procreate</dd>
+      <dd class="mt-2 font-semibold">Illustrator, Photoshop</dd>
     </div>
   </dl>
 </section>
 
-<!-- ====== CARROSSEL 1 — mockups da capa e páginas internas ====== -->
+<!-- ====== IMAGEM — capa / mockup principal ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/chico-quitandas/capa.jpg"
+         alt="Mockup da marca Chico Quitandas Mineiras: embalagem de café, xícara, bule e ingredientes sobre estampa de azulejos mineiros"
+         class="w-full object-cover">
+  </figure>
+</section>
+
+<!-- ====== CARROSSEL — aplicações da marca ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <div data-carousel data-interval="4000">
     <div class="flex gap-3 lg:gap-4" data-carousel-track>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
       </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
       </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
       </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      <div class="h-[6px] flex-1 rounded-full bg-roxo/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-roxo rounded-full" data-carousel-fill></div>
       </div>
     </div>
 
     <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
-      <img src="../assets/img/luna-monstrinho/carrossel-01.jpg"
-           alt="Mockup do livro Luna e o Monstrinho sobre fundo azul: capa verde com a personagem Luna e o Monstrinho"
+      <img src="../assets/img/chico-quitandas/sacola.jpg"
+           alt="Sacola ecobag da Chico Quitandas Mineiras pendurada, com logotipo e estampa de azulejos"
            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/luna-monstrinho/carrossel-02.jpg"
-           alt="Sinopse do livro Luna e o Monstrinho ao lado da capa, sobre fundo amarelo"
+      <img src="../assets/img/chico-quitandas/copos.jpg"
+           alt="Copos personalizados da Chico Quitandas Mineiras com estampa de azulejos, em fundo amarelo"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/luna-monstrinho/carrossel-03.jpg"
-           alt="Página dupla do livro Luna e o Monstrinho: Luna e o Monstrinho brincam na gangorra"
+      <img src="../assets/img/chico-quitandas/avental.jpg"
+           alt="Avental da Chico Quitandas Mineiras em azul-marinho com estampa de azulejos na barra"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img src="../assets/img/luna-monstrinho/carrossel-04.jpg"
-           alt="Página dupla do livro Luna e o Monstrinho: Luna conhece o Monstrinho pela primeira vez"
+      <img src="../assets/img/chico-quitandas/cartao-visita.jpg"
+           alt="Cartões de visita da Chico Quitandas Mineiras com estampa de azulejos e selo da marca, em fundo amarelo"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
 
@@ -169,116 +175,149 @@ Since children are the main audience, research into their needs and interests sh
   </div>
 </section>
 
-<!-- ====== IMAGEM — página personalizável ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/03.gif"
-         alt="Animação com prévia de páginas internas do livro Luna e o Monstrinho, incluindo a página personalizável 'Desenhe-se aqui'"
-         class="w-full object-cover">
+<!-- ====== LOGO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-12 lg:pb-16">
+  <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Logotipo" data-en="Logo"></h2>
+  <p class="mt-6 max-w-[70ch] text-lg leading-relaxed"
+     data-pt="A tipografia desenhada à mão remete à escrita de cartazes de quitanda, e o símbolo reproduz a janela colonial mineira — referências diretas à arquitetura e à estética tradicional de Minas Gerais."
+     data-en="The hand-drawn lettering echoes the handwritten signs of a traditional Brazilian quitanda, and the symbol reproduces a colonial-style window from Minas Gerais — direct references to the region's architecture and traditional aesthetic."></p>
+
+  <!-- ordem do Figma: assinatura horizontal, depois vertical + selo lado a lado, depois o gif -->
+  <figure class="mt-10 flex justify-center">
+    <img src="../assets/img/chico-quitandas/logo-horizontal.png"
+         alt="Logotipo horizontal da Chico Quitandas Mineiras: janela colonial mineira à esquerda e o nome em azul-marinho"
+         class="w-full max-w-[668px] h-auto object-contain">
+  </figure>
+
+  <div class="mt-12 grid gap-10 sm:grid-cols-2 items-center justify-items-center">
+    <figure class="w-full max-w-[376px]">
+      <img src="../assets/img/chico-quitandas/logo-vertical.png"
+           alt="Versão vertical do logotipo, com a janela acima do nome"
+           class="w-full h-auto object-contain">
+    </figure>
+
+    <figure class="w-full max-w-[384px]">
+      <img src="../assets/img/chico-quitandas/selo.png"
+           alt="Selo da marca, com moldura ornamentada inspirada nos azulejos e folhas ao redor do nome"
+           class="w-full h-auto object-contain">
+    </figure>
+  </div>
+
+  <!-- gif: o logotipo percorrendo as cores da paleta -->
+  <figure class="mt-12">
+    <div class="rounded-lg overflow-hidden bg-navy/5">
+      <img src="../assets/img/chico-quitandas/logo-cores.gif"
+           alt="Animação do logotipo da Chico Quitandas Mineiras alternando entre as cores da paleta da marca"
+           class="w-full h-auto object-contain">
+    </div>
+    <figcaption class="mt-3 text-sm opacity-60"
+                data-pt="A marca funciona em qualquer combinação da paleta, sem perder leitura."
+                data-en="The logo holds up in every combination of the palette, without losing legibility."></figcaption>
+  </figure>
+</section>
+
+<!-- ====== PALETA ====== -->
+<!-- Prancha da paleta como veio do projeto, com as fichas de RGB/CMYK/HEX. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
+  <figure>
+    <img src="../assets/img/chico-quitandas/paleta.png"
+         alt="Paleta da marca em seis cartões: azul-marinho, amarelo-claro, branco, amarelo-ouro, azul-claro e azul-arroxeado, cada um com seus valores de RGB, CMYK e HEX"
+         class="w-full h-auto object-contain">
   </figure>
 </section>
 
 <!-- ====== TIPOGRAFIA ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
-  <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Tipografia" data-en="Typography"></h2>
-  <p class="mt-6 max-w-[70ch] text-lg leading-relaxed"
-     data-pt="Fonte criada para o projeto: Luna. Houveram muitas tentativas de deixar o título do livro mais orgânico, inicialmente criando uma fonte do zero, apenas com algumas referências. Porém, sua espessura não estava uniforme e ainda causava estranheza na leitura. Portanto, revisitei as referências e modifiquei a fonte DK Lemon Yellow Sun, criada por David Kerkhoff — que possui licença pessoal grátis e era a tipografia mais próxima dos rascunhos iniciais. Acrescentei serifas discretas, modifiquei letras como o M e o W e deixei as formas mais retas. A tipografia foi desenhada no Adobe Illustrator e convertida de vetor para fonte instalável com o FontLab. Foi criada para trazer identidade a todo o projeto — não só ao título do livro, mas a qualquer material que carregue o nome 'Luna e o Monstrinho'."
-     data-en="Custom typeface for the project: Luna. There were many attempts to make the book's title feel more organic, starting with a typeface built from scratch using only a few references. But its stroke weight wasn't consistent and made the title awkward to read. So I went back to the references and modified an existing typeface instead: DK Lemon Yellow Sun, created by David Kerkhoff, which has a free personal-use licence and was the closest match to the early sketches. I added subtle serifs, reworked letters like M and W, and straightened the strokes overall. The typeface was drawn in Adobe Illustrator and converted from vector shapes into an installable font using FontLab. It was created to give the whole project an identity — not just the book's title, but any material that carries the 'Luna e o Monstrinho' name."></p>
-
-  <figure class="mt-10 rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/tipografia.jpg"
-         alt="Fonte customizada do projeto Luna e o Monstrinho: alfabeto completo em maiúsculas e caracteres acentuados"
-         class="w-full object-cover">
-  </figure>
+<!-- Prancha original do projeto: mostra a 1Rial CT e a Poppins desenhadas de verdade,
+     o que a página não conseguiria reproduzir só com a fonte do site. Fundo no mesmo
+     tom escuro da seção de ilustrações — a prancha em si tem fundo transparente. -->
+<section class="bg-navy py-12 lg:py-16">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <figure>
+      <img src="../assets/img/chico-quitandas/tipografia.png"
+           alt="Prancha de tipografia da marca. Tipografia 1, de destaque: 1Rial CT Regular, usada em títulos grandes por ser chamativa e complementar a estética da marca. Tipografia 2, de legibilidade: Poppins, para textos corridos. Cada uma acompanhada do alfabeto completo e dos numerais."
+           class="w-full h-auto object-contain">
+    </figure>
+  </div>
 </section>
 
 <!-- ====== ILUSTRAÇÕES ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-10 lg:gap-16">
-  <div>
-    <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Ilustrações" data-en="Illustrations"></h2>
-    <p class="mt-6 max-w-[70ch] text-lg leading-relaxed"
-       data-pt="O processo de pintura digital passa por quatro etapas: rascunho da ideia com as linhas já limpas, aplicação das cores base removendo aos poucos o rascunho, renderização com luz e sombra de acordo com a direção da luz na cena — buscando uma estética não tão realista, mais 'cartoon' — e, por fim, pequenos retoques de cor e brilho para deixar a ilustração mais estilizada."
-       data-en="The digital painting process runs through four stages: a rough sketch with the lines cleaned up, then flat base colours applied while gradually removing the sketch lines. In the rendering stage I apply light and shadow according to each object's place in the scene, aiming for a look that's less realistic and more 'cartoon'. I finish with small colour adjustments and extra highlights to make the illustration feel more stylised."></p>
-  </div>
+<!-- Colagem de ícones soltos, posições e rotações vindas do Figma. Cada um gira ao passar o mouse. -->
+<section class="bg-navy py-12 lg:py-16">
+  <div class="max-w-[1050px] mx-auto px-5 lg:px-0 relative aspect-[1050/1201]">
+      <img src="../assets/img/chico-quitandas/icones/pao-baguete.png"
+           alt="Pão baguete — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:6.02%; top:1.83%; width:30.26%; height:20.87%; --hover-rot:-9deg">
 
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/processo-sketches.jpg"
-         alt="Grade de oito sketches numerados mostrando o processo de criação dos personagens de Luna e o Monstrinho"
-         class="w-full object-cover">
-  </figure>
+      <img src="../assets/img/chico-quitandas/icones/chef.png"
+           alt="Personagem chef — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:70.66%; top:-0.01%; width:22.58%; height:23.6%; --hover-rot:9deg">
 
-  <div class="grid md:grid-cols-2 gap-6">
-    <figure class="rounded-lg overflow-hidden bg-navy/5">
-      <img src="../assets/img/luna-monstrinho/processo-cores.jpg"
-           alt="Etapas de rascunho e aplicação de cores base na ilustração de um personagem de Luna e o Monstrinho"
-           class="w-full h-full object-cover">
-    </figure>
-    <figure class="rounded-lg overflow-hidden bg-navy/5">
-      <img src="../assets/img/luna-monstrinho/processo-render.jpg"
-           alt="Etapas de renderização e finalização de um personagem de Luna e o Monstrinho"
-           class="w-full h-full object-cover">
-    </figure>
-  </div>
+      <img src="../assets/img/chico-quitandas/icones/faca.png"
+           alt="Faca — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:51.94%; top:2.67%; width:16.86%; height:29.44%; --hover-rot:-9deg">
 
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/personagens-cores.jpg"
-         alt="Estudo de personagem de Luna e o Monstrinho em diferentes ângulos, já colorido"
-         class="w-full object-cover">
-  </figure>
+      <img src="../assets/img/chico-quitandas/icones/queijo.png"
+           alt="Queijo — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:29.51%; top:14.91%; width:21.01%; height:15.56%; --hover-rot:9deg">
 
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/personagens-estudo.jpg"
-         alt="Variações de expressão e figurino da personagem Luna, em ilustração colorida"
-         class="w-full object-cover">
-  </figure>
+      <img src="../assets/img/chico-quitandas/icones/selo-postal.png"
+           alt="Selo postal com paisagem mineira — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:74.52%; top:27.26%; width:17.79%; height:15.06%; --hover-rot:-9deg">
 
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/luna-monstrinho/personagens-sketch.jpg"
-         alt="Sketches a lápis do turnaround de personagem de Luna e o Monstrinho"
-         class="w-full object-cover">
-  </figure>
-</section>
+      <img src="../assets/img/chico-quitandas/icones/panela.png"
+           alt="Panela — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:44.59%; top:33.39%; width:25.19%; height:19.72%; --hover-rot:9deg">
 
-<!-- ====== CARROSSEL 2 — livro impresso ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
-  <div data-carousel data-interval="4000">
-    <div class="flex gap-3 lg:gap-4" data-carousel-track>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
-      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
-        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
-      </div>
-    </div>
+      <img src="../assets/img/chico-quitandas/icones/bule.png"
+           alt="Bule — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:2.18%; top:25.11%; width:25.88%; height:21.61%; --hover-rot:-9deg">
 
-    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-square cursor-zoom-in" data-carousel-viewport>
-      <img src="../assets/img/luna-monstrinho/carrossel2-01.jpg"
-           alt="Livro Luna e o Monstrinho impresso sendo segurado na mão, com fundo de plantas"
-           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-           data-carousel-slide>
-      <img src="../assets/img/luna-monstrinho/carrossel2-02.jpg"
-           alt="Página dupla 'Aos pais e responsáveis' do livro impresso, ao lado de uma foto polaroid ilustrada de família"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-           data-carousel-slide>
-      <img src="../assets/img/luna-monstrinho/carrossel2-03.jpg"
-           alt="Página dupla roxa do livro impresso com a personagem Luna emocionada e o Monstrinho ao fundo"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-           data-carousel-slide>
+      <img src="../assets/img/chico-quitandas/icones/batedor.png"
+           alt="Batedor de arame — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:5.45%; top:50.67%; width:18.39%; height:27.31%; --hover-rot:9deg">
 
-      <button type="button"
-              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
-              data-carousel-prev aria-label="Imagem anterior">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button"
-              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
-              data-carousel-next aria-label="Próxima imagem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
+      <img src="../assets/img/chico-quitandas/icones/garfo.png"
+           alt="Garfo — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:23.05%; top:40.69%; width:18.56%; height:25.67%; --hover-rot:-9deg">
+
+      <img src="../assets/img/chico-quitandas/icones/pudim.png"
+           alt="Pudim — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:27.71%; top:59.25%; width:30.64%; height:18.89%; --hover-rot:9deg">
+
+      <img src="../assets/img/chico-quitandas/icones/milho.png"
+           alt="Espiga de milho — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:60.36%; top:52.98%; width:14.17%; height:20.98%; --hover-rot:-9deg">
+
+      <img src="../assets/img/chico-quitandas/icones/chapeu-chef.png"
+           alt="Chapéu de chef — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:42.23%; top:73.95%; width:26.72%; height:24.22%; --hover-rot:9deg">
+
+      <img src="../assets/img/chico-quitandas/icones/cafeteira.png"
+           alt="Cafeteira italiana — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:70.78%; top:74.27%; width:22.46%; height:19.19%; --hover-rot:-9deg">
+
+      <img src="../assets/img/chico-quitandas/icones/luva.png"
+           alt="Luva de forno — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:77.49%; top:46.68%; width:19.82%; height:21.56%; --hover-rot:9deg">
+
+      <img src="../assets/img/chico-quitandas/icones/pao-forma.png"
+           alt="Pão de forma fatiado — ilustração da identidade da Chico Quitandas Mineiras"
+           class="chico-icon absolute object-contain"
+           style="left:14.67%; top:81.69%; width:21.16%; height:16.11%; --hover-rot:-9deg">
   </div>
 </section>
 
@@ -294,11 +333,11 @@ Since children are the main audience, research into their needs and interests sh
 <!-- ====== PRÓXIMO PROJETO ====== -->
 <!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
-  <a href="almanaque-vampirico.html" class="group block">
+  <a href="puket-inverno.html" class="group block">
     <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
-      Almanaque Vampírico →
+      Puket — Coleção de Inverno →
     </span>
   </a>
 </section>
