@@ -1,0 +1,228 @@
+<!--
+  ============================================================
+  CATÁLOGO DE BLOCOS — case de projeto
+  ============================================================
+
+  Este arquivo não é uma página: é uma prateleira. Copie os blocos que o projeto pedir
+  para dentro da área <!-- MIOLO --> da pagina-base.html, na ordem que fizer sentido.
+
+  Convenções em todos os blocos:
+  - [slug]       → pasta do projeto em assets/img/
+  - {{ACENTO}}   → roxo | magenta | laranja (a cor do case, sempre a mesma na página)
+  - Imagem que ainda não chegou: mantenha o caminho final, escreva o alt do jeito que
+    vai ficar e marque com <!-- IMG PENDENTE: o que falta -->
+  - Espaçamento entre blocos: pb-16 lg:pb-24. O primeiro bloco depois da ficha não
+    precisa de padding-top, porque a ficha já fecha com pb-20.
+-->
+
+
+<!-- ============================================================
+     1. IMAGEM ÚNICA, LARGURA DO CONTAINER
+     Para a capa do projeto ou um mockup que vale sozinho.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <!-- IMG PENDENTE: mockup principal do projeto -->
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/[slug]/capa.jpg"
+         alt="Descreva a peça, os elementos e o estilo que aparecem na imagem"
+         class="w-full object-cover">
+  </figure>
+</section>
+
+
+<!-- ============================================================
+     2. IMAGEM COM LEGENDA
+     Quando a imagem precisa de uma frase explicando a decisão de projeto.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <figure>
+    <div class="rounded-lg overflow-hidden bg-navy/5">
+      <img src="../assets/img/[slug]/nome.jpg"
+           alt="Descreva o que aparece na imagem"
+           class="w-full h-auto object-contain">
+    </div>
+    <figcaption class="mt-3 text-sm opacity-60"
+                data-pt="A decisão de projeto que esta imagem mostra."
+                data-en="The design decision this image shows."></figcaption>
+  </figure>
+</section>
+
+
+<!-- ============================================================
+     3. IMAGENS EMPILHADAS
+     Duas ou mais pranchas em sequência, com respiro grande entre elas.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-16 lg:gap-24">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/[slug]/paleta.jpg" alt="Descreva a prancha" class="w-full object-cover">
+  </figure>
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/[slug]/sketches.jpg" alt="Descreva a prancha" class="w-full object-cover">
+  </figure>
+</section>
+
+
+<!-- ============================================================
+     4. DUAS IMAGENS LADO A LADO
+     Comparação: antes/depois, duas etapas, duas variações.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div class="grid md:grid-cols-2 gap-6">
+    <figure class="rounded-lg overflow-hidden bg-navy/5">
+      <img src="../assets/img/[slug]/etapa-01.jpg" alt="Descreva a primeira etapa" class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5">
+      <img src="../assets/img/[slug]/etapa-02.jpg" alt="Descreva a segunda etapa" class="w-full h-full object-cover">
+    </figure>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. TÍTULO + TEXTO + IMAGEM
+     A seção explicativa padrão: logotipo, tipografia, processo, ilustrações.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <h2 class="font-black text-3xl lg:text-section tracking-tighter"
+      data-pt="Logotipo" data-en="Logo"></h2>
+  <p class="mt-6 max-w-[70ch] text-lg leading-relaxed"
+     data-pt="O que sustenta essa decisão de projeto — a referência, o problema, a escolha."
+     data-en="What backs this design decision — the reference, the problem, the choice."></p>
+
+  <figure class="mt-10 rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/[slug]/nome.jpg"
+         alt="Descreva o que aparece na imagem"
+         class="w-full object-cover">
+  </figure>
+</section>
+
+
+<!-- ============================================================
+     6. CARROSSEL
+     Barra de progresso tipo stories, setas e clique para ampliar.
+     REGRA: o número de barras (data-carousel-segment) tem que ser igual ao número de
+     slides (data-carousel-slide). Ajuste o aspect-[] ao formato real das imagens.
+     O primeiro slide NÃO tem opacity-0; todos os outros têm.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4000">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-{{ACENTO}}/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-{{ACENTO}} rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-{{ACENTO}}/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-{{ACENTO}} rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-{{ACENTO}}/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-{{ACENTO}} rounded-full" data-carousel-fill></div>
+      </div>
+    </div>
+
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/[slug]/carrossel-01.jpg"
+           alt="Descreva a primeira imagem"
+           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/[slug]/carrossel-02.jpg"
+           alt="Descreva a segunda imagem"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img src="../assets/img/[slug]/carrossel-03.jpg"
+           alt="Descreva a terceira imagem"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!--
+  Variação: um slide com DUAS imagens lado a lado (capa + contracapa, página dupla).
+  Troque um <img data-carousel-slide> por este <div> — o lightbox abre as duas juntas.
+-->
+<div class="absolute inset-0 flex gap-0.5 transition-opacity duration-700" data-carousel-slide>
+  <img src="../assets/img/[slug]/capa.jpg" alt="Descreva a capa" class="w-1/2 h-full object-cover">
+  <img src="../assets/img/[slug]/contracapa.jpg" alt="Descreva a contracapa" class="w-1/2 h-full object-cover">
+</div>
+
+
+<!-- ============================================================
+     7. SEÇÃO EM FUNDO NAVY
+     Quebra o creme no meio da página. Boa para prancha de tipografia ou paleta com
+     fundo transparente, e para dar respiro entre blocos claros.
+     ============================================================ -->
+<section class="bg-navy py-12 lg:py-16">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <figure>
+      <img src="../assets/img/[slug]/tipografia.png"
+           alt="Descreva a prancha, incluindo os nomes das fontes e para que cada uma serve"
+           class="w-full h-auto object-contain">
+    </figure>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     8. PRANCHA EM FUNDO BRANCO
+     Para imagem que já vem com fundo branco (paleta, tipografia exportada do Figma).
+     O card branco faz o bloco ler como prancha, e não como retângulo acidental no creme.
+     ============================================================ -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
+  <figure class="bg-white rounded-lg overflow-hidden">
+    <img src="../assets/img/[slug]/paleta.png"
+         alt="Paleta da marca, com os valores de RGB, CMYK e HEX de cada cor"
+         class="w-full h-auto object-contain">
+  </figure>
+</section>
+
+
+<!-- ============================================================
+     9. COLAGEM DE ÍCONES SOLTOS
+     Ilustrações espalhadas em posições livres, cada uma girando no hover.
+     As posições vêm em % do Figma: left/top/width/height do nó dividido pelo tamanho
+     do frame. O aspect-[] do container é o do frame original (largura/altura).
+
+     Precisa também deste CSS no <style> da página:
+
+       .icone-solto { transition: transform 300ms ease; cursor: default; }
+       .icone-solto:hover { transform: rotate(var(--hover-rot)) scale(1.06); }
+       @media (prefers-reduced-motion: reduce) { .icone-solto { transition: none; } }
+     ============================================================ -->
+<section class="bg-navy py-12 lg:py-16">
+  <div class="max-w-[1050px] mx-auto px-5 lg:px-0 relative aspect-[1050/1201]">
+    <img src="../assets/img/[slug]/icones/nome.png"
+         alt="Descreva a ilustração"
+         class="icone-solto absolute object-contain"
+         style="left:6.02%; top:1.83%; width:30.26%; height:20.87%; --hover-rot:-9deg">
+
+    <img src="../assets/img/[slug]/icones/outro.png"
+         alt="Descreva a ilustração"
+         class="icone-solto absolute object-contain"
+         style="left:70.66%; top:0%; width:22.58%; height:23.6%; --hover-rot:9deg">
+    <!-- alterne --hover-rot entre -9deg e 9deg para a colagem não girar toda pro mesmo lado -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     10. CRÉDITOS E LINK EXTERNO
+     Vai logo depois do resumo, dentro da seção TÍTULO. Para orientação acadêmica,
+     equipe, premiação, ou link para o relatório/publicação.
+     ============================================================ -->
+  <p class="mt-6 text-sm opacity-60 max-w-[70ch]"
+     data-pt="Orientação: Nome · Banca: Nome e Nome · Aprovado e indicado ao repositório."
+     data-en="Advisor: Name · Committee: Name and Name · Approved and nominated for the repository."></p>
+
+  <a href="https://exemplo.com" target="_blank" rel="noopener noreferrer"
+     class="mt-3 inline-block text-sm font-semibold underline hover:text-{{ACENTO}} transition-colors"
+     data-pt="Leia o relatório completo" data-en="Read the full report"></a>
