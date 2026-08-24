@@ -1,4 +1,5 @@
 .DS_Store
 node_modules/
 *.log
-.claude/
+.claude/settings.local.json
+_to_delete/
