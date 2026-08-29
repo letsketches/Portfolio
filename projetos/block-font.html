@@ -25,6 +25,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Lenis: smooth scroll em toda a página. https://github.com/darkroomengineering/lenis -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
   <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
   <style type="text/tailwindcss">
     @theme {
@@ -242,6 +246,18 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
   </button>
   <div id="lightbox-content" class="flex gap-0.5 max-w-full max-h-full"></div>
 </div>
+
+<!-- Lenis: smooth scroll. Igual em todas as páginas. Não editar. -->
+<script>
+  new Lenis({
+    autoRaf: true,
+    autoToggle: true,
+    anchors: true,
+    allowNestedScroll: true,
+    naiveDimensions: true,
+    stopInertiaOnNavigate: true,
+  });
+</script>
 
 <!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
 <script>
