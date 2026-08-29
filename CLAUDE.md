@@ -9,9 +9,9 @@ Dois públicos: cliente de ilustração/identidade visual **e** recrutador de de
 ## Estrutura de arquivos
 
 ```
-index.html              home
-projetos.html           grid completo com filtro
+index.html              home, com a grade de projetos
 sobre.html              bio, experiência, clientes
+contato.html            formulário de contato
 projetos/_template.html template de case
 projetos/[slug].html    um por projeto
 assets/img/             imagens dos projetos

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>13º Prêmio Regional de Excelência Gráfica — Letícia Garcia</title>
+  <meta name="description" content="Cartaz do 13º Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube, da ABIGRAF Bauru: formas orgânicas, cores vibrantes e tipografia moderna.">
+  <link rel="icon" href="../assets/brand/avatar-let.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/brand/avatar-let.svg">
+
+  <!-- Compartilhamento. URL absoluta é obrigatória: trocar SEU-DOMINIO depois do deploy. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Letícia Garcia — Let Design">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://SEU-DOMINIO/projetos/premio-excelencia.html">
+  <meta property="og:title" content="13º Prêmio Regional de Excelência Gráfica — Letícia Garcia">
+  <meta property="og:description" content="Cartaz do 13º Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube, da ABIGRAF Bauru: formas orgânicas, cores vibrantes e tipografia moderna.">
+  <meta property="og:image" content="https://SEU-DOMINIO/assets/img/premio-excelencia/capa.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* faixa rolante do @letsketches — duas cópias idênticas fecham o loop */
+    @keyframes faixa {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .animate-faixa { animation: faixa 30s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-faixa { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== FAIXA DE GRADIENTE ====== -->
+<!-- Fio de 24px no topo, com as cores da marca. -->
+<div class="h-6 w-full bg-gradient-to-r from-magenta via-laranja to-roxo" aria-hidden="true"></div>
+
+<!-- ====== HEADER ====== -->
+<!-- Igual em todos os cases. Não editar. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
+  <a href="../index.html" class="shrink-0">
+    <img src="../assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
+         class="h-8 lg:h-[76px] w-auto">
+  </a>
+
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+    <a href="../sobre.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="../contato.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Contato" data-en="Contact"></a>
+
+    <button id="lang-toggle"
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
+      EN
+    </button>
+  </nav>
+</header>
+
+<!-- ====== TÍTULO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
+  <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
+        data-pt="Design + Ilustração" data-en="Design + Illustration"></span>
+
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">13º Prêmio Regional de Excelência Gráfica</h1>
+
+  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+     data-pt="Cartaz desenvolvido para o 13° Concurso do Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube realizado pela ABIGRAF Bauru.
+O prêmio foi criado para reconhecer os melhores trabalhos da indústria gráfica de Bauru e região e homenagear Vinicius Viotto Coube, este que deixou grande legado para o mercado gráfico regional.
+Conceito: O projeto foi desenvolvido focando nas formas orgânicas, cores vibrantes e na representação do avanço das artes gráficas e nos diferentes caminhos que ela pode seguir. Explorando fontes modernas, formas presentes em programas de editor de imagens vetoriais e elementos lúdicos para trazer personalidade e contraste."
+     data-en="Poster developed for the 13th Vinícius Viotto Coube Regional Graphic Excellence Award Competition held by ABIGRAF Bauru.
+The award was created to consider the best works in the graphics industry in Bauru and the region and to honor Vinicius Viotto Coube, who left a great legacy for the regional graphics market.
+Concept: The project was developed focusing on organic shapes, vibrant cores and the representation of the advancement of graphic arts and the different paths it can follow. Exploring modern fonts, shapes present in geometric image editor programs and playful elements to bring personality and contrast."></p>
+
+  <p class="mt-6 text-sm opacity-60 max-w-[70ch]"
+     data-pt="Orientação: Professora Cássia Carrara"
+     data-en="Advisor: Professor Cássia Carrara"></p>
+
+  <a href="https://www.behance.net/gallery/199706545/13-Premio-Regional-de-Excelencia-Grafica"
+     target="_blank" rel="noopener noreferrer"
+     class="mt-3 inline-block text-sm font-semibold underline hover:text-laranja transition-colors"
+     data-pt="Ver o projeto no Behance" data-en="See the project on Behance"></a>
+</section>
+
+<!-- ====== FICHA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dd class="mt-2 font-semibold">2024</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dd class="mt-2 font-semibold"
+          data-pt="Ilustração, direção artística e design gráfico"
+          data-en="Illustration, art direction and graphic design"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dd class="mt-2 font-semibold">Illustrator, Photoshop</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ====== DETALHE DO CARTAZ ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img src="../assets/img/premio-excelencia/cartaz-detalhe-magenta.jpg"
+         alt="Detalhe do cartaz preso numa parede magenta, com a barra de papel enrolando na base: linhas orgânicas pretas, formas em amarelo, azul e rosa e uma estrela laranja"
+         class="w-full object-cover">
+  </figure>
+</section>
+
+<!-- ====== CARTAZ EM DUAS APLICAÇÕES ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div class="grid md:grid-cols-2 gap-6">
+    <figure class="rounded-lg overflow-hidden bg-navy/5">
+      <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-mockup-verde.jpg"
+           alt="Cartaz impresso apoiado de viés sobre fundo verde, com a composição inteira visível e o título “13º Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube” no rodapé"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5">
+      <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-detalhe-amarelo.jpg"
+           alt="Close do cartaz enrolando sobre fundo amarelo, mostrando de perto a bota azul, o zigue-zague amarelo e a seta verde da ilustração"
+           class="w-full h-full object-cover">
+    </figure>
+  </div>
+</section>
+
+<!-- ====== CARTAZ COMPLETO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <figure class="rounded-lg overflow-hidden bg-navy/5">
+    <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-azul.jpg"
+         alt="Cartaz inteiro sobre fundo azul: o número 13 desenhado em linha contínua no centro, cercado de setas, estrelas, mãos e botas coloridas, com o título do prêmio embaixo"
+         class="w-full object-cover">
+  </figure>
+</section>
+
+<!-- ====== FAIXA @LETSKETCHES ====== -->
+<!-- Duas cópias com 10 itens cada. As metades precisam ser idênticas: a animação
+     anda -50%, então qualquer diferença faz o loop dar um salto. Não editar. -->
+<div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
+
+<!-- ====== PRÓXIMO PROJETO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
+  <a href="luna-monstrinho.html" class="group block">
+    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+          data-pt="Próximo projeto" data-en="Next project"></span>
+    <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
+      Luna e o Monstrinho →
+    </span>
+  </a>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<!-- ====== LIGHTBOX ====== -->
+<!-- Overlay compartilhado por todos os carrosséis da página. Não editar.
+     Pode ficar mesmo que a página não tenha carrossel. -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/95 p-4 lg:p-10" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button type="button" id="lightbox-close"
+          class="absolute top-4 right-4 lg:top-8 lg:right-8 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-creme/10 text-creme hover:bg-creme/20 transition-colors"
+          aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div id="lightbox-content" class="flex gap-0.5 max-w-full max-h-full"></div>
+</div>
+
+<!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+    btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
+    apply(lang);
+  })();
+</script>
+
+<!-- Carrossel de imagens: barra de progresso tipo stories, setas e clique pra ampliar.
+     Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- lightbox compartilhado ----
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxClose = document.getElementById('lightbox-close');
+    let onLightboxClose = null;
+
+    function openLightbox(slide, onClose) {
+      if (!lightbox) return;
+      lightboxContent.innerHTML = '';
+      const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.currentSrc || img.src;
+        clone.alt = img.alt;
+        clone.className = 'max-h-[85vh] max-w-full object-contain';
+        lightboxContent.appendChild(clone);
+      });
+      onLightboxClose = onClose || null;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox || lightbox.classList.contains('hidden')) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+      if (onLightboxClose) { onLightboxClose(); onLightboxClose = null; }
+    }
+
+    if (lightbox) {
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    }
+
+    // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      const fills = Array.from(carousel.querySelectorAll('[data-carousel-fill]'));
+      const viewport = carousel.querySelector('[data-carousel-viewport]');
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      const duration = Number(carousel.dataset.interval) || 4000;
+      if (slides.length < 2) return;
+
+      let index = 0;
+      let elapsed = 0;
+      let lastTime = null;
+      let playing = !reduceMotion;
+
+      function render() {
+        slides.forEach((slide, n) => { slide.style.opacity = n === index ? '1' : '0'; });
+        fills.forEach((fill, n) => {
+          if (n < index) fill.style.width = '100%';
+          else if (n > index) fill.style.width = '0%';
+          else fill.style.width = (reduceMotion || !playing) ? '100%' : `${(elapsed / duration) * 100}%`;
+        });
+      }
+
+      function goTo(next) {
+        index = (next + slides.length) % slides.length;
+        elapsed = 0;
+        render();
+      }
+
+      function frame(time) {
+        if (lastTime === null) lastTime = time;
+        const delta = time - lastTime;
+        lastTime = time;
+        if (playing) {
+          elapsed += delta;
+          if (elapsed >= duration) {
+            goTo(index + 1);
+          } else {
+            fills[index].style.width = `${(elapsed / duration) * 100}%`;
+          }
+        }
+        requestAnimationFrame(frame);
+      }
+
+      render();
+      if (!reduceMotion) requestAnimationFrame(frame);
+
+      carousel.addEventListener('mouseenter', () => { playing = false; });
+      carousel.addEventListener('mouseleave', () => { playing = !reduceMotion; lastTime = null; });
+
+      prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index - 1); });
+      nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index + 1); });
+
+      viewport?.addEventListener('click', (e) => {
+        if (e.target.closest('[data-carousel-prev],[data-carousel-next]')) return;
+        playing = false;
+        openLightbox(slides[index], () => { playing = !reduceMotion; lastTime = null; });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
