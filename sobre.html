@@ -84,30 +84,30 @@
 <header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
   <a href="index.html" class="shrink-0">
     <img src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
-         class="h-8 lg:h-[76px] w-auto">
+         class="h-8 min-[360px]:h-10 lg:h-[76px] w-auto">
   </a>
 
-  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] min-[360px]:text-xs lg:text-base tracking-tight uppercase">
     <a href="sobre.html" aria-current="page"
-       class="border-2 border-magenta text-magenta rounded-full px-2 lg:px-4 py-1 lg:py-1.5"
+       class="border-2 border-magenta text-magenta rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5"
        data-pt="Sobre" data-en="About"></a>
     <a href="contato.html"
-       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       class="border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Contato" data-en="Contact"></a>
 
     <button id="lang-toggle"
-            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors">
       EN
     </button>
   </nav>
 </header>
 
 <!-- ====== BIO ====== -->
-<section class="bg-navy text-creme py-16 lg:py-24">
+<section class="bg-navy text-creme py-16 lg:py-24 overflow-hidden">
   <div class="max-w-[1280px] mx-auto px-5 lg:px-20 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
 
     <!-- vídeo em arco: topo totalmente arredondado, base reta -->
-    <div class="relative mx-auto md:mx-0 w-full max-w-[420px] md:max-w-none pl-10 lg:pl-16">
+    <div class="relative mx-auto md:mx-0 w-full max-w-[420px] md:max-w-none md:pl-10 lg:pl-16">
       <img src="assets/stickers/explosao-magenta.svg" alt="" aria-hidden="true"
            class="pointer-events-none absolute left-0 top-8 w-40 lg:w-56 -translate-x-1/3">
       <div class="relative aspect-[2/3] rounded-t-full overflow-hidden bg-creme/10">
@@ -160,7 +160,7 @@
      com uma amplitude própria — os de cima reagem mais que os de baixo, o que dá
      a sensação de profundidade. Sem mouse ou com "reduzir movimento", ficam parados. -->
 <section id="avatares" class="bg-amarelo py-9 overflow-hidden relative">
-  <div class="max-w-[1280px] mx-auto h-[200px] sm:h-[240px] lg:h-[278px] relative">
+  <div class="max-w-[1280px] mx-auto aspect-[1280/278] relative">
     <img loading="lazy" decoding="async" src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="26" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:1.95%; top:19.78%">
     <img loading="lazy" decoding="async" src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="44" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:21.25%; top:6.12%">
     <img loading="lazy" decoding="async" src="assets/brand/avatar-let.svg" alt="" aria-hidden="true" data-amp="18" class="avatar-flutua absolute w-[17.4%] max-w-[223px]" style="left:41.09%; top:19.78%">
@@ -183,7 +183,7 @@
      data-pt="Bora criar algo incrível juntos" data-en="Let's create something amazing together"></p>
 
   <a href="mailto:let_garcia10@hotmail.com"
-     class="block mt-6 font-black text-3xl lg:text-title tracking-tighter break-all hover:text-magenta transition-colors">
+     class="block mt-6 font-black text-[7vw] sm:text-3xl lg:text-title tracking-tighter whitespace-nowrap hover:text-magenta transition-colors">
     let_garcia10@hotmail.com
   </a>
 

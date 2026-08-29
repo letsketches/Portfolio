@@ -85,19 +85,19 @@
 <header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
   <a href="index.html" class="shrink-0">
     <img src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
-         class="h-8 lg:h-[76px] w-auto">
+         class="h-8 min-[360px]:h-10 lg:h-[76px] w-auto">
   </a>
 
-  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] min-[360px]:text-xs lg:text-base tracking-tight uppercase">
     <a href="sobre.html"
-       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       class="border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Sobre" data-en="About"></a>
     <a href="contato.html"
-       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       class="border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Contato" data-en="Contact"></a>
 
     <button id="lang-toggle"
-            class="shrink-0 font-black border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors">
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors">
       EN
     </button>
   </nav>
@@ -152,11 +152,14 @@
 <!-- TODO Letícia: confirmar o ano de Almanaque e Puket (estavam como 2026). -->
 <!-- TODO Letícia: sem ano confirmado — Marca Let, Prêmio Excelência, Block Font, dr.consulta, Sanavita, Negra Rosa, Iamaní, Minu. -->
 <section id="trabalhos" class="relative overflow-hidden pt-12 lg:pt-16 pb-20 lg:pb-28">
-  <!-- estrelas decorativas atrás da grade, sangrando pelas laterais -->
+  <!-- Estrelas decorativas atrás da grade, sangrando pelas laterais.
+       Só de sm pra cima: abaixo disso a grade vira uma coluna só e o texto do card
+       fica sobre o creme, então uma estrela em -z-10 apareceria atrás do texto.
+       No mobile quem faz esse papel são as duas estrelas presas à imagem dos cards. -->
   <img loading="lazy" decoding="async" src="assets/stickers/explosao-amarelo.svg" alt="" aria-hidden="true"
-       class="pointer-events-none absolute -left-40 lg:-left-48 top-[20%] w-80 lg:w-[620px] -z-10">
+       class="pointer-events-none hidden sm:block absolute -left-40 lg:-left-48 top-[20%] w-80 lg:w-[620px] -z-10">
   <img loading="lazy" decoding="async" src="assets/stickers/explosao-roxo.svg" alt="" aria-hidden="true"
-       class="pointer-events-none absolute -right-32 lg:-right-24 top-[70%] w-80 lg:w-[620px] -z-10">
+       class="pointer-events-none hidden sm:block absolute -right-32 lg:-right-24 top-[70%] w-80 lg:w-[620px] -z-10">
   <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
   <!-- some só quando um filtro de Design/Ilustração está ativo -->
   <button type="button" id="trabalhos-reset"
@@ -181,7 +184,10 @@
     </a>
 
     <a href="projetos/almanaque-vampirico.html" data-tags="design ilustracao" class="group relative block">
-      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+      <!-- só no mobile: encosta na imagem, nunca na faixa de texto abaixo dela -->
+      <img loading="lazy" decoding="async" src="assets/stickers/explosao-amarelo.svg" alt="" aria-hidden="true"
+           class="pointer-events-none sm:hidden absolute -left-10 top-16 w-32">
+      <div class="relative aspect-[4/5] overflow-hidden bg-navy/5">
         <img loading="lazy" decoding="async" src="assets/img/almanaque-vampirico/capa.jpg"
              alt="Almanaque Vampírico — ilustrações e diagramação de almanaque de temática vampiresca"
              class="w-full h-full object-cover">
@@ -293,7 +299,10 @@
     </a>
 
     <a href="projetos/calendario-frutas.html" data-tags="ilustracao" class="group relative block">
-      <div class="aspect-[4/5] overflow-hidden bg-navy/5">
+      <!-- só no mobile: encosta na imagem, nunca na faixa de texto abaixo dela -->
+      <img loading="lazy" decoding="async" src="assets/stickers/explosao-roxo.svg" alt="" aria-hidden="true"
+           class="pointer-events-none sm:hidden absolute -right-10 top-24 w-32">
+      <div class="relative aspect-[4/5] overflow-hidden bg-navy/5">
         <img loading="lazy" decoding="async" src="assets/img/calendario-frutas/capa.webp"
              alt="Calendário 2025 — ilustrações de frutas brasileiras com mulheres compondo a cena"
              class="w-full h-full object-cover">
@@ -414,7 +423,7 @@
      data-pt="Bora criar algo juntos" data-en="Let's create something together"></p>
 
   <a href="mailto:let_garcia10@hotmail.com"
-     class="block mt-6 font-black text-3xl lg:text-title tracking-tighter break-all hover:text-magenta transition-colors">
+     class="block mt-6 font-black text-[7vw] sm:text-3xl lg:text-title tracking-tighter whitespace-nowrap hover:text-magenta transition-colors">
     let_garcia10@hotmail.com
   </a>
 
