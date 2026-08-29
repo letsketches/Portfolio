@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 
+  <!-- canvas-confetti: comemoração ao enviar o formulário de contato. https://github.com/catdad/canvas-confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.browser.min.js"></script>
+
   <style type="text/tailwindcss">
     @theme {
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
@@ -376,6 +379,37 @@
       return ok ? v : null;
     }
 
+    // ao corrigir, o erro some
+    ['nome','email','assunto','mensagem'].forEach(c => {
+      document.getElementById(c).addEventListener('input', () => {
+        if (document.getElementById(c).classList.contains('campo-erro')) validar();
+      });
+    });
+
+    // confete ao enviar: quem prefere menos movimento não vê a animação
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function confete() {
+      if (reduceMotion || typeof confetti !== 'function') return;
+
+      const defaults = {
+        spread: 360,
+        ticks: 50,
+        gravity: 0,
+        decay: 0.94,
+        startVelocity: 30,
+        colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
+      };
+
+      function shoot() {
+        confetti({ ...defaults, particleCount: 40, scalar: 1.2, shapes: ['star'] });
+        confetti({ ...defaults, particleCount: 10, scalar: 0.75, shapes: ['circle'] });
+      }
+
+      setTimeout(shoot, 0);
+      setTimeout(shoot, 100);
+      setTimeout(shoot, 200);
+    }
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const v = validar();
@@ -383,17 +417,12 @@
         form.querySelector('.campo-erro')?.focus();
         return;
       }
+      confete();
       const corpo = `${v.mensagem}\n\n—\n${v.nome}\n${v.email}`;
       const link = 'mailto:' + DESTINO
                  + '?subject=' + encodeURIComponent(v.assunto)
                  + '&body=' + encodeURIComponent(corpo);
       window.location.href = link;
-
-    // ao corrigir, o erro some
-    ['nome','email','assunto','mensagem'].forEach(c => {
-      document.getElementById(c).addEventListener('input', () => {
-        if (document.getElementById(c).classList.contains('campo-erro')) validar();
-      });
     });
   })();
 </script>
