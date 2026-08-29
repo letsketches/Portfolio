@@ -57,6 +57,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Lenis: smooth scroll em toda a página. https://github.com/darkroomengineering/lenis -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
   <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
   <style type="text/tailwindcss">
     @theme {
@@ -260,6 +264,18 @@
 </div>
 
 <!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
+<!-- Lenis: smooth scroll. Igual em todas as páginas. Não editar. -->
+<script>
+  new Lenis({
+    autoRaf: true,
+    autoToggle: true,
+    anchors: true,
+    allowNestedScroll: true,
+    naiveDimensions: true,
+    stopInertiaOnNavigate: true,
+  });
+</script>
+
 <script>
   (function () {
     const btn = document.getElementById('lang-toggle');

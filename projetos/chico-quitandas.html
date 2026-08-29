@@ -26,6 +26,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Lenis: smooth scroll em toda a página. https://github.com/darkroomengineering/lenis -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
   <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
   <style type="text/tailwindcss">
     @theme {
@@ -235,20 +239,6 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
   </figure>
 </section>
 
-<!-- ====== TIPOGRAFIA ====== -->
-<!-- Prancha original do projeto: mostra a 1Rial CT e a Poppins desenhadas de verdade,
-     o que a página não conseguiria reproduzir só com a fonte do site. Fundo no mesmo
-     tom escuro da seção de ilustrações — a prancha em si tem fundo transparente. -->
-<section class="bg-navy py-12 lg:py-16">
-  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
-    <figure>
-      <img loading="lazy" decoding="async" src="../assets/img/chico-quitandas/tipografia.png"
-           alt="Prancha de tipografia da marca. Tipografia 1, de destaque: 1Rial CT Regular, usada em títulos grandes por ser chamativa e complementar a estética da marca. Tipografia 2, de legibilidade: Poppins, para textos corridos. Cada uma acompanhada do alfabeto completo e dos numerais."
-           class="w-full h-auto object-contain">
-    </figure>
-  </div>
-</section>
-
 <!-- ====== ILUSTRAÇÕES ====== -->
 <!-- Colagem de ícones soltos, posições e rotações vindas do Figma. Cada um gira ao passar o mouse. -->
 <section class="bg-navy py-12 lg:py-16">
@@ -375,6 +365,18 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
 </div>
 
 <!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
+<!-- Lenis: smooth scroll. Igual em todas as páginas. Não editar. -->
+<script>
+  new Lenis({
+    autoRaf: true,
+    autoToggle: true,
+    anchors: true,
+    allowNestedScroll: true,
+    naiveDimensions: true,
+    stopInertiaOnNavigate: true,
+  });
+</script>
+
 <script>
   (function () {
     const btn = document.getElementById('lang-toggle');

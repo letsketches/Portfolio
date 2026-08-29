@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AURA - revista — Letícia Garcia</title>
-  <meta name="description" content="Revista editorial que documenta a cultura dos brechós em Bauru-SP: consumo consciente, moda de segunda mão, inclusão e sustentabilidade.">
+  <title>ILUMAC — Letícia Garcia</title>
+  <meta name="description" content="Catálogo de feira, brandbook, brindes, banners e campanha Super Mês do Consumidor para a ILUMAC, fabricante de sistemas de detecção e alarme de incêndio.">
   <link rel="icon" href="../assets/brand/avatar-let.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/brand/avatar-let.svg">
 
@@ -13,10 +13,10 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Letícia Garcia — Let Design">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:url" content="https://SEU-DOMINIO/projetos/revista-aura.html">
-  <meta property="og:title" content="AURA - revista — Letícia Garcia">
-  <meta property="og:description" content="Revista editorial que documenta a cultura dos brechós em Bauru-SP: consumo consciente, moda de segunda mão, inclusão e sustentabilidade.">
-  <meta property="og:image" content="https://SEU-DOMINIO/assets/img/revista-aura/capa.jpg">
+  <meta property="og:url" content="https://SEU-DOMINIO/projetos/ilumac.html">
+  <meta property="og:title" content="ILUMAC — Letícia Garcia">
+  <meta property="og:description" content="Catálogo de feira, brandbook, brindes, banners e campanha Super Mês do Consumidor para a ILUMAC, fabricante de sistemas de detecção e alarme de incêndio.">
+  <meta property="og:image" content="https://SEU-DOMINIO/assets/img/ilumac/capa.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +55,11 @@
     @media (prefers-reduced-motion: reduce) {
       .animate-faixa { animation: none; }
     }
+
+    /* colagem de ícones da campanha: cada ilustração gira um pouco no hover */
+    .icone-solto { transition: transform 300ms ease; cursor: default; }
+    .icone-solto:hover { transform: rotate(var(--hover-rot)) scale(1.06); }
+    @media (prefers-reduced-motion: reduce) { .icone-solto { transition: none; } }
   </style>
 </head>
 
@@ -73,10 +78,13 @@
   </a>
 
   <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] lg:text-base tracking-tight uppercase">
+    <a href="../projetos.html"
+       class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Trabalhos" data-en="Work"></a>
     <a href="../sobre.html"
        class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Sobre" data-en="About"></a>
-    <a href="../contato.html"
+    <a href="../index.html#contato"
        class="border-2 border-navy rounded-full px-2 lg:px-4 py-1 lg:py-1.5 hover:bg-navy hover:text-creme transition-colors"
        data-pt="Contato" data-en="Contact"></a>
 
@@ -88,21 +96,20 @@
 </header>
 
 <!-- ====== TÍTULO ====== -->
-<!-- A categoria usa a cor de acento do case: roxo (Design), magenta (Ilustração),
-     laranja (Design + Ilustração). Se a categoria for só "Design", ela é igual nos dois
-     idiomas — nesse caso troque o span por texto solto, sem data-pt. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
   <span class="font-semibold text-sm uppercase tracking-tight text-roxo">Design</span>
 
-  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">AURA - revista</h1>
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">ILUMAC</h1>
 
   <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
-     data-pt="Trabalho da faculdade de 2023 com Bárbara, Letícia e Luisa.
-
-Aura — o projeto tem como objetivo documentar a cultura dos brechós na cidade de Bauru-SP, abordando temas como solidariedade, inclusão social e cidadania. Promove o diálogo sobre consumismo, sustentabilidade, diversidade e acessibilidade na moda, incentivando o uso de roupas de segunda mão, doações e um consumo mais consciente."
-     data-en="A university project from 2023, made with Bárbara, Letícia and Luisa.
-
-Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity, social inclusion and citizenship. It opens a conversation about consumerism, sustainability, diversity and accessibility in fashion, making the case for second-hand clothes, donations and more conscious consumption."></p>
+     data-pt="Em 2024 atuei como designer na empresa ILUMAC desenvolvendo diversos materiais para a marca, entre eles um modelo de catálogo digital e impresso feito para ser apresentado em feiras e para diversos clientes. Nele estão presentes descrições de equipamentos de detecção e alarmes de incêndio próprios da marca e explica os seus diferenciais dos demais equipamentos presentes no mercado.
+O brandbook da marca foi atualizado com novas cores, elementos gráficos e tipografias, com ele foi possível manter um padrão visual para diversos materiais impressos como manuais, calendários, folders, além de materiais digitais como posts para redes sociais e assinaturas de e-mail.
+Foram produzidos também banners, totens e brindes para eventos como PrevWeekend e FEICON. Entre os brindes personalizados foram feitos: uma bolsa com balde de pipoca, copo e meia para os convidados do evento, além de ganharem uma caixa com um kit especial com vários petiscos e uma vela aromática para recordação.
+Para o mês de março foi desenvolvida uma campanha chamada: Super mês do consumidor, anunciando descontos em vários equipamentos da marca e com um visual único para a campanha, utilizando uma estética mais cartoon com ilustrações de mãos, notas e moedas personalizadas."
+     data-en="In 2024 I worked as a designer at ILUMAC, developing a range of material for the brand, among it a digital and printed catalogue model made to be presented at trade shows and to a variety of clients. It carries descriptions of the brand's own fire detection and alarm equipment and explains what sets it apart from other equipment on the market.
+The brand book was updated with new colours, graphic elements and typefaces; with it, it became possible to keep a consistent visual standard across printed material such as manuals, calendars and folders, as well as digital material such as social media posts and e-mail signatures.
+Banners, totems and merchandise were also produced for events such as PrevWeekend and FEICON. The custom merchandise included a tote with a popcorn bucket, a cup and socks for the event guests, who also received a box with a special kit of snacks and a scented candle as a keepsake.
+For the month of March a campaign was developed, called Super mês do consumidor, announcing discounts on several of the brand's products and with a look of its own, using a more cartoon-like aesthetic with custom illustrations of hands, banknotes and coins."></p>
 </section>
 
 <!-- ====== FICHA ====== -->
@@ -110,7 +117,7 @@ Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
-      <dd class="mt-2 font-semibold">2023</dd>
+      <dd class="mt-2 font-semibold">2024</dd>
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
@@ -120,21 +127,21 @@ Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity
     </div>
     <div>
       <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
-      <dd class="mt-2 font-semibold">Photoshop, Illustrator, InDesign</dd>
+      <dd class="mt-2 font-semibold">Photoshop, Illustrator, Indesign</dd>
     </div>
   </dl>
 </section>
 
-<!-- ====== CAPA ABERTA ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-12 lg:pt-16 pb-16 lg:pb-24">
+<!-- ====== BANNER DA MARCA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-14">
   <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/revista-aura/capa-aberta.png"
-         alt="Arte plana da capa da revista AURA com frente e lombada"
-         class="w-full h-auto object-contain">
+    <img src="../assets/img/ilumac/marca-banner.png"
+         alt="Faixa vermelha com o logotipo ILUMAC em branco ao centro, sobre blocos geométricos em relevo e linhas de contorno finas"
+         class="w-full object-cover">
   </figure>
 </section>
 
-<!-- ====== CARROSSEL — páginas e aplicações ====== -->
+<!-- ====== CARROSSEL ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <div data-carousel data-interval="4000">
     <div class="flex gap-3 lg:gap-4" data-carousel-track>
@@ -155,25 +162,45 @@ Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity
       </div>
     </div>
 
-    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
-      <img loading="lazy" decoding="async" src="../assets/img/revista-aura/carrossel-01.png"
-           alt="Página dupla da revista: à esquerda, texto sobre brechós beneficentes em Bauru com foto recortada em moldura rosa; à direita, foto de pessoa em saia jeans sobre fundo amarelo"
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/655] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/ilumac/catalogo-mockup.webp"
+           alt="Mockup do catálogo ILUMAC: capa fechada em vermelho e preto, exemplar aberto numa página de ficha técnica e contracapa com QR code"
            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
            data-carousel-slide>
-      <img loading="lazy" decoding="async" src="../assets/img/revista-aura/carrossel-02.png"
-           alt="Página dupla “Alfinetando”: à esquerda, retrato em preto e branco com citação de Aurora James em destaque amarelo; à direita, texto sobre a falta de roupas plus size nos brechós, sobre fundo laranja"
+
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/kit-emergencia-mockup.png"
+           alt="Caixa de papelão vermelha aberta, com o logotipo ILUMAC e a chamada “Kit em caso de emergência” impressos na tampa"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img loading="lazy" decoding="async" src="../assets/img/revista-aura/carrossel-03.png"
-           alt="As quatro pranchetas do projeto lado a lado, mostrando a diagramação das páginas"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+
+      <div class="absolute inset-0 flex items-center justify-center gap-3 bg-navy px-6 lg:px-10 opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img loading="lazy" decoding="async" src="../assets/img/revista-aura/carrossel-04.png"
-           alt="Três posts de Instagram da revista AURA em mockup de feed"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+        <img loading="lazy" decoding="async" src="../assets/img/ilumac/brindes-copo-sacola.png"
+             alt="Copo, meias e balde vermelhos com o logotipo ILUMAC, apoiados sobre a sacola de algodão da marca"
+             class="min-w-0 flex-1 h-full object-contain">
+        <img loading="lazy" decoding="async" src="../assets/img/ilumac/brindes-kit-aberto.png"
+             alt="Kit em caso de emergência aberto, com caderno, camiseta dobrada, potes e cartão de instruções em vermelho"
+             class="min-w-0 flex-1 h-full object-contain">
+        <img loading="lazy" decoding="async" src="../assets/img/ilumac/brindes-flyers.png"
+             alt="Pilha de folhetos vermelhos com a assinatura “A sua saída mais segura” sobre uma mesa de vidro"
+             class="min-w-0 flex-1 h-full object-contain">
+      </div>
+
+      <div class="absolute inset-0 flex items-center justify-center gap-3 bg-navy px-6 lg:px-10 opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img loading="lazy" decoding="async" src="../assets/img/revista-aura/carrossel-05.png"
-           alt="Capa da revista ao lado de uma página dupla aberta"
+        <img loading="lazy" decoding="async" src="../assets/img/ilumac/post-treta-incendio.png"
+             alt="Post quadrado vermelho com o título “A treta do incêndio que ninguém te conta” e duas pessoas recortadas de costas uma para a outra"
+             class="min-w-0 flex-1 h-full object-contain">
+        <img loading="lazy" decoding="async" src="../assets/img/ilumac/post-caso-kiss.png"
+             alt="Post quadrado com o título “Como o caso Kiss expôs a fragilidade do sistema” sobre foto em preto e branco da fachada da boate"
+             class="min-w-0 flex-1 h-full object-contain">
+        <img loading="lazy" decoding="async" src="../assets/img/ilumac/post-gran-circus.png"
+             alt="Post quadrado preto sobre o incêndio do Gran Circus Norte Americano, com texto explicativo e foto histórica em preto e branco"
+             class="min-w-0 flex-1 h-full object-contain">
+      </div>
+
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/capa-sacola.png"
+           alt="Sacola de algodão vermelha com o logotipo ILUMAC e a assinatura “A sua saída mais segura” em branco, apoiada no colo de uma pessoa sentada"
            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
            data-carousel-slide>
 
@@ -191,53 +218,110 @@ Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity
   </div>
 </section>
 
-<!-- ====== PALETA ====== -->
-<!-- Fundo creme: a prancha já vem com fundo claro embutido na própria imagem. -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
-  <figure>
-    <img loading="lazy" decoding="async" src="../assets/img/revista-aura/miolo-largo.png"
-         alt="Paleta de cores da revista AURA em sete cartões: verde, rosa, roxo, preto, laranja, amarelo e branco, com códigos hex e CMYK"
-         class="w-full h-auto object-contain">
-  </figure>
-</section>
-
-<!-- ====== MIOLO ====== -->
-<!-- Fundo navy: separa as páginas internas do resto da página, como nos outros cases. -->
-<section class="bg-navy py-12 lg:py-16">
-  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
-    <figure class="rounded-lg overflow-hidden bg-navy">
-      <img loading="lazy" decoding="async" src="../assets/img/revista-aura/miolo-alto.png"
-           alt="Sequência vertical de páginas duplas da revista AURA"
-           class="w-full h-auto object-contain">
+<!-- ====== PÁGINAS DO CATÁLOGO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-5 lg:gap-10">
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-01-capa.png"
+           alt="Capa do catálogo: logotipo ILUMAC em branco sobre blocos vermelhos, com a frase “sua segurança nas mãos de especialistas” na vertical"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-03-sumario.png"
+           alt="Sumário do catálogo em duas colunas de itens numerados, com a palavra “Sumário” na vertical em vermelho sobre fundo preto"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-02-carta-ceo.png"
+           alt="Página dupla com retrato do CEO em preto e branco à esquerda e os textos “Experiência em inovar” e “Carta do CEO” à direita, sobre fundo preto"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-04-missao.png"
+           alt="Página “Proteção à vida é a nossa missão”, com foto de técnico de capacete instalando um detector e texto em vermelho ao lado"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-05-diferenciais.png"
+           alt="Página “O porquê de escolher a ILUMAC”, com lista de diferenciais e três fotos de equipamentos legendadas SDAI, IEE e SPN"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-06-sistema-alarme.png"
+           alt="Abertura da seção “Sistema de detecção e alarme de incêndio convencional”, com centrais e acionadores recortados sobre faixa vermelha"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-07-central-cac.png"
+           alt="Ficha técnica da central de alarme CAC: foto grande do painel à esquerda e tabela de especificações à direita"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-08-detectores.png"
+           alt="Página com três detectores de fumaça e temperatura lado a lado, cada um em seu card branco com tabela de especificações"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[350/199]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/catalogo-09-acionadores.png"
+           alt="Página com três acionadores manuais vermelhos lado a lado, cada um em seu card branco com tabela de especificações"
+           class="w-full h-full object-cover">
     </figure>
   </div>
 </section>
 
+<!-- ====== SUPER MÊS DO CONSUMIDOR ====== -->
+<section class="bg-navy pt-16 lg:pt-30 pb-16 lg:pb-42">
 
-<!-- ====== EQUIPE ====== -->
-<!-- Faixa de gradiente + retratos em duotone. Os nomes são texto de verdade, não imagem. -->
-<section class="bg-navy">
-  <div class="h-16 w-full" aria-hidden="true"
-       style="background:linear-gradient(90deg,#5FBF8F 0%,#F5B800 50%,#8E5BA6 100%)"></div>
+  <!-- IMG PENDENTE: faixa da campanha, 1440x202 — exportar do Figma a camada "image 6" -->
+  <img loading="lazy" decoding="async" src="../assets/img/ilumac/consumidor-faixa.png"
+       alt="Faixa vermelha com hachuras diagonais e a chamada “Super mês do consumidor”, com “Super mês do” sobre tarja preta"
+       class="w-full h-auto object-cover">
 
-  <div class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
-    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
-      <li class="w-full max-w-[315px] text-center">
-        <img loading="lazy" decoding="async" src="../assets/img/revista-aura/retrato-barbara.png"
-             alt="Retrato de Bárbara Beline em duotone verde" class="w-full h-auto rounded-lg">
-        <p class="mt-4 text-lg" style="color:#5FBF8F">Bárbara Beline</p>
-      </li>
-      <li class="w-full max-w-[315px] text-center">
-        <img loading="lazy" decoding="async" src="../assets/img/revista-aura/retrato-leticia.png"
-             alt="Retrato de Letícia Garcia Ribeiro em duotone amarelo" class="w-full h-auto rounded-lg">
-        <p class="mt-4 text-lg" style="color:#F5B800">Letícia Garcia Ribeiro</p>
-      </li>
-      <li class="w-full max-w-[315px] text-center">
-        <img loading="lazy" decoding="async" src="../assets/img/revista-aura/retrato-luisa.png"
-             alt="Retrato de Luísa Campos Fornazeiro em duotone roxo" class="w-full h-auto rounded-lg">
-        <p class="mt-4 text-lg text-creme">Luísa Campos Fornazeiro</p>
-      </li>
-    </ul>
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-0 relative aspect-[1440/481] mt-8 lg:mt-10">
+    <img loading="lazy" decoding="async" src="../assets/img/ilumac/icones/mao-moeda.svg"
+         alt="Ilustração de mão vermelha erguendo uma moeda com o escudo da ILUMAC"
+         class="icone-solto absolute object-contain"
+         style="left:16.53%; top:0%; width:13.40%; height:50%; --hover-rot:-9deg">
+    <img loading="lazy" decoding="async" src="../assets/img/ilumac/icones/moeda.svg"
+         alt="Ilustração de moeda em preto e branco com o escudo da ILUMAC no lugar do valor"
+         class="icone-solto absolute object-contain"
+         style="left:73.19%; top:0%; width:14.69%; height:44.96%; --hover-rot:9deg">
+    <img loading="lazy" decoding="async" src="../assets/img/ilumac/icones/mao-joia.svg"
+         alt="Ilustração de mão vermelha fazendo sinal de joia"
+         class="icone-solto absolute object-contain"
+         style="left:50.90%; top:8.94%; width:11.39%; height:41.21%; --hover-rot:-9deg">
+    <img loading="lazy" decoding="async" src="../assets/img/ilumac/icones/mao-paz.svg"
+         alt="Ilustração de mão vermelha fazendo sinal de paz"
+         class="icone-solto absolute object-contain"
+         style="left:36.18%; top:45.95%; width:12.27%; height:48.50%; --hover-rot:9deg">
+    <img loading="lazy" decoding="async" src="../assets/img/ilumac/icones/mao-pinca-moeda.svg"
+         alt="Ilustração de mão vermelha segurando uma moeda com o escudo da ILUMAC entre os dedos"
+         class="icone-solto absolute object-contain"
+         style="left:61.32%; top:58.21%; width:16.16%; height:35.96%; --hover-rot:-9deg">
+    <img loading="lazy" decoding="async" src="../assets/img/ilumac/icones/cedula.svg"
+         alt="Ilustração de cédula de dinheiro com o escudo da ILUMAC ao centro e cifrões nas laterais"
+         class="icone-solto absolute object-contain"
+         style="left:9.38%; top:69.65%; width:20.22%; height:30.21%; --hover-rot:9deg">
+  </div>
+
+  <div class="max-w-[1294px] mx-auto px-5 lg:px-0 mt-12 lg:mt-28 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
+    <figure class="rounded-lg overflow-hidden aspect-[399/709]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/consumidor-anuncio.png"
+           alt="Anúncio vertical com a frase “Em março, faça o seu melhor investimento em segurança contra incêndios” e três produtos ILUMAC embaixo"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden aspect-[399/709]">
+      <video src="../assets/img/ilumac/consumidor-video.mp4"
+             poster="../assets/img/ilumac/consumidor-video-poster.png"
+             class="w-full h-full object-cover"
+             controls muted loop playsinline preload="none"
+             aria-label="Vídeo vertical da campanha Super Mês do Consumidor, com os produtos ILUMAC entrando em molduras vermelhas"></video>
+    </figure>
+    <figure class="rounded-lg overflow-hidden aspect-[399/709]">
+      <img loading="lazy" decoding="async" src="../assets/img/ilumac/consumidor-card-01.png"
+           alt="Card vertical vermelho com a chamada “Super mês do consumidor”, moedas ilustradas e uma mão fazendo o sinal de dinheiro"
+           class="w-full h-full object-cover">
+    </figure>
   </div>
 </section>
 
@@ -246,18 +330,18 @@ Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity
      anda -50%, então qualquer diferença faz o loop dar um salto. Não editar. -->
 <div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
   <div class="flex w-max animate-faixa">
-    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
     <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
   </div>
 </div>
 
 <!-- ====== PRÓXIMO PROJETO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
-  <a href="ilumac.html" class="group block">
+  <a href="luna-monstrinho.html" class="group block">
     <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
-      ILUMAC →
+      Luna e o Monstrinho →
     </span>
   </a>
 </section>

@@ -24,6 +24,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+  <!-- Lenis: smooth scroll em toda a página. https://github.com/darkroomengineering/lenis -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css">
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
   <style type="text/tailwindcss">
     @theme {
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
@@ -192,6 +196,18 @@
     <span class="opacity-50">© 2026 Letícia Garcia</span>
   </div>
 </footer>
+
+<!-- Lenis: smooth scroll. Igual em todas as páginas. Não editar. -->
+<script>
+  new Lenis({
+    autoRaf: true,
+    autoToggle: true,
+    anchors: true,
+    allowNestedScroll: true,
+    naiveDimensions: true,
+    stopInertiaOnNavigate: true,
+  });
+</script>
 
 <script>
   // troca de idioma: lê data-pt / data-en e guarda a escolha
