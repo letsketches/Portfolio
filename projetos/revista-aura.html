@@ -192,13 +192,34 @@ Aura sets out to document thrift-store culture in Bauru-SP, taking on solidarity
 </section>
 
 <!-- ====== PALETA ====== -->
-<!-- Fundo creme: a prancha já vem com fundo claro embutido na própria imagem. -->
+<!-- Cartela montada em HTML, no mesmo formato da Puket, para que os valores
+     de RGB/CMYK/HEX possam ser selecionados e copiados.
+     Cor de cliente é conteúdo do case, por isso vai como valor literal e não como token.
+     A cor do texto de cada cartão é a que dá maior contraste com o fundo. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
-  <figure>
-    <img loading="lazy" decoding="async" src="../assets/img/revista-aura/miolo-largo.webp"
-         alt="Paleta de cores da revista AURA em sete cartões: verde, rosa, roxo, preto, laranja, amarelo e branco, com códigos hex e CMYK"
-         class="w-full h-auto object-contain">
-  </figure>
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+    <div class="col-span-1 bg-[#33AF7D] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 51  175  125<br>CMYK: 73  0  64  0<br>HEX: 33AF7D</p>
+    </div>
+    <div class="col-span-1 bg-[#E94678] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 233  70  120<br>CMYK: 0  84  26  0<br>HEX: E94678</p>
+    </div>
+    <div class="col-span-1 bg-[#9D4392] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 157  67  146<br>CMYK: 46  84  0  0<br>HEX: 9D4392</p>
+    </div>
+    <div class="col-span-1 bg-[#EC6331] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 236  99  49<br>CMYK: 0  72  84  0<br>HEX: EC6331</p>
+    </div>
+    <div class="col-span-1 bg-[#FCBF0A] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 252  191  10<br>CMYK: 0  27  93  0<br>HEX: FCBF0A</p>
+    </div>
+    <div class="col-span-1 bg-[#FFFFFF] border border-navy/15 text-navy rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[300px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 255  255  255<br>CMYK: 0  0  0  0<br>HEX: FFFFFF</p>
+    </div>
+    <div class="col-span-2 lg:col-span-1 lg:row-span-2 lg:col-start-4 lg:row-start-1 bg-[#000000] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[170px] lg:min-h-[624px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 0  0  0<br>CMYK: 30  0  0  100<br>HEX: 000000</p>
+    </div>
+  </div>
 </section>
 
 <!-- ====== MIOLO ====== -->

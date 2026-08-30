@@ -169,13 +169,36 @@ This is a non-commercial educational project, developed for Escola Arte Revide a
   </div>
 </section>
 
-<!-- ====== IMAGENS — paleta e sketches ====== -->
-<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-16 lg:gap-24">
-  <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img loading="lazy" decoding="async" src="../assets/img/almanaque-vampirico/paleta.webp"
-         alt="Paleta de cores do Almanaque Vampírico: rosa, amarelo, verde menta, marrom escuro, azul periwinkle e rosa salmão, com códigos RGB, CMYK e HEX"
-         class="w-full object-cover">
-  </figure>
+<!-- ====== PALETA ====== -->
+<!-- Cartela montada em HTML, no mesmo formato da Puket, para que os valores
+     de RGB/CMYK/HEX possam ser selecionados e copiados.
+     Cor de cliente é conteúdo do case, por isso vai como valor literal e não como token.
+     A cor do texto de cada cartão é a que dá maior contraste com o fundo. -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
+  <div class="grid grid-cols-2 lg:grid-cols-[567fr_248fr_248fr] gap-4 lg:gap-6">
+    <div class="col-span-2 lg:col-span-1 bg-[#FC2950] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[200px] lg:min-h-[380px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 252  41  80<br>CMYK: 0  84  68  1<br>HEX: FC2950</p>
+    </div>
+    <div class="col-span-1 bg-[#FFBD0E] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[200px] lg:min-h-[380px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 255  189  14<br>CMYK: 0  26  95  0<br>HEX: FFBD0E</p>
+    </div>
+    <div class="col-span-1 bg-[#71DB9F] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[200px] lg:min-h-[380px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 113  219  159<br>CMYK: 48  0  27  14<br>HEX: 71DB9F</p>
+    </div>
+    <div class="col-span-2 lg:col-span-1 bg-[#3C2209] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[160px] lg:min-h-[260px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 60  34  9<br>CMYK: 0  43  85  76<br>HEX: 3C2209</p>
+    </div>
+    <div class="col-span-1 bg-[#7896FC] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[160px] lg:min-h-[260px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 120  150  252<br>CMYK: 52  40  0  1<br>HEX: 7896FC</p>
+    </div>
+    <div class="col-span-1 bg-[#F9A9B0] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[160px] lg:min-h-[260px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 249  169  176<br>CMYK: 0  32  29  2<br>HEX: F9A9B0</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SKETCHES ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <figure class="rounded-lg overflow-hidden bg-navy/5">
     <img loading="lazy" decoding="async" src="../assets/img/almanaque-vampirico/sketches.webp"
          alt="Sketches do Almanaque Vampírico: rascunho de página com miniaturas, capa em traço a lápis e capa finalizada a nanquim com o título Almanaque dos Vampiros"

@@ -230,13 +230,31 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
 </section>
 
 <!-- ====== PALETA ====== -->
-<!-- Prancha da paleta como veio do projeto, com as fichas de RGB/CMYK/HEX. -->
+<!-- Cartela montada em HTML, no mesmo formato da Puket, para que os valores
+     de RGB/CMYK/HEX possam ser selecionados e copiados.
+     Cor de cliente é conteúdo do case, por isso vai como valor literal e não como token.
+     A cor do texto de cada cartão é a que dá maior contraste com o fundo. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-12 lg:py-16">
-  <figure>
-    <img loading="lazy" decoding="async" src="../assets/img/chico-quitandas/paleta.webp"
-         alt="Paleta da marca em seis cartões: azul-marinho, amarelo-claro, branco, amarelo-ouro, azul-claro e azul-arroxeado, cada um com seus valores de RGB, CMYK e HEX"
-         class="w-full h-auto object-contain">
-  </figure>
+  <div class="grid grid-cols-2 lg:grid-cols-[567fr_248fr_248fr] gap-4 lg:gap-6">
+    <div class="col-span-2 lg:col-span-1 bg-[#010166] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[200px] lg:min-h-[380px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 1  1  102<br>CMYK: 99  99  0  60<br>HEX: 010166</p>
+    </div>
+    <div class="col-span-1 bg-[#FFD580] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[200px] lg:min-h-[380px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 255  213  128<br>CMYK: 0  16  50  0<br>HEX: FFD580</p>
+    </div>
+    <div class="col-span-1 bg-[#F4F4F4] border border-navy/15 text-navy rounded-lg p-6 flex flex-col justify-end min-h-[200px] lg:min-h-[380px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 244  244  244<br>CMYK: 0  0  0  4<br>HEX: F4F4F4</p>
+    </div>
+    <div class="col-span-2 lg:col-span-1 bg-[#FFAF00] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[160px] lg:min-h-[260px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 255  175  0<br>CMYK: 0  31  100  0<br>HEX: FFAF00</p>
+    </div>
+    <div class="col-span-1 bg-[#BFD9E4] text-navy rounded-lg p-6 flex flex-col justify-end min-h-[160px] lg:min-h-[260px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 191  217  228<br>CMYK: 16  5  0  11<br>HEX: BFD9E4</p>
+    </div>
+    <div class="col-span-1 bg-[#2A3396] text-creme rounded-lg p-6 flex flex-col justify-end min-h-[160px] lg:min-h-[260px]">
+      <p class="text-sm font-semibold leading-relaxed">RGB: 42  51  150<br>CMYK: 72  66  0  41<br>HEX: 2A3396</p>
+    </div>
+  </div>
 </section>
 
 <!-- ====== ILUSTRAÇÕES ====== -->
