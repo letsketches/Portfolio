@@ -138,52 +138,52 @@
     <div id="palco"
          class="relative w-full max-w-[min(1180px,calc((100svh-160px)*1.156))] aspect-[1280/1107] mx-auto px-5 lg:px-0">
 
-      <button type="button" class="peca absolute" data-vel="1"    data-dx="-1" data-dy="-1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/aura-editorial.webp" aria-label="Ampliar: Revista AURA, página dupla"
               style="left:21.80%; top:5.15%; width:14.22%; height:20.05%">
         <img src="assets/img/intro/aura-editorial.webp" alt="Revista AURA — página dupla com fundo preto, texto em coluna e uma figura recortada em amarelo" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="-1.4" data-dx="-1" data-dy="1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/melissa-minhoca.webp" aria-label="Ampliar: Melissa + Fini"
               style="left:21.80%; top:74.44%; width:14.14%; height:20.05%">
         <img src="assets/img/intro/melissa-minhoca.webp" alt="Melissa + Fini — menina de vestido laranja pulando entre balas de minhoca" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="1.6"  data-dx="1"  data-dy="-1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/ilumac-sacola.webp" aria-label="Ampliar: ILUMAC, sacola"
               style="left:60.08%; top:5.15%; width:14.22%; height:20.05%">
         <img src="assets/img/intro/ilumac-sacola.webp" alt="ILUMAC — pessoa sentada segurando a sacola vermelha da marca" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="-0.8" data-dx="-1" data-dy="1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/calendario.webp" aria-label="Ampliar: Calendário 2025"
               style="left:5.63%; top:52.85%; width:21.56%; height:30.35%">
         <img src="assets/img/intro/calendario.webp" alt="Calendário 2025 — calendário de mesa ilustrado com frutas brasileiras, sobre fundo verde" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="1.2"  data-dx="1"  data-dy="-1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/chico-copo.webp" aria-label="Ampliar: Chico Quitandas, copo"
               style="left:67.19%; top:19.69%; width:21.56%; height:30.35%">
         <img src="assets/img/intro/chico-copo.webp" alt="Chico Quitandas — copo azul com padrão de azulejo sobre fundo amarelo" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="-1.7" data-dx="1"  data-dy="1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/ilumac-brindes.webp" aria-label="Ampliar: ILUMAC, brindes"
               style="left:60.08%; top:74.44%; width:14.22%; height:20.05%">
         <img src="assets/img/intro/ilumac-brindes.webp" alt="ILUMAC — meias e sacola vermelhas com a assinatura da marca" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="0.9"  data-dx="1"  data-dy="1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/aura-cartaz.webp" aria-label="Ampliar: Revista AURA, cartaz"
               style="left:68.83%; top:53.75%; width:21.56%; height:30.35%">
         <img src="assets/img/intro/aura-cartaz.webp" alt="Revista AURA — cartaz em preto e branco emoldurado, com tipografia vertical e uma figura em rosa" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="-1.1" data-dx="0"  data-dy="1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/almanaque-livro.webp" aria-label="Ampliar: Almanaque Vampírico"
               style="left:37.50%; top:69.65%; width:21.56%; height:30.35%">
         <img src="assets/img/intro/almanaque-livro.webp" alt="Almanaque Vampírico — capa vermelha com morcego e rosas sobre fundo verde" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="1.35" data-dx="-1" data-dy="0"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/luna-livro.webp" aria-label="Ampliar: Luna e o Monstrinho"
               style="left:7.34%; top:19.69%; width:21.56%; height:30.35%">
         <img src="assets/img/intro/luna-livro.webp" alt="Luna e o Monstrinho — livro impresso segurado por uma mão, sobre folhagem" class="w-full h-full object-cover">
       </button>
-      <button type="button" class="peca absolute" data-vel="-1.25" data-dx="0" data-dy="-1"
+      <button type="button" class="peca absolute"
               data-img="assets/img/intro/puket-camiseta.webp" aria-label="Ampliar: Puket, camiseta"
               style="left:37.27%; top:0%; width:21.56%; height:30.35%">
         <img src="assets/img/intro/puket-camiseta.webp" alt="Puket — camiseta verde-água com estampa de gatinha skatista sobre fundo amarelo" class="w-full h-full object-cover">
@@ -627,11 +627,25 @@
     if (!sec || !area || !palco || !avatar) return;
 
     const pecas = Array.from(palco.querySelectorAll('.peca')).map(el => ({
-      el,
-      vel: parseFloat(el.dataset.vel) || 1,
-      dx:  parseFloat(el.dataset.dx)  || 0,
-      dy:  parseFloat(el.dataset.dy)  || 0
+      el, raio: 0, ang0: 0, ox: 0, oy: 0
     }));
+
+    // Mede raio e ângulo inicial de cada peça em relação ao centro do avatar.
+    // As peças orbitam esse ponto sem girar no próprio eixo, então só a
+    // translação muda — a imagem continua reta o tempo todo.
+    function medir() {
+      const cx = avatar.offsetLeft + avatar.offsetWidth  / 2;
+      const cy = avatar.offsetTop  + avatar.offsetHeight / 2;
+      for (const pc of pecas) {
+        const px = pc.el.offsetLeft + pc.el.offsetWidth  / 2;
+        const py = pc.el.offsetTop  + pc.el.offsetHeight / 2;
+        const vx = px - cx, vy = py - cy;
+        pc.raio = Math.hypot(vx, vy);
+        pc.ang0 = Math.atan2(vy, vx);
+        pc.ox = vx;
+        pc.oy = vy;
+      }
+    }
 
     const semMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -658,12 +672,14 @@
       const g     = Math.min(1, p / FIM_GIRO);
       const saida = p <= FIM_GIRO ? 0 : (p - FIM_GIRO) / (1 - FIM_GIRO);
 
+      // uma volta completa no sentido horário; com y para baixo, ângulo
+      // crescente já é horário. Sem rotate: as peças não giram no próprio eixo.
+      const volta = (g * 360 + arrasto) * Math.PI / 180;
       for (const pc of pecas) {
-        const ang  = (g * 360 + arrasto) * pc.vel * 0.55;
-        const desl = g * 26;
+        const a = pc.ang0 + volta;
         pc.el.style.transform =
-          'translate(' + (pc.dx * desl).toFixed(1) + 'px,' + (pc.dy * desl).toFixed(1) + 'px)' +
-          ' rotate(' + ang.toFixed(2) + 'deg)';
+          'translate(' + (Math.cos(a) * pc.raio - pc.ox).toFixed(1) + 'px,' +
+                         (Math.sin(a) * pc.raio - pc.oy).toFixed(1) + 'px)';
       }
 
       avX += (alvoX - avX) * 0.12;
@@ -685,7 +701,7 @@
     function animar() { if (!rodando) { rodando = true; requestAnimationFrame(quadro); } }
 
     addEventListener('scroll', animar, { passive: true });
-    addEventListener('resize', animar);
+    addEventListener('resize', () => { medir(); animar(); });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(es => { visivel = es[0].isIntersecting; if (visivel) animar(); })
         .observe(sec);
@@ -761,7 +777,9 @@
     zoom.addEventListener('click', (e) => { if (e.target === zoom) fecharZoom(); });
     addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharZoom(); });
 
+    medir();
     animar();
+    addEventListener('load', () => { medir(); animar(); });
   })();
 </script>
 
