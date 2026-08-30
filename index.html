@@ -71,6 +71,25 @@
       .animate-faixa,
       .animate-faixa-inversa { animation: none; }
     }
+
+    /* ---- apresentação de abertura ---- */
+    .peca { display: block; overflow: hidden; border-radius: 2px;
+            transition: transform 300ms ease, filter 300ms ease; }
+    .peca img { display: block; }
+    a.peca:hover { transform: scale(1.04); z-index: 20; }
+    #palco:hover a.peca:not(:hover) { filter: saturate(0.55) opacity(0.75); }
+    .rotulo { transform: translate(0, 0); background: var(--color-navy); color: var(--color-creme);
+              font-weight: 600; font-size: 14px; letter-spacing: -0.35px;
+              padding: 7px 18px; border-radius: 999px; white-space: nowrap; z-index: 15; }
+    #avatar-intro { transform-origin: center; will-change: transform, opacity; }
+    /* enquanto a apresentação está na tela, o logo do header dá lugar ao avatar central */
+    body.na-apresentacao #logo-header { opacity: 0; pointer-events: none; }
+    #logo-header { transition: opacity 300ms ease; }
+    @media (max-width: 640px) { .rotulo { font-size: 11px; padding: 4px 10px; } }
+    @media (prefers-reduced-motion: reduce) {
+      .peca, #logo-header { transition: none; }
+      #avatar-intro { transform: none !important; opacity: 1 !important; }
+    }
   </style>
 </head>
 
@@ -84,7 +103,7 @@
 <!-- Nav em pílulas de contorno, alinhadas à direita, como no modelo do Figma. -->
 <header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
   <a href="index.html" class="shrink-0">
-    <img src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
+    <img id="logo-header" src="assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
          class="h-8 min-[360px]:h-10 lg:h-[76px] w-auto">
   </a>
 
@@ -102,6 +121,67 @@
     </button>
   </nav>
 </header>
+
+<!-- ====== APRESENTAÇÃO (etapa anterior à home) ====== -->
+<!-- Colagem em tela cheia com as posições do Figma (Section 8, frame 2207:853).
+     O palco tem 1280x1107 e cada peça é posicionada em % desse retângulo, então a
+     composição inteira escala junto com a janela sem recalcular nada.
+     O scroll dos primeiros 180vh encolhe o avatar central e apaga a colagem,
+     revelando a home logo abaixo. Com "reduzir movimento" a etapa fica estática. -->
+<section id="apresentacao" class="relative h-[180vh]" aria-label="Apresentação dos trabalhos">
+  <div class="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
+
+    <div id="palco"
+         class="relative w-full max-w-[min(1180px,calc((100svh-160px)*1.156))] aspect-[1280/1107] mx-auto px-5 lg:px-0">
+
+      <!-- imagens, na ordem de empilhamento do Figma (de trás para frente) -->
+      <a href="projetos/revista-aura.html" class="peca absolute" style="left:21.80%; top:5.15%; width:14.22%; height:20.05%">
+        <img src="assets/img/intro/aura-editorial.webp" alt="Revista AURA — página dupla com fundo preto, texto em coluna e uma figura recortada em amarelo" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/melissa-fini.html" class="peca absolute" style="left:21.80%; top:74.44%; width:14.14%; height:20.05%">
+        <img src="assets/img/intro/melissa-minhoca.webp" alt="Melissa + Fini — menina de vestido laranja pulando entre balas de minhoca" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/ilumac.html" class="peca absolute" style="left:60.08%; top:5.15%; width:14.22%; height:20.05%">
+        <img src="assets/img/intro/ilumac-sacola.webp" alt="ILUMAC — pessoa sentada segurando a sacola vermelha da marca" class="w-full h-full object-cover">
+      </a>
+      <span class="peca absolute" style="left:5.63%; top:52.85%; width:21.56%; height:30.35%" aria-hidden="true">
+        <img src="assets/img/intro/calendario.webp" alt="" class="w-full h-full object-cover">
+      </span>
+      <a href="projetos/chico-quitandas.html" class="peca absolute" style="left:67.19%; top:19.69%; width:21.56%; height:30.35%">
+        <img src="assets/img/intro/chico-copo.webp" alt="Chico Quitandas — copo azul com padrão de azulejo sobre fundo amarelo" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/ilumac.html" class="peca absolute" style="left:60.08%; top:74.44%; width:14.22%; height:20.05%">
+        <img src="assets/img/intro/ilumac-brindes.webp" alt="ILUMAC — meias e sacola vermelhas com a assinatura da marca" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/revista-aura.html" class="peca absolute" style="left:68.83%; top:53.75%; width:21.56%; height:30.35%">
+        <img src="assets/img/intro/aura-cartaz.webp" alt="Revista AURA — cartaz em preto e branco emoldurado, com tipografia vertical e uma figura em rosa" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/almanaque-vampirico.html" class="peca absolute" style="left:37.50%; top:69.65%; width:21.56%; height:30.35%">
+        <img src="assets/img/intro/almanaque-livro.webp" alt="Almanaque Vampírico — capa vermelha com morcego e rosas sobre fundo verde" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/luna-monstrinho.html" class="peca absolute" style="left:7.34%; top:19.69%; width:21.56%; height:30.35%">
+        <img src="assets/img/intro/luna-livro.webp" alt="Luna e o Monstrinho — livro impresso segurado por uma mão, sobre folhagem" class="w-full h-full object-cover">
+      </a>
+      <a href="projetos/puket-inverno.html" class="peca absolute" style="left:37.27%; top:0%; width:21.56%; height:30.35%">
+        <img src="assets/img/intro/puket-camiseta.webp" alt="Puket — camiseta verde-água com estampa de gatinha skatista sobre fundo amarelo" class="w-full h-full object-cover">
+      </a>
+
+      <!-- rótulos de disciplina -->
+      <span class="rotulo absolute" style="left:26.33%; top:27.55%" data-pt="Design" data-en="Design"></span>
+      <span class="rotulo absolute" style="left:53.59%; top:27.55%" data-pt="Ilustração" data-en="Illustration"></span>
+      <span class="rotulo absolute" style="left:17.27%; top:52.75%" data-pt="Animação" data-en="Animation"></span>
+      <span class="rotulo absolute" style="left:52.50%; top:69.65%" data-pt="Editorial" data-en="Editorial"></span>
+
+      <!-- avatar central: encolhe conforme a página rola -->
+      <img id="avatar-intro" src="assets/brand/avatar-let.svg" alt="" aria-hidden="true"
+           class="absolute pointer-events-none" style="left:36.25%; top:34.87%; width:25.47%; height:27.91%">
+    </div>
+
+    <a href="#trabalhos" id="intro-seta"
+       class="absolute bottom-8 left-1/2 -translate-x-1/2 font-semibold text-xs uppercase tracking-tight opacity-60 hover:opacity-100 transition-opacity"
+       data-pt="Role para ver os trabalhos" data-en="Scroll to see the work"></a>
+  </div>
+</section>
 
 <!-- ====== SELETOR DESIGN / ILUSTRAÇÃO ====== -->
 <!-- Primeira seção da página: o trabalho abre o site, sem texto de introdução. -->
@@ -495,6 +575,43 @@
     });
 
     resetBtn.addEventListener('click', () => setFilter(null));
+  })();
+</script>
+
+
+<!-- Apresentação de abertura: o scroll dos primeiros 180vh encolhe o avatar central
+     e apaga a colagem. Sem biblioteca — só requestAnimationFrame e transform. -->
+<script>
+  (function () {
+    const sec = document.getElementById('apresentacao');
+    const palco = document.getElementById('palco');
+    const avatar = document.getElementById('avatar-intro');
+    const seta = document.getElementById('intro-seta');
+    if (!sec || !palco || !avatar) return;
+
+    const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let pendente = false;
+
+    function aplicar() {
+      pendente = false;
+      const alcance = sec.offsetHeight - window.innerHeight;
+      const p = alcance > 0 ? Math.min(1, Math.max(0, window.scrollY / alcance)) : 0;
+
+      document.body.classList.toggle('na-apresentacao', p < 0.75);
+
+      if (semMovimento) return;
+      // avatar: 1 -> 0.24, some no fim
+      avatar.style.transform = 'scale(' + (1 - p * 0.76).toFixed(4) + ')';
+      avatar.style.opacity = p > 0.85 ? String(Math.max(0, (1 - p) / 0.15).toFixed(3)) : '1';
+      // colagem: afasta e apaga
+      palco.style.transform = 'scale(' + (1 + p * 0.12).toFixed(4) + ')';
+      palco.style.opacity = String(Math.max(0, 1 - p * 1.25).toFixed(3));
+      if (seta) seta.style.opacity = String(Math.max(0, 0.6 - p * 1.5).toFixed(3));
+    }
+
+    addEventListener('scroll', () => { if (!pendente) { pendente = true; requestAnimationFrame(aplicar); } }, { passive: true });
+    addEventListener('resize', aplicar);
+    aplicar();
   })();
 </script>
 
