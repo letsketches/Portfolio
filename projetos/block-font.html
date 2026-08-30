@@ -139,7 +139,7 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
 <!-- ====== ABERTURA ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/block-font/abertura.png"
+    <img src="../assets/img/block-font/abertura.webp"
          alt="A palavra BLOCK escrita em duas linhas com letras infladas em laranja brilhante, sobre um degradê de laranja a rosa, com as legendas “by: Let” e “display font”"
          class="w-full object-cover">
   </figure>
@@ -161,15 +161,15 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
     </div>
 
     <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden aspect-[1400/661] cursor-zoom-in" data-carousel-viewport>
-      <img loading="lazy" decoding="async" src="../assets/img/block-font/alfabeto.png"
+      <img loading="lazy" decoding="async" src="../assets/img/block-font/alfabeto.webp"
            alt="O alfabeto completo de A a Z em branco sobre fundo laranja, com as letras encaixadas em blocos quadrados, e o desenho em contorno da letra B ao lado"
            class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700"
            data-carousel-slide>
-      <img loading="lazy" decoding="async" src="../assets/img/block-font/escala-tipografica.png"
+      <img loading="lazy" decoding="async" src="../assets/img/block-font/escala-tipografica.webp"
            alt="A frase “Lorem ipsum dolor” repetida em branco sobre fundo roxo nos corpos 16, 24, 36, 48, 60 e 72, mostrando a fonte crescendo de tamanho"
            class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-700"
            data-carousel-slide>
-      <img loading="lazy" decoding="async" src="../assets/img/block-font/construcao-b.png"
+      <img loading="lazy" decoding="async" src="../assets/img/block-font/construcao-b.webp"
            alt="A letra B em contorno sobre fundo rosa, com os pontos e as alças de bézier visíveis, ladeada por um padrão xadrez em roxo e branco"
            class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-700"
            data-carousel-slide>
@@ -193,10 +193,10 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
      para lerem como uma imagem só. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <figure>
-    <img loading="lazy" decoding="async" src="../assets/img/block-font/cartazes-01.jpg"
+    <img loading="lazy" decoding="async" src="../assets/img/block-font/cartazes-01.webp"
          alt="Dois cartazes lado a lado: um em degradê azul e rosa com a palavra BLOCK espelhada e uma mão saindo da água, outro laranja com a palavra repetida em contorno sobre a silhueta de uma mão"
          class="block w-full">
-    <img loading="lazy" decoding="async" src="../assets/img/block-font/cartazes-02.jpg"
+    <img loading="lazy" decoding="async" src="../assets/img/block-font/cartazes-02.webp"
          alt="Mais dois cartazes: um em tons pastel com BLOCK repetido em degradê laranja e contornos, outro preto com a palavra em efeito cromado sobre a silhueta de uma pessoa recortada num círculo branco"
          class="block w-full">
   </figure>
@@ -214,11 +214,11 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
 
 <!-- ====== PRÓXIMO PROJETO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
-  <a href="luna-monstrinho.html" class="group block">
+  <a href="melissa-fini.html" class="group block">
     <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
-      Luna e o Monstrinho →
+      Melissa + Fini →
     </span>
   </a>
 </section>
@@ -291,11 +291,16 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
       if (!lightbox) return;
       lightboxContent.innerHTML = '';
       const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      // pranchas coladas na vertical abrem empilhadas, do jeito que aparecem na página
+      const empilhado = imgs.length > 1 && imgs.every((img, i, todas) =>
+        i === 0 || Math.abs(img.getBoundingClientRect().left - todas[0].getBoundingClientRect().left) < 4);
+      lightboxContent.classList.toggle('flex-col', empilhado);
+      lightboxContent.classList.toggle('overflow-y-auto', empilhado);
       imgs.forEach((img) => {
         const clone = document.createElement('img');
         clone.src = img.currentSrc || img.src;
         clone.alt = img.alt;
-        clone.className = 'max-h-[85vh] max-w-full object-contain';
+        clone.className = empilhado ? 'max-w-full object-contain' : 'max-h-[85vh] max-w-full object-contain';
         lightboxContent.appendChild(clone);
       });
       onLightboxClose = onClose || null;
@@ -317,6 +322,19 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
       lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
     }
+
+    // ---- clique para ampliar em QUALQUER imagem de conteúdo, não só nas do carrossel ----
+    // Vale para toda <figure> do miolo. Ficam de fora: as do carrossel (que já têm o
+    // seu próprio clique), a colagem de ícones soltos e os retratos de equipe.
+    document.querySelectorAll('section figure').forEach((figura) => {
+      if (figura.closest('[data-carousel]')) return;
+      if (!figura.querySelector('img')) return;
+      figura.classList.add('cursor-zoom-in');
+      figura.addEventListener('click', (e) => {
+        if (e.target.closest('video, a, button')) return;
+        openLightbox(figura);
+      });
+    });
 
     // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
     document.querySelectorAll('[data-carousel]').forEach((carousel) => {

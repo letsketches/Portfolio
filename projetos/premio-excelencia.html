@@ -135,7 +135,7 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
 <!-- ====== DETALHE DO CARTAZ ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img src="../assets/img/premio-excelencia/cartaz-detalhe-magenta.jpg"
+    <img src="../assets/img/premio-excelencia/cartaz-detalhe-magenta.webp"
          alt="Detalhe do cartaz preso numa parede magenta, com a barra de papel enrolando na base: linhas orgânicas pretas, formas em amarelo, azul e rosa e uma estrela laranja"
          class="w-full object-cover">
   </figure>
@@ -145,12 +145,12 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <div class="grid md:grid-cols-2 gap-6">
     <figure class="rounded-lg overflow-hidden bg-navy/5">
-      <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-mockup-verde.jpg"
+      <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-mockup-verde.webp"
            alt="Cartaz impresso apoiado de viés sobre fundo verde, com a composição inteira visível e o título “13º Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube” no rodapé"
            class="w-full h-full object-cover">
     </figure>
     <figure class="rounded-lg overflow-hidden bg-navy/5">
-      <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-detalhe-amarelo.jpg"
+      <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-detalhe-amarelo.webp"
            alt="Close do cartaz enrolando sobre fundo amarelo, mostrando de perto a bota azul, o zigue-zague amarelo e a seta verde da ilustração"
            class="w-full h-full object-cover">
     </figure>
@@ -160,7 +160,7 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
 <!-- ====== CARTAZ COMPLETO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <figure class="rounded-lg overflow-hidden bg-navy/5">
-    <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-azul.jpg"
+    <img loading="lazy" decoding="async" src="../assets/img/premio-excelencia/cartaz-azul.webp"
          alt="Cartaz inteiro sobre fundo azul: o número 13 desenhado em linha contínua no centro, cercado de setas, estrelas, mãos e botas coloridas, com o título do prêmio embaixo"
          class="w-full object-cover">
   </figure>
@@ -255,11 +255,16 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
       if (!lightbox) return;
       lightboxContent.innerHTML = '';
       const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      // pranchas coladas na vertical abrem empilhadas, do jeito que aparecem na página
+      const empilhado = imgs.length > 1 && imgs.every((img, i, todas) =>
+        i === 0 || Math.abs(img.getBoundingClientRect().left - todas[0].getBoundingClientRect().left) < 4);
+      lightboxContent.classList.toggle('flex-col', empilhado);
+      lightboxContent.classList.toggle('overflow-y-auto', empilhado);
       imgs.forEach((img) => {
         const clone = document.createElement('img');
         clone.src = img.currentSrc || img.src;
         clone.alt = img.alt;
-        clone.className = 'max-h-[85vh] max-w-full object-contain';
+        clone.className = empilhado ? 'max-w-full object-contain' : 'max-h-[85vh] max-w-full object-contain';
         lightboxContent.appendChild(clone);
       });
       onLightboxClose = onClose || null;
@@ -281,6 +286,19 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
       lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
     }
+
+    // ---- clique para ampliar em QUALQUER imagem de conteúdo, não só nas do carrossel ----
+    // Vale para toda <figure> do miolo. Ficam de fora: as do carrossel (que já têm o
+    // seu próprio clique), a colagem de ícones soltos e os retratos de equipe.
+    document.querySelectorAll('section figure').forEach((figura) => {
+      if (figura.closest('[data-carousel]')) return;
+      if (!figura.querySelector('img')) return;
+      figura.classList.add('cursor-zoom-in');
+      figura.addEventListener('click', (e) => {
+        if (e.target.closest('video, a, button')) return;
+        openLightbox(figura);
+      });
+    });
 
     // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
     document.querySelectorAll('[data-carousel]').forEach((carousel) => {

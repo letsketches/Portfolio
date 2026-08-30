@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Melissa + Fini — Dia das crianças — Letícia Garcia</title>
+  <meta name="description" content="Campanha fictícia de Dia das Crianças para a collab Melissa + Fini: lettering, key visuals ilustrados, peças digitais e aplicações em mídia externa.">
+  <link rel="icon" href="../assets/brand/avatar-let.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/brand/avatar-let.svg">
+
+  <!-- Compartilhamento. URL absoluta é obrigatória: trocar SEU-DOMINIO depois do deploy. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Letícia Garcia — Let Design">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://SEU-DOMINIO/projetos/melissa-fini.html">
+  <meta property="og:title" content="Melissa + Fini — Dia das crianças — Letícia Garcia">
+  <meta property="og:description" content="Campanha fictícia de Dia das Crianças para a collab Melissa + Fini: lettering, key visuals ilustrados, peças digitais e aplicações em mídia externa.">
+  <meta property="og:image" content="https://SEU-DOMINIO/assets/img/melissa-fini/capa.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Não editar o bloco @theme: é igual em todas as páginas do site. -->
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter", Arial, Helvetica, sans-serif;
+      --color-creme:   #FFF9EB;
+      --color-navy:    #1B1435;
+      --color-magenta: #E62070;
+      --color-laranja: #E9571B;
+      --color-amarelo: #FBBC12;
+      --color-roxo:    #5E4A97;
+      --text-hero:    120px;
+      --text-title:    72px;
+      --text-section:  48px;
+    }
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* faixa rolante do @letsketches — duas cópias idênticas fecham o loop */
+    @keyframes faixa {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .animate-faixa { animation: faixa 30s linear infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-faixa { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-creme text-navy font-sans">
+
+<!-- ====== FAIXA DE GRADIENTE ====== -->
+<!-- Fio de 24px no topo, com as cores da marca. -->
+<div class="h-6 w-full bg-gradient-to-r from-magenta via-laranja to-roxo" aria-hidden="true"></div>
+
+<!-- ====== HEADER ====== -->
+<!-- Igual em todos os cases. Não editar. -->
+<header class="max-w-[1280px] mx-auto px-5 lg:px-20 py-5 lg:py-8 flex items-center justify-between gap-4">
+  <a href="../index.html" class="shrink-0">
+    <img src="../assets/brand/logo-let.svg" alt="Let Design — Letícia Garcia, designer e ilustradora"
+         class="h-8 min-[360px]:h-10 lg:h-[76px] w-auto">
+  </a>
+
+  <nav class="flex items-center gap-1.5 lg:gap-7 font-semibold text-[10px] min-[360px]:text-xs lg:text-base tracking-tight uppercase">
+    <a href="../sobre.html"
+       class="border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Sobre" data-en="About"></a>
+    <a href="../contato.html"
+       class="border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors"
+       data-pt="Contato" data-en="Contact"></a>
+
+    <button id="lang-toggle"
+            class="shrink-0 font-black border-2 border-navy rounded-full px-2 min-[360px]:px-2.5 lg:px-4 py-1.5 hover:bg-navy hover:text-creme transition-colors">
+      EN
+    </button>
+  </nav>
+</header>
+
+<!-- ====== TÍTULO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pt-10 pb-14">
+  <span class="font-semibold text-sm uppercase tracking-tight text-laranja"
+        data-pt="Design + ilustração" data-en="Design + illustration"></span>
+
+  <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Melissa + Fini - Dia das crianças</h1>
+
+  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+     data-pt="Foi desenvolvida uma campanha do dia das crianças para anunciar uma collab da Melissa + Fini com uma coleção exclusiva de sandálias para a linha infantil com o cheiro e design que remetem as balas Fini.
+A campanha possui uma abordagem visual com personagens e ilustrações voltadas ao público infantil, misturando elementos de brincadeiras com as balas Fini e apresentando as sandálias como imagem para curtir a infância.
+Este é um projeto fictício desenvolvido com fins educativos como parte do curso “Desvendando a Ilustração Publicitária” da Escola Arte Revide."
+     data-en="A Children's Day campaign developed to announce a Melissa + Fini collab: an exclusive line of sandals for the children's collection, with a scent and a design that echo Fini sweets.
+The campaign takes a visual approach built on characters and illustration aimed at children, mixing play with the Fini sweets themselves and presenting the sandals as an invitation to enjoy childhood.
+This is a fictional project developed for educational purposes as part of the course “Desvendando a Ilustração Publicitária” at Escola Arte Revide."></p>
+
+  <a href="https://www.behance.net/gallery/224788101/Melissa-Fini-Dia-das-criancas"
+     target="_blank" rel="noopener noreferrer"
+     class="mt-6 inline-block text-sm font-semibold underline hover:text-laranja transition-colors"
+     data-pt="Ver o projeto no Behance" data-en="See the project on Behance"></a>
+</section>
+
+<!-- ====== FICHA ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dd class="mt-2 font-semibold">2025</dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dd class="mt-2 font-semibold"
+          data-pt="Direção artística, editorial, design gráfico"
+          data-en="Art direction, editorial, graphic design"></dd>
+    </div>
+    <div>
+      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dd class="mt-2 font-semibold">Photoshop, Illustrator, Procreate</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ====== KEY VISUALS ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[366/527]">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/kv-minhoca.webp"
+           alt="Cartaz Minhoca: menina de vestido laranja pulando de braços abertos entre balas de minhoca, com o lettering “Minhoca” no topo e a sandália Melissa preta estampada apoiada no morro verde"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[366/527]">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/kv-torcao.webp"
+           alt="Cartaz Torção: menina de jardineira azul balançando numa bala de torção gigante, com o lettering “Torção” no topo e a sandália Melissa rosa apoiada no morro verde"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[366/527]">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/kv-banana.webp"
+           alt="Cartaz Banana: menina ruiva de óculos rodando um bambolê em formato de banana, com o lettering “Banana” no topo e a sandália Melissa amarela apoiada no morro verde"
+           class="w-full h-full object-cover">
+    </figure>
+  </div>
+</section>
+
+<!-- ====== CARROSSEL: PEÇAS IMPRESSAS E DIGITAIS ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4000">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+    </div>
+
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/melissa-fini/impresso-minhoca.webp"
+           alt="Close-up do cartaz Minhoca impresso sobre fundo laranja, mostrando a textura do papel e a borda verde da segunda folha"
+           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/impresso-banana.webp"
+           alt="Close-up do cartaz Banana impresso sobre fundo roxo, com uma segunda folha aparecendo por baixo"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/impresso-torcao.webp"
+           alt="Close-up do cartaz Torção impresso sobre fundo rosa, com uma segunda folha aparecendo por baixo"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/posts-instagram.webp"
+           alt="Dois posts de Instagram sobre fundo roxo: um com a sandália Minhoca e os pacotes de bala Fini, outro com o texto da promoção dentro de uma nuvem"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/adesivos.webp"
+           alt="Os quatro letterings recortados como adesivos empilhados sobre fundo amarelo, com contorno branco e sombra"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROCESSO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[326/470]">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/processo-1-esboco.webp"
+           alt="Primeira etapa do cartaz Minhoca: o esboço a lápis da menina e do lettering, com a foto da sandália já posicionada sobre fundo branco"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[326/470]">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/processo-2-cor.webp"
+           alt="Segunda etapa: a ilustração já colorida sobre o cenário de céu e morro, ainda sem o lettering final"
+           class="w-full h-full object-cover">
+    </figure>
+    <figure class="rounded-lg overflow-hidden bg-navy/5 aspect-[326/470]">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/processo-3-final.webp"
+           alt="Terceira etapa: a arte final com o lettering “Minhoca” aplicado e as balas espalhadas pelo cenário"
+           class="w-full h-full object-cover">
+    </figure>
+  </div>
+</section>
+
+<!-- ====== SITE E REDES (FUNDO NAVY) ====== -->
+<section class="bg-navy py-12 lg:py-16 mb-16 lg:mb-24">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-20">
+    <figure class="rounded-lg overflow-hidden">
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/banner-site.webp"
+           alt="Banner da coleção para o site: o lettering “Dia das Crianças” dentro de uma nuvem com o texto da promoção à esquerda, o lettering “Minhoca” ao centro, a sandália com os pacotes de bala Fini e a menina pulando à direita"
+           class="w-full object-cover">
+    </figure>
+
+    <div class="mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-center">
+      <figure class="rounded-lg overflow-hidden">
+        <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/mockup-notebook.webp"
+             alt="A home do site da Melissa aberta num notebook, com o banner da coleção Dia das Crianças ocupando o topo da página"
+             class="w-full object-contain">
+      </figure>
+      <figure class="rounded-lg overflow-hidden">
+        <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/banner-horizontal.webp"
+             alt="Versão horizontal do banner, com o lettering “Minhoca” e a sandália à esquerda e o texto da promoção dentro de uma nuvem à direita"
+             class="w-full object-contain">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CARROSSEL: APLICAÇÕES ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
+  <div data-carousel data-interval="4500">
+    <div class="flex gap-3 lg:gap-4" data-carousel-track>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+      <div class="h-[6px] flex-1 rounded-full bg-laranja/25 overflow-hidden" data-carousel-segment>
+        <div class="h-full w-0 bg-laranja rounded-full" data-carousel-fill></div>
+      </div>
+    </div>
+
+    <div class="mt-4 lg:mt-6 relative rounded-lg overflow-hidden bg-navy/5 aspect-[1120/653] cursor-zoom-in" data-carousel-viewport>
+      <img src="../assets/img/melissa-fini/aplicacao-vitrine-rua.webp"
+           alt="Os três cartazes lado a lado numa vitrine iluminada de fachada de rua"
+           class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/aplicacao-mupi.webp"
+           alt="O cartaz Banana num painel iluminado dentro de um shopping, entre duas lojas"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/aplicacao-relogio.webp"
+           alt="O cartaz Minhoca num relógio digital de rua em São Paulo, com prédios e palmeiras ao fundo"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/aplicacao-aeroporto.webp"
+           alt="O banner Torção num painel digital do aeroporto de Brasília, sobre a área de passagens"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+      <img loading="lazy" decoding="async" src="../assets/img/melissa-fini/aplicacao-vitrine-shopping.webp"
+           alt="Os cartazes Torção e Minhoca ocupando as duas faces de uma coluna de vitrine em um shopping"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
+           data-carousel-slide>
+
+      <button type="button"
+              class="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-prev aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button"
+              class="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 lg:h-11 lg:w-11 rounded-full bg-creme/90 text-navy hover:bg-creme transition-colors"
+              data-carousel-next aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAIXA @LETSKETCHES ====== -->
+<!-- Duas cópias com 10 itens cada. As metades precisam ser idênticas: a animação
+     anda -50%, então qualquer diferença faz o loop dar um salto. Não editar. -->
+<div class="bg-laranja text-navy overflow-hidden py-3 lg:py-4 select-none" aria-hidden="true">
+  <div class="flex w-max animate-faixa">
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+    <span class="flex items-center shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"><span class="font-black italic text-2xl lg:text-4xl uppercase tracking-tight px-6 lg:px-8">@letsketches</span><img loading="lazy" decoding="async" src="../assets/stickers/brilho-navy.svg" alt="" class="h-4 lg:h-6 w-auto shrink-0"></span>
+  </div>
+</div>
+
+<!-- ====== PRÓXIMO PROJETO ====== -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
+  <a href="luna-monstrinho.html" class="group block">
+    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+          data-pt="Próximo projeto" data-en="Next project"></span>
+    <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
+      Luna e o Monstrinho →
+    </span>
+  </a>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
+  <div class="flex flex-wrap items-center justify-between gap-6 text-sm font-semibold uppercase tracking-tight">
+    <nav class="flex gap-6">
+      <a href="https://www.behance.net/letsketches" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Behance</a>
+      <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
+      <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
+    </nav>
+    <span class="opacity-50">© 2026 Letícia Garcia</span>
+  </div>
+</footer>
+
+<!-- ====== LIGHTBOX ====== -->
+<!-- Overlay compartilhado por todos os carrosséis da página. Não editar.
+     Pode ficar mesmo que a página não tenha carrossel. -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy/95 p-4 lg:p-10" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button type="button" id="lightbox-close"
+          class="absolute top-4 right-4 lg:top-8 lg:right-8 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-creme/10 text-creme hover:bg-creme/20 transition-colors"
+          aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 lg:h-6 lg:w-6"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div id="lightbox-content" class="flex gap-0.5 max-w-full max-h-full"></div>
+</div>
+
+<!-- Troca de idioma. Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    let lang = localStorage.getItem('lang') || 'pt';
+    function apply(l) {
+      document.querySelectorAll('[data-pt]').forEach(el => { el.textContent = el.dataset[l]; });
+      document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+      btn.textContent = l === 'pt' ? 'EN' : 'PT';
+      localStorage.setItem('lang', l);
+    }
+    btn.addEventListener('click', () => { lang = lang === 'pt' ? 'en' : 'pt'; apply(lang); });
+    apply(lang);
+  })();
+</script>
+
+<!-- Carrossel de imagens: barra de progresso tipo stories, setas e clique pra ampliar.
+     Igual em todas as páginas. Não editar. -->
+<script>
+  (function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- lightbox compartilhado ----
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightbox-content');
+    const lightboxClose = document.getElementById('lightbox-close');
+    let onLightboxClose = null;
+
+    function openLightbox(slide, onClose) {
+      if (!lightbox) return;
+      lightboxContent.innerHTML = '';
+      const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      // pranchas coladas na vertical abrem empilhadas, do jeito que aparecem na página
+      const empilhado = imgs.length > 1 && imgs.every((img, i, todas) =>
+        i === 0 || Math.abs(img.getBoundingClientRect().left - todas[0].getBoundingClientRect().left) < 4);
+      lightboxContent.classList.toggle('flex-col', empilhado);
+      lightboxContent.classList.toggle('overflow-y-auto', empilhado);
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.currentSrc || img.src;
+        clone.alt = img.alt;
+        clone.className = empilhado ? 'max-w-full object-contain' : 'max-h-[85vh] max-w-full object-contain';
+        lightboxContent.appendChild(clone);
+      });
+      onLightboxClose = onClose || null;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox || lightbox.classList.contains('hidden')) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+      if (onLightboxClose) { onLightboxClose(); onLightboxClose = null; }
+    }
+
+    if (lightbox) {
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    }
+
+    // ---- clique para ampliar em QUALQUER imagem de conteúdo, não só nas do carrossel ----
+    // Vale para toda <figure> do miolo. Ficam de fora: as do carrossel (que já têm o
+    // seu próprio clique), a colagem de ícones soltos e os retratos de equipe.
+    document.querySelectorAll('section figure').forEach((figura) => {
+      if (figura.closest('[data-carousel]')) return;
+      if (!figura.querySelector('img')) return;
+      figura.classList.add('cursor-zoom-in');
+      figura.addEventListener('click', (e) => {
+        if (e.target.closest('video, a, button')) return;
+        openLightbox(figura);
+      });
+    });
+
+    // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+      const fills = Array.from(carousel.querySelectorAll('[data-carousel-fill]'));
+      const viewport = carousel.querySelector('[data-carousel-viewport]');
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      const duration = Number(carousel.dataset.interval) || 4000;
+      if (slides.length < 2) return;
+
+      let index = 0;
+      let elapsed = 0;
+      let lastTime = null;
+      let playing = !reduceMotion;
+
+      function render() {
+        slides.forEach((slide, n) => { slide.style.opacity = n === index ? '1' : '0'; });
+        fills.forEach((fill, n) => {
+          if (n < index) fill.style.width = '100%';
+          else if (n > index) fill.style.width = '0%';
+          else fill.style.width = (reduceMotion || !playing) ? '100%' : `${(elapsed / duration) * 100}%`;
+        });
+      }
+
+      function goTo(next) {
+        index = (next + slides.length) % slides.length;
+        elapsed = 0;
+        render();
+      }
+
+      function frame(time) {
+        if (lastTime === null) lastTime = time;
+        const delta = time - lastTime;
+        lastTime = time;
+        if (playing) {
+          elapsed += delta;
+          if (elapsed >= duration) {
+            goTo(index + 1);
+          } else {
+            fills[index].style.width = `${(elapsed / duration) * 100}%`;
+          }
+        }
+        requestAnimationFrame(frame);
+      }
+
+      render();
+      if (!reduceMotion) requestAnimationFrame(frame);
+
+      carousel.addEventListener('mouseenter', () => { playing = false; });
+      carousel.addEventListener('mouseleave', () => { playing = !reduceMotion; lastTime = null; });
+
+      prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index - 1); });
+      nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(index + 1); });
+
+      viewport?.addEventListener('click', (e) => {
+        if (e.target.closest('[data-carousel-prev],[data-carousel-next]')) return;
+        playing = false;
+        openLightbox(slides[index], () => { playing = !reduceMotion; lastTime = null; });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

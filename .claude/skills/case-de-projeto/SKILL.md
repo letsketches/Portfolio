@@ -65,7 +65,7 @@ O amarelo é destaque pontual, nunca a cor do case.
 
 É comum montar a página antes de receber os arquivos. Nesse caso:
 
-- Mantenha o `src` apontando para o caminho final: `../assets/img/[slug]/nome-descritivo.jpg`
+- Mantenha o `src` apontando para o caminho final: `../assets/img/[slug]/nome-descritivo.webp`
 - Escreva o `alt` do jeito que ele vai ficar, descrevendo o que a imagem **vai** mostrar
 - Marque com o comentário `<!-- IMG PENDENTE: descrição do que falta -->` logo acima
 
@@ -76,6 +76,12 @@ grep -rn "IMG PENDENTE" projetos/
 ```
 
 Quando os arquivos chegarem, é só salvá-los com o nome certo e apagar os comentários.
+
+## Formato das imagens
+
+Todas as imagens do site são **WebP**, com no máximo 2240px no lado maior — o dobro dos
+1120px de área útil do container, o que cobre telas retina. Converta antes de salvar em
+`assets/img/[slug]/`. Vídeo continua `.mp4` e GIF animado continua `.gif`.
 
 ## Regras que valem em qualquer case
 
@@ -97,8 +103,8 @@ bloco `@theme` · faixa de gradiente do topo · header · faixa `@letsketches` �
 script de troca de idioma · script do carrossel
 
 As meta tags de compartilhamento (`og:` / `twitter:`) do `<head>` também são padrão: só troque
-os marcadores. A `og:image` aponta para `assets/img/[slug]/capa.jpg` — se a capa do case for
-`.webp` ou `.png`, corrija a extensão. Enquanto o site não estiver no ar, a URL fica como
+os marcadores. A `og:image` aponta para `assets/img/[slug]/capa.webp`. Enquanto o site não
+estiver no ar, a URL fica como
 `https://SEU-DOMINIO`; depois do deploy é um find-and-replace único em todos os arquivos.
 
 **A faixa `@letsketches` tem duas cópias com exatamente 10 itens cada.** A animação anda

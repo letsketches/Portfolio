@@ -48,7 +48,7 @@
   <meta property="og:url" content="https://SEU-DOMINIO/projetos/{{SLUG}}.html">
   <meta property="og:title" content="{{TITULO_PAGINA}} — Letícia Garcia">
   <meta property="og:description" content="{{META_DESCRICAO}}">
-  <meta property="og:image" content="https://SEU-DOMINIO/assets/img/{{SLUG}}/capa.jpg">
+  <meta property="og:image" content="https://SEU-DOMINIO/assets/img/{{SLUG}}/capa.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -315,11 +315,16 @@
       if (!lightbox) return;
       lightboxContent.innerHTML = '';
       const imgs = slide.tagName === 'IMG' ? [slide] : Array.from(slide.querySelectorAll('img'));
+      // pranchas coladas na vertical abrem empilhadas, do jeito que aparecem na página
+      const empilhado = imgs.length > 1 && imgs.every((img, i, todas) =>
+        i === 0 || Math.abs(img.getBoundingClientRect().left - todas[0].getBoundingClientRect().left) < 4);
+      lightboxContent.classList.toggle('flex-col', empilhado);
+      lightboxContent.classList.toggle('overflow-y-auto', empilhado);
       imgs.forEach((img) => {
         const clone = document.createElement('img');
         clone.src = img.currentSrc || img.src;
         clone.alt = img.alt;
-        clone.className = 'max-h-[85vh] max-w-full object-contain';
+        clone.className = empilhado ? 'max-w-full object-contain' : 'max-h-[85vh] max-w-full object-contain';
         lightboxContent.appendChild(clone);
       });
       onLightboxClose = onClose || null;
@@ -341,6 +346,19 @@
       lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
     }
+
+    // ---- clique para ampliar em QUALQUER imagem de conteúdo, não só nas do carrossel ----
+    // Vale para toda <figure> do miolo. Ficam de fora: as do carrossel (que já têm o
+    // seu próprio clique), a colagem de ícones soltos e os retratos de equipe.
+    document.querySelectorAll('section figure').forEach((figura) => {
+      if (figura.closest('[data-carousel]')) return;
+      if (!figura.querySelector('img')) return;
+      figura.classList.add('cursor-zoom-in');
+      figura.addEventListener('click', (e) => {
+        if (e.target.closest('video, a, button')) return;
+        openLightbox(figura);
+      });
+    });
 
     // ---- cada carrossel roda seu próprio loop, sem setInterval duplicado ----
     document.querySelectorAll('[data-carousel]').forEach((carousel) => {
