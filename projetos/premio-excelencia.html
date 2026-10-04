@@ -41,6 +41,9 @@
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
       --color-creme:   #FFF9EB;
       --color-navy:    #1B1435;
+      /* navy rebaixado para rótulos e legendas: 6.39:1 sobre o creme,
+         enquanto opacity-50 dava 3.36:1 e reprovava em AA */
+      --color-navy-suave: #5F596C;
       --color-magenta: #E62070;
       --color-laranja: #E9571B;
       --color-amarelo: #FBBC12;
@@ -61,6 +64,23 @@
     @media (prefers-reduced-motion: reduce) {
       .animate-faixa { animation: none; }
     }
+    /* Cards de projeto: a imagem avança 3% no hover, em 250ms ease-out.
+       Dentro da faixa de 150–300ms, suficiente para dar resposta sem atrasar o clique. */
+    .card-projeto img { transition: transform 250ms ease-out; }
+    .card-projeto:hover img { transform: scale(1.03); }
+
+    /* Foco visível consistente: o teclado precisa enxergar onde está. */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-magenta);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-projeto img { transition: none; }
+      .card-projeto:hover img { transform: none; }
+    }
+
   </style>
 </head>
 
@@ -100,7 +120,7 @@
 
   <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">13º Prêmio Regional de Excelência Gráfica</h1>
 
-  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+  <p class="mt-8 max-w-[58ch] text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
      data-pt="Cartaz desenvolvido para o 13° Concurso do Prêmio Regional de Excelência Gráfica Vinícius Viotto Coube realizado pela ABIGRAF Bauru.
 O prêmio foi criado para reconhecer os melhores trabalhos da indústria gráfica de Bauru e região e homenagear Vinicius Viotto Coube, este que deixou grande legado para o mercado gráfico regional.
 Conceito: O projeto foi desenvolvido focando nas formas orgânicas, cores vibrantes e na representação do avanço das artes gráficas e nos diferentes caminhos que ela pode seguir. Explorando fontes modernas, formas presentes em programas de editor de imagens vetoriais e elementos lúdicos para trazer personalidade e contraste."
@@ -108,7 +128,7 @@ Conceito: O projeto foi desenvolvido focando nas formas orgânicas, cores vibran
 The award was created to consider the best works in the graphics industry in Bauru and the region and to honor Vinicius Viotto Coube, who left a great legacy for the regional graphics market.
 Concept: The project was developed focusing on organic shapes, vibrant cores and the representation of the advancement of graphic arts and the different paths it can follow. Exploring modern fonts, shapes present in geometric image editor programs and playful elements to bring personality and contrast."></p>
 
-  <p class="mt-6 text-sm opacity-60 max-w-[70ch]"
+  <p class="mt-6 text-sm opacity-60 max-w-[58ch]"
      data-pt="Orientação: Professora Cássia Carrara"
      data-en="Advisor: Professor Cássia Carrara"></p>
 
@@ -122,17 +142,17 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ano" data-en="Year"></dt>
       <dd class="mt-2 font-semibold">2024</dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Categoria" data-en="Category"></dt>
       <dd class="mt-2 font-semibold"
           data-pt="Ilustração, direção artística e design gráfico"
           data-en="Illustration, art direction and graphic design"></dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ferramentas" data-en="Tools"></dt>
       <dd class="mt-2 font-semibold">Illustrator, Photoshop</dd>
     </div>
   </dl>
@@ -185,7 +205,7 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
 <!-- ====== PRÓXIMO PROJETO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
   <a href="block-font.html" class="group block">
-    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+    <span class="font-semibold text-sm uppercase tracking-tight text-navy-suave"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
       Block Font →
@@ -201,7 +221,7 @@ Concept: The project was developed focusing on organic shapes, vibrant cores and
       <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
       <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
     </nav>
-    <span class="opacity-50">© 2026 Letícia Garcia</span>
+    <span class="text-navy-suave">© 2026 Letícia Garcia</span>
   </div>
 </footer>
 

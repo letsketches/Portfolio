@@ -42,6 +42,9 @@
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
       --color-creme:   #FFF9EB;
       --color-navy:    #1B1435;
+      /* navy rebaixado para rótulos e legendas: 6.39:1 sobre o creme,
+         enquanto opacity-50 dava 3.36:1 e reprovava em AA */
+      --color-navy-suave: #5F596C;
       --color-magenta: #E62070;
       --color-laranja: #E9571B;
       --color-amarelo: #FBBC12;
@@ -68,6 +71,23 @@
       .animate-faixa { animation: none; }
       .chico-icon { transition: none; }
     }
+    /* Cards de projeto: a imagem avança 3% no hover, em 250ms ease-out.
+       Dentro da faixa de 150–300ms, suficiente para dar resposta sem atrasar o clique. */
+    .card-projeto img { transition: transform 250ms ease-out; }
+    .card-projeto:hover img { transform: scale(1.03); }
+
+    /* Foco visível consistente: o teclado precisa enxergar onde está. */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-magenta);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-projeto img { transition: none; }
+      .card-projeto:hover img { transform: none; }
+    }
+
   </style>
 </head>
 
@@ -106,7 +126,7 @@
 
   <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Chico Quitandas Mineiras</h1>
 
-  <p class="mt-8 text-xl leading-relaxed whitespace-pre-wrap"
+  <p class="mt-8 max-w-[58ch] text-xl leading-relaxed whitespace-pre-wrap"
      data-pt="Chico Quitandas Mineiras é uma micro padaria artesanal especializada em produtos tipicamente mineiros. A marca nasceu como uma forma de honrar o legado do avô de Kamila, sua fundadora, e de agradecê-lo — trazendo ideias de tradição, simplicidade e produtos feitos artesanalmente, além de valorizar a cultura gastronômica de Minas Gerais, seus ingredientes e receitas.
 A marca quer ser vista como uma quitanda que coloca carinho em todos os produtos, preza pela qualidade e é referência em café da tarde — já que hoje falta comida que não nutra só o corpo, mas que traga conforto e afetividade para a alma. O objetivo é criar memórias afetivas e resgatar a herança mineira através da comida e do espaço da quitanda.
 Seu público é predominantemente feminino, com mais de 25 anos e de classe média alta: gente que busca alimentos prontos e saborosos para o dia a dia ou para criar momentos especiais com família e amigos."
@@ -119,17 +139,17 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ano" data-en="Year"></dt>
       <dd class="mt-2 font-semibold">2025</dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Categoria" data-en="Category"></dt>
       <dd class="mt-2 font-semibold"
           data-pt="Branding, direção de arte e design gráfico"
           data-en="Branding, art direction and graphic design"></dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ferramentas" data-en="Tools"></dt>
       <dd class="mt-2 font-semibold">Illustrator, Photoshop</dd>
     </div>
   </dl>
@@ -197,7 +217,7 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
 <!-- ====== LOGO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-12 lg:pb-16">
   <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Logotipo" data-en="Logo"></h2>
-  <p class="mt-6 text-lg leading-relaxed"
+  <p class="mt-6 max-w-[58ch] text-lg leading-relaxed"
      data-pt="A tipografia desenhada à mão remete à escrita de cartazes de quitanda, e o símbolo reproduz a janela colonial mineira — referências diretas à arquitetura e à estética tradicional de Minas Gerais."
      data-en="The hand-drawn lettering echoes the handwritten signs of a traditional Brazilian quitanda, and the symbol reproduces a colonial-style window from Minas Gerais — direct references to the region's architecture and traditional aesthetic."></p>
 
@@ -357,7 +377,7 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
 <!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
   <a href="puket-inverno.html" class="group block">
-    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+    <span class="font-semibold text-sm uppercase tracking-tight text-navy-suave"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
       Puket — Coleção de Inverno →
@@ -373,7 +393,7 @@ Its audience is predominantly female, over 25 and upper-middle class: people loo
       <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
       <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
     </nav>
-    <span class="opacity-50">© 2026 Letícia Garcia</span>
+    <span class="text-navy-suave">© 2026 Letícia Garcia</span>
   </div>
 </footer>
 

@@ -41,6 +41,9 @@
       /* base */
       --color-creme:   #FFF9EB;
       --color-navy:    #1B1435;
+      /* navy rebaixado para rótulos e legendas: 6.39:1 sobre o creme,
+         enquanto opacity-50 dava 3.36:1 e reprovava em AA */
+      --color-navy-suave: #5F596C;
 
       /* acentos da marca */
       --color-magenta: #E62070;
@@ -76,6 +79,23 @@
       .animate-faixa { animation: none; }
       .avatar-flutua { transform: none; }
     }
+    /* Cards de projeto: a imagem avança 3% no hover, em 250ms ease-out.
+       Dentro da faixa de 150–300ms, suficiente para dar resposta sem atrasar o clique. */
+    .card-projeto img { transition: transform 250ms ease-out; }
+    .card-projeto:hover img { transform: scale(1.03); }
+
+    /* Foco visível consistente: o teclado precisa enxergar onde está. */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-magenta);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-projeto img { transition: none; }
+      .card-projeto:hover img { transform: none; }
+    }
+
   </style>
 </head>
 
@@ -185,7 +205,7 @@
 
 <!-- ====== CONTATO / FOOTER ====== -->
 <footer id="contato" class="max-w-[1280px] mx-auto px-5 lg:px-20 py-20 lg:py-28">
-  <p class="font-semibold text-sm uppercase tracking-tight opacity-50"
+  <p class="font-semibold text-sm uppercase tracking-tight text-navy-suave"
      data-pt="Bora criar algo incrível juntos" data-en="Let's create something amazing together"></p>
 
   <a href="mailto:let_garcia10@hotmail.com"
@@ -199,7 +219,7 @@
       <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
       <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
     </nav>
-    <span class="opacity-50">© 2026 Letícia Garcia</span>
+    <span class="text-navy-suave">© 2026 Letícia Garcia</span>
   </div>
 </footer>
 

@@ -42,6 +42,9 @@
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
       --color-creme:   #FFF9EB;
       --color-navy:    #1B1435;
+      /* navy rebaixado para rótulos e legendas: 6.39:1 sobre o creme,
+         enquanto opacity-50 dava 3.36:1 e reprovava em AA */
+      --color-navy-suave: #5F596C;
       --color-magenta: #E62070;
       --color-laranja: #E9571B;
       --color-amarelo: #FBBC12;
@@ -62,6 +65,23 @@
     @media (prefers-reduced-motion: reduce) {
       .animate-faixa { animation: none; }
     }
+    /* Cards de projeto: a imagem avança 3% no hover, em 250ms ease-out.
+       Dentro da faixa de 150–300ms, suficiente para dar resposta sem atrasar o clique. */
+    .card-projeto img { transition: transform 250ms ease-out; }
+    .card-projeto:hover img { transform: scale(1.03); }
+
+    /* Foco visível consistente: o teclado precisa enxergar onde está. */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-magenta);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-projeto img { transition: none; }
+      .card-projeto:hover img { transform: none; }
+    }
+
   </style>
 </head>
 
@@ -101,7 +121,7 @@
 
   <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Luna e o Monstrinho</h1>
 
-  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+  <p class="mt-8 max-w-[58ch] text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
      data-pt="Luna e o Monstrinho é um livro infantil ilustrado desenvolvido com foco em ajudar crianças que têm dificuldade de dizer o que sentem e de entender suas emoções — e também ajuda pais e responsáveis a acolherem esses sentimentos, em vez de reprimi-los. Um dos principais desafios do livro foi ter um embasamento sólido sobre emoções na infância, o que levou à busca por profissionais da psicologia, que responderam a um questionário voltado a encontrar a melhor abordagem para o tema e para a construção da história.
 
 O público principal são as crianças, então a pesquisa também buscou entender suas necessidades e interesses para a criação de personagens, cenários e história. A escrita é simples, e os personagens são coloridos e carismáticos, com uma estética cartoon que remete a desenhos animados — formas simples e geométricas que ficam na memória das crianças."
@@ -122,17 +142,17 @@ Since children are the main audience, research into their needs and interests sh
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ano" data-en="Year"></dt>
       <dd class="mt-2 font-semibold">2024</dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Categoria" data-en="Category"></dt>
       <dd class="mt-2 font-semibold"
           data-pt="Autoria, ilustração, projeto gráfico e pesquisa"
           data-en="Writing, illustration, book design and research"></dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ferramentas" data-en="Tools"></dt>
       <dd class="mt-2 font-semibold">Photoshop, Illustrator, Procreate</dd>
     </div>
   </dl>
@@ -200,7 +220,7 @@ Since children are the main audience, research into their needs and interests sh
 <!-- ====== TIPOGRAFIA ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24">
   <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Tipografia" data-en="Typography"></h2>
-  <p class="mt-6 text-lg leading-relaxed"
+  <p class="mt-6 max-w-[58ch] text-lg leading-relaxed"
      data-pt="Fonte criada para o projeto: Luna. Houveram muitas tentativas de deixar o título do livro mais orgânico, inicialmente criando uma fonte do zero, apenas com algumas referências. Porém, sua espessura não estava uniforme e ainda causava estranheza na leitura. Portanto, revisitei as referências e modifiquei a fonte DK Lemon Yellow Sun, criada por David Kerkhoff — que possui licença pessoal grátis e era a tipografia mais próxima dos rascunhos iniciais. Acrescentei serifas discretas, modifiquei letras como o M e o W e deixei as formas mais retas. A tipografia foi desenhada no Adobe Illustrator e convertida de vetor para fonte instalável com o FontLab. Foi criada para trazer identidade a todo o projeto — não só ao título do livro, mas a qualquer material que carregue o nome 'Luna e o Monstrinho'."
      data-en="Custom typeface for the project: Luna. There were many attempts to make the book's title feel more organic, starting with a typeface built from scratch using only a few references. But its stroke weight wasn't consistent and made the title awkward to read. So I went back to the references and modified an existing typeface instead: DK Lemon Yellow Sun, created by David Kerkhoff, which has a free personal-use licence and was the closest match to the early sketches. I added subtle serifs, reworked letters like M and W, and straightened the strokes overall. The typeface was drawn in Adobe Illustrator and converted from vector shapes into an installable font using FontLab. It was created to give the whole project an identity — not just the book's title, but any material that carries the 'Luna e o Monstrinho' name."></p>
 
@@ -215,7 +235,7 @@ Since children are the main audience, research into their needs and interests sh
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-16 lg:pb-24 flex flex-col gap-10 lg:gap-16">
   <div>
     <h2 class="font-black text-3xl lg:text-section tracking-tighter" data-pt="Ilustrações" data-en="Illustrations"></h2>
-    <p class="mt-6 text-lg leading-relaxed"
+    <p class="mt-6 max-w-[58ch] text-lg leading-relaxed"
        data-pt="O processo de pintura digital passa por quatro etapas: rascunho da ideia com as linhas já limpas, aplicação das cores base removendo aos poucos o rascunho, renderização com luz e sombra de acordo com a direção da luz na cena — buscando uma estética não tão realista, mais 'cartoon' — e, por fim, pequenos retoques de cor e brilho para deixar a ilustração mais estilizada."
        data-en="The digital painting process runs through four stages: a rough sketch with the lines cleaned up, then flat base colours applied while gradually removing the sketch lines. In the rendering stage I apply light and shadow according to each object's place in the scene, aiming for a look that's less realistic and more 'cartoon'. I finish with small colour adjustments and extra highlights to make the illustration feel more stylised."></p>
   </div>
@@ -314,7 +334,7 @@ Since children are the main audience, research into their needs and interests sh
 <!-- Apontar para o próximo case, encadeando a navegação. Link relativo, mesma pasta. -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
   <a href="almanaque-vampirico.html" class="group block">
-    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+    <span class="font-semibold text-sm uppercase tracking-tight text-navy-suave"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
       Almanaque Vampírico →
@@ -330,7 +350,7 @@ Since children are the main audience, research into their needs and interests sh
       <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
       <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
     </nav>
-    <span class="opacity-50">© 2026 Letícia Garcia</span>
+    <span class="text-navy-suave">© 2026 Letícia Garcia</span>
   </div>
 </footer>
 

@@ -41,6 +41,9 @@
       --font-sans: "Inter", Arial, Helvetica, sans-serif;
       --color-creme:   #FFF9EB;
       --color-navy:    #1B1435;
+      /* navy rebaixado para rótulos e legendas: 6.39:1 sobre o creme,
+         enquanto opacity-50 dava 3.36:1 e reprovava em AA */
+      --color-navy-suave: #5F596C;
       --color-magenta: #E62070;
       --color-laranja: #E9571B;
       --color-amarelo: #FBBC12;
@@ -61,6 +64,23 @@
     @media (prefers-reduced-motion: reduce) {
       .animate-faixa { animation: none; }
     }
+    /* Cards de projeto: a imagem avança 3% no hover, em 250ms ease-out.
+       Dentro da faixa de 150–300ms, suficiente para dar resposta sem atrasar o clique. */
+    .card-projeto img { transition: transform 250ms ease-out; }
+    .card-projeto:hover img { transform: scale(1.03); }
+
+    /* Foco visível consistente: o teclado precisa enxergar onde está. */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-magenta);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-projeto img { transition: none; }
+      .card-projeto:hover img { transform: none; }
+    }
+
   </style>
 </head>
 
@@ -99,13 +119,13 @@
 
   <h1 class="mt-4 font-black text-5xl lg:text-title leading-none tracking-tighter">Block Font</h1>
 
-  <p class="mt-8 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
+  <p class="mt-8 max-w-[58ch] text-lg lg:text-xl leading-relaxed whitespace-pre-wrap"
      data-pt="Trabalho realizado para a matéria de tipografia 03 - consiste na criação de uma tipografia, esta denominada “BLOCK” e foi feita em caixa alta, para exemplificar a aplicação da fonte foram confeccionados cartazes artísticos com a fonte destacada.
 A fonte BLOCK foi feita para uso digital/display e em caixa alta, sua finalidade é para fins artísticos e pode ser aplicada em pôster e artes gráficas. A fonte possui os caracteres com o mesmo tamanho, a altura é levemente maior do que a largura dos caracteres para destacar o fato de ser caixa alta. A inspiração para sua criação veio de fontes mais psicodélicas com alto contraste e muitas curvas, além da brincadeira com caracteres formando blocos e preenchendo o máximo possível do espaço retangular delimitado. A tipografia produzida possui uma temática divertida e cativante para se destacar em meio a fontes mais tradicionais. Algumas fontes usadas como inspiração foram: Klore, Corn, Ahsing e Keep on truckin."
      data-en="Work carried out for typography class 03 - consists of creating a typography, this one called “BLOCK” and was made in capital letters, to exemplify the application of the font, artistic posters were made with the font highlighted.
 The BLOCK font was made for digital/display use and in capital letters, its purpose is for artistic purposes and can be applied to posters and graphic arts. The font has the characters the same size, the height is slightly larger than the width of the characters to highlight the fact that it is upper case. The inspiration for its creation came from more psychedelic fonts with high contrast and many curves, in addition to playing with characters forming blocks and filling as much space as possible delimited rectangle. The typography produced has a fun and captivating theme to stand out among more traditional fonts. Some sources used as inspiration were: Klore, Corn, Ahsing and Keep on truckin."></p>
 
-  <p class="mt-6 text-sm opacity-60 max-w-[70ch]"
+  <p class="mt-6 text-sm opacity-60 max-w-[58ch]"
      data-pt="Projeto acadêmico — Tipografia 03, Design UNESP. A fonte é distribuída em .otf e .ttf."
      data-en="Academic project — Typography 03, Design at UNESP. The font ships as .otf and .ttf."></p>
 
@@ -126,17 +146,17 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 pb-20">
   <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 lg:gap-x-24 gap-y-8 border-t-2 border-navy/10 pt-10">
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ano" data-en="Year"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ano" data-en="Year"></dt>
       <dd class="mt-2 font-semibold">2023</dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Categoria" data-en="Category"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Categoria" data-en="Category"></dt>
       <dd class="mt-2 font-semibold"
           data-pt="Tipografia, design gráfico e design de pôster"
           data-en="Type design, graphic design and poster design"></dd>
     </div>
     <div>
-      <dt class="font-semibold text-xs uppercase tracking-tight opacity-50" data-pt="Ferramentas" data-en="Tools"></dt>
+      <dt class="font-semibold text-xs uppercase tracking-tight text-navy-suave" data-pt="Ferramentas" data-en="Tools"></dt>
       <dd class="mt-2 font-semibold">Illustrator, Photoshop</dd>
     </div>
   </dl>
@@ -221,7 +241,7 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
 <!-- ====== PRÓXIMO PROJETO ====== -->
 <section class="max-w-[1280px] mx-auto px-5 lg:px-20 py-16 lg:py-24">
   <a href="melissa-fini.html" class="group block">
-    <span class="font-semibold text-sm uppercase tracking-tight opacity-50"
+    <span class="font-semibold text-sm uppercase tracking-tight text-navy-suave"
           data-pt="Próximo projeto" data-en="Next project"></span>
     <span class="mt-3 block font-black text-3xl lg:text-title tracking-tighter group-hover:text-magenta transition-colors">
       Melissa + Fini →
@@ -237,7 +257,7 @@ The BLOCK font was made for digital/display use and in capital letters, its purp
       <a href="https://www.instagram.com/letsketches/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">Instagram</a>
       <a href="https://www.linkedin.com/in/let%C3%ADcia-garcia-ribeiro/" target="_blank" rel="noopener noreferrer" class="hover:text-magenta transition-colors">LinkedIn</a>
     </nav>
-    <span class="opacity-50">© 2026 Letícia Garcia</span>
+    <span class="text-navy-suave">© 2026 Letícia Garcia</span>
   </div>
 </footer>
 
